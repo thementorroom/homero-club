@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HOMERO CLUB · Reto 21 días de escritura</title>
+  <meta name="description" content="HOMERO CLUB: reto de 21 días de escritura creativa con haiku, microrrelato y escritura simbólica.">
+  <meta name="theme-color" content="#141327">
+  <style>
+    :root{
+      --ink:#141327;--paper:#fbf3e5;--paper2:#f2e2c7;--gold:#c59b4b;--gold2:#9a6b20;
+      --wine:#6f263d;--blue:#2c405d;--muted:#69626a;--line:rgba(20,19,39,.14);
+      --shadow:0 26px 70px rgba(20,19,39,.13);--r:26px;--container:min(1160px,calc(100% - 2rem));
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);line-height:1.65;background:radial-gradient(circle at 8% 8%,rgba(197,155,75,.22),transparent 22%),radial-gradient(circle at 92% 18%,rgba(111,38,61,.16),transparent 24%),linear-gradient(180deg,#fffaf0 0%,var(--paper) 60%,#efe1c6 100%)}
+    a{text-decoration:none;color:inherit}.container{width:var(--container);margin:auto}
+    .topbar{background:var(--ink);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.92rem;letter-spacing:.03em}
+    header{position:sticky;top:0;z-index:50;background:rgba(251,243,229,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .head{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:flex;align-items:center;gap:.8rem}
+    .mark{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold),#e6cf8a);color:var(--ink);border:1px solid rgba(20,19,39,.16);box-shadow:0 12px 28px rgba(197,155,75,.24);font-weight:900}
+    .brand strong{display:block;letter-spacing:.16em;font-size:1.05rem}.brand small{display:block;color:var(--muted);font-size:.82rem}
+    nav{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:flex-end}nav a{font-family:Arial,sans-serif;font-size:.9rem;font-weight:800;color:var(--muted)}nav a:hover{color:var(--gold2)}
+    .section{padding:4rem 0}.hero{padding:4.5rem 0 3.6rem;background:linear-gradient(90deg,rgba(251,243,229,.97),rgba(251,243,229,.88) 48%,rgba(251,243,229,.62)),radial-gradient(circle at 80% 44%,rgba(197,155,75,.22),transparent 28%),radial-gradient(circle at 88% 18%,rgba(111,38,61,.16),transparent 24%);border-bottom:1px solid rgba(197,155,75,.24)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--gold2);font-family:Arial,sans-serif;font-weight:900;font-size:.78rem;margin:0 0 .7rem}
+    h1,h2,h3,.subtitle{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(3.2rem,7vw,6rem);line-height:.9;margin:0;letter-spacing:-.035em}h2{font-size:clamp(2.1rem,4vw,3.35rem);line-height:1;margin:0 0 .75rem}h3{font-size:1.7rem;line-height:1.05;margin:.15rem 0 .55rem}
+    .subtitle{color:var(--muted);font-size:clamp(1.35rem,2.5vw,2.1rem);font-style:italic;margin:1rem 0 .4rem}.lead{color:var(--muted);font-size:1.08rem;max-width:65ch}
+    .actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.55rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.25rem;border-radius:999px;border:0;font-family:Arial,sans-serif;font-weight:900;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--gold),#9b6e22);color:#fff;box-shadow:0 14px 34px rgba(197,155,75,.28)}.btn-secondary{background:rgba(255,255,255,.62);border:1px solid var(--line);color:var(--ink)}
+    .hero-art{min-height:430px;display:grid;place-items:center;position:relative}.book-orbit{width:min(440px,92%);aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.82),rgba(255,250,240,.38) 58%,rgba(197,155,75,.18) 59%),conic-gradient(from 70deg,rgba(197,155,75,.42),rgba(111,38,61,.25),rgba(44,64,93,.28),rgba(197,155,75,.42));border:1px solid rgba(197,155,75,.35);box-shadow:var(--shadow);position:relative;display:grid;place-items:center}
+    .book-orbit:before{content:"";width:64%;height:42%;border-radius:22px;background:linear-gradient(90deg,#fffaf0 0 49%,rgba(20,19,39,.12) 49% 51%,#fffdf8 51% 100%);border:1px solid rgba(20,19,39,.12);box-shadow:0 18px 40px rgba(20,19,39,.12);transform:rotate(-7deg)}
+    .book-orbit span{position:absolute;font-size:2.2rem;color:var(--gold2);text-shadow:0 10px 22px rgba(20,19,39,.12)}.book-orbit span:nth-child(1){top:10%;left:18%}.book-orbit span:nth-child(2){right:12%;top:28%}.book-orbit span:nth-child(3){bottom:14%;left:42%}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.card,.quote,.price-card,.contact-card,.resource{background:rgba(255,252,246,.88);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:1.55rem}.card p,.card li,.quote p,.muted,.price-card li,.contact-card p,.resource p{color:var(--muted)}
+    .tag{font-family:Arial,sans-serif;color:var(--gold2);font-weight:900;text-transform:uppercase;font-size:.78rem;letter-spacing:.12em}.center{text-align:center;margin-bottom:2rem}
+    .quotes{background:rgba(20,19,39,.96);color:#fff}.quotes .eyebrow{color:#e6cf8a}.quotes h2{color:#fff}.quotes .quote{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);box-shadow:none}.quotes .quote p{color:rgba(255,255,255,.82);font-size:1.12rem}.quotes .quote strong{display:block;color:#e6cf8a;margin-top:.9rem;font-family:Arial,sans-serif}
+    .curriculum{display:grid;gap:.75rem}.unit{display:grid;grid-template-columns:58px 1fr auto;gap:1rem;align-items:center;background:rgba(255,252,246,.78);border:1px solid var(--line);border-radius:20px;padding:.9rem}.num{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(197,155,75,.16);color:var(--gold2);font-family:Arial,sans-serif;font-weight:900}.unit b{display:block}.unit span:last-child{color:var(--muted);font-style:italic}
+    .practice{background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.16)),radial-gradient(circle at 8% 8%,rgba(197,155,75,.14),transparent 24%)}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;text-align:center}.step span{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;margin:0 auto .7rem;background:rgba(197,155,75,.16);color:var(--gold2);border:1px solid rgba(197,155,75,.28);font-family:Arial,sans-serif;font-weight:900}
+    .pricing{display:grid;grid-template-columns:.9fr 1.1fr;gap:1rem}.price{font-size:4.4rem;line-height:1;color:var(--gold2)}.bizum-data{display:grid;gap:.45rem;color:var(--muted);margin:1rem 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem;background:#fffdf8;font:inherit}textarea{min-height:100px;resize:vertical}.full{grid-column:1/-1}label{font-family:Arial,sans-serif;font-weight:800;font-size:.9rem}
+    footer{background:var(--ink);color:#fff;padding:2rem 0}.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    @media(max-width:1000px){.hero-grid,.pricing{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}nav{display:none}}
+    @media(max-width:760px){.head{display:grid;grid-template-columns:1fr auto}.hero{padding:3rem 0}.grid3,.grid4,.steps{grid-template-columns:1fr}.unit{grid-template-columns:48px 1fr}.unit span:last-child{grid-column:2}.form-grid{grid-template-columns:1fr}.actions .btn{width:100%}h1{font-size:3.15rem}}
+  
+    #productos .price-card, #productos .contact-card{min-height:100%}
+    #productos .price{font-size:3.4rem}
+
+  </style>
+</head>
+<body>
+  <div class="topbar">HOMERO CLUB · Escritura simbólica · Microrrelato · Haiku · Reto 21 días</div>
+  <header>
+    <div class="container head">
+      <a class="brand" href="#top"><span class="mark">H</span><span><strong>HOMERO CLUB</strong><small>Escuela de escritura creativa</small></span></a>
+      <nav>
+        <a href="#beneficios">Beneficios</a><a href="#productos">Productos</a><a href="#temario">Temario</a><a href="#citas">Citas</a><a href="#reto">Reto 21 días</a><a href="#contacto">Contacto</a><a href="#bizum">Bizum</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Homero Club · Crisálida · Escritura consciente</p>
+          <h1>Escribe. Descubre. Transforma.</h1>
+          <p class="subtitle">21 días para abrir tu voz simbólica, breve y contemplativa.</p>
+          <p class="lead">HOMERO CLUB tendrá dos líneas: una APP de 21 días para crear hábito diario y una ESCUELA para profundizar en escritura simbólica, microrrelato y haiku mediante materiales, actividades y acompañamiento.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#productos">Ver APP y ESCUELA</a>
+            <a class="btn btn-secondary" href="#contacto">Solicitar inscripción</a>
+          </div>
+          <p class="muted">Correo: thementorroom@proton.me · Bizum: 637341417</p>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="book-orbit"><span>✦</span><span>☉</span><span>⌁</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="container">
+        <div class="center">
+          <p class="eyebrow">Dos líneas de trabajo</p>
+          <h2>Elige cómo entrar en HOMERO CLUB</h2>
+          <p class="muted">La APP crea hábito diario. La ESCUELA desarrolla el aprendizaje profundo con materiales, temario, actividades y seguimiento.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card">
+            <p class="eyebrow">Producto 1</p>
+            <h2>APP HOMERO · 21 días</h2>
+            <p class="subtitle">Escribir 10 minutos al día.</p>
+            <div class="price">29 €</div>
+            <ul>
+              <li>Reto privado de 21 días.</li>
+              <li>7 días de haiku.</li>
+              <li>7 días de microrrelato.</li>
+              <li>7 días de escritura simbólica.</li>
+              <li>Microteoría, reto diario y caja de escritura.</li>
+              <li>Progreso básico y acceso durante 6 meses.</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="#contacto">Quiero la APP</a>
+              <a class="btn btn-secondary" href="#reto">Ver reto 21 días</a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <p class="eyebrow">Producto 2</p>
+            <h2>ESCUELA HOMERO CLUB</h2>
+            <p class="subtitle">Cursos, materiales y acompañamiento.</p>
+            <div class="price">desde 49 €</div>
+            <ul>
+              <li>Taller de Escritura simbólica.</li>
+              <li>Taller de Microrrelato.</li>
+              <li>Taller de Poesía japonesa: Haiku.</li>
+              <li>Vídeos no listados, audios, PDF y plantillas.</li>
+              <li>Actividades, comunicaciones y proyecto final.</li>
+              <li>Posibilidad futura de pack completo y diploma.</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="#contacto">Quiero la ESCUELA</a>
+              <a class="btn btn-secondary" href="#temario">Ver temario</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="center"><p class="eyebrow">Beneficios</p><h2>Una práctica literaria seria, amable y progresiva</h2><p class="muted">No se trata de producir mucho, sino de aprender a mirar, condensar, simbolizar y reescribir con conciencia.</p></div>
+        <div class="grid3">
+          <article class="card"><span class="tag">Atención</span><h3>Mirar antes de escribir</h3><p>El haiku enseña a contemplar lo real sin adornarlo: estación, instante, silencio y aware.</p></article>
+          <article class="card"><span class="tag">Precisión</span><h3>Condensar un mundo</h3><p>El microrrelato trabaja elipsis, intensidad, tensión y finales que abren sentido.</p></article>
+          <article class="card"><span class="tag">Símbolo</span><h3>Escribir desde dentro</h3><p>La escritura simbólica transforma imágenes, recuerdos y silencios en relatos con autoconocimiento.</p></article>
+          <article class="card"><span class="tag">Hábito</span><h3>10 minutos al día</h3><p>La app privada propone un reto diario para crear constancia sin saturación.</p></article>
+          <article class="card"><span class="tag">Curso</span><h3>Materiales esenciales</h3><p>Vídeos no listados, audios, PDF, ejemplos modelo, plantillas y ejercicios guiados.</p></article>
+          <article class="card"><span class="tag">Cuidado</span><h3>Ritmo sostenible</h3><p>Una escuela debe sostener el deseo de escribir sin convertirlo en ansiedad. Ahimsa también vale para crear.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section quotes" id="citas">
+      <div class="container">
+        <div class="center"><p class="eyebrow">Citas</p><h2>Tres imágenes para orientar la escritura</h2></div>
+        <div class="grid3">
+          <article class="quote"><p>“No expliques todavía la imagen. Escúchala hasta que empiece a moverse.”</p><strong>Escritura simbólica</strong></article>
+          <article class="quote"><p>“En un microrrelato, lo que falta también narra.”</p><strong>Microrrelato</strong></article>
+          <article class="quote"><p>“El haiku no adorna el mundo: se aparta un instante para que el mundo hable.”</p><strong>Haiku</strong></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="temario">
+      <div class="container">
+        <div class="center"><p class="eyebrow">Temario</p><h2>Tres talleres, un mismo camino creativo</h2><p class="muted">El proyecto crece por capas: reto de 21 días, talleres completos, biblioteca de recursos y acompañamiento.</p></div>
+        <div class="curriculum">
+          <div class="unit"><span class="num">0</span><div><b>Bienvenida a Homero Club</b><span>Método, acceso, app privada y cuaderno de escritura.</span></div><span>Inicio</span></div>
+          <div class="unit"><span class="num">1</span><div><b>Poesía japonesa: Haiku</b><span>Mirar, kigo, kire, aware, silencio y camino del haijin.</span></div><span>Días 1-7</span></div>
+          <div class="unit"><span class="num">2</span><div><b>Microrrelato</b><span>Condensación, elipsis, tensión, giro, imagen final y reescritura.</span></div><span>Días 8-14</span></div>
+          <div class="unit"><span class="num">3</span><div><b>Escritura simbólica</b><span>Imagen interior, objeto, personaje, herida, máscara, escena y relato final.</span></div><span>Días 15-21</span></div>
+          <div class="unit"><span class="num">4</span><div><b>Biblioteca de recursos</b><span>PDF, audios, vídeos no listados, plantillas, ejemplos modelo y rúbricas.</span></div><span>Siempre</span></div>
+          <div class="unit"><span class="num">5</span><div><b>Proyecto final y diploma</b><span>Entrega de cuaderno de haikus, colección de microrrelatos o relato simbólico.</span></div><span>Cierre</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section practice" id="reto">
+      <div class="container">
+        <div class="center"><p class="eyebrow">Reto 21 días</p><h2>La app crea hábito; el curso profundiza</h2></div>
+        <div class="steps">
+          <div class="step"><span>1</span><b>Inscripción</b><p>Rellenas el formulario.</p></div>
+          <div class="step"><span>2</span><b>Bizum</b><p>Pagas manualmente.</p></div>
+          <div class="step"><span>3</span><b>Alta</b><p>Te damos usuario y clave.</p></div>
+          <div class="step"><span>4</span><b>App</b><p>Entras al reto diario.</p></div>
+          <div class="step"><span>5</span><b>Materiales</b><p>Ves vídeos, audios y PDF.</p></div>
+          <div class="step"><span>6</span><b>Progreso</b><p>Guardas escritura y avance.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="bizum">
+      <div class="container pricing">
+        <article class="price-card">
+          <p class="eyebrow">APP · Producto de entrada</p><h2>Homero Club 21 días</h2><div class="price">29 €</div>
+          <ul><li>Acceso a la app privada de retos</li><li>21 propuestas de escritura</li><li>Haiku, microrrelato y escritura simbólica</li><li>Materiales esenciales en PDF/audio/vídeo</li><li>Acceso durante 6 meses</li></ul>
+        </article>
+        <article class="contact-card">
+          <p class="eyebrow">Pago por Bizum</p><h2>Reserva tu plaza</h2>
+          <div class="bizum-data"><div><strong>Bizum:</strong> 637341417</div><div><strong>Concepto recomendado:</strong> HOMERO + tu nombre</div><div><strong>Email:</strong> thementorroom@proton.me</div></div>
+          <button class="btn btn-secondary" id="copyBizum">Copiar Bizum</button>
+          <a class="btn btn-primary" href="#contacto">Solicitar acceso</a>
+          <p class="muted">El pago se confirma manualmente. Después recibirás usuario, contraseña y enlace de la app privada.</p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="center"><p class="eyebrow">Contacto e inscripción</p><h2>Solicita tu acceso a Homero Club</h2><p class="muted">Cuando tengas el Google Form definitivo, este botón irá al formulario real. De momento, puedes usar el correo Proton.</p></div>
+        <div class="grid3">
+          <article class="resource"><h3>1. Formulario</h3><p>Google Forms recogerá nombre, email, idioma, producto elegido —APP o ESCUELA—, curso, justificante y aceptación de condiciones.</p><a class="btn btn-secondary" id="formLink" href="mailto:thementorroom@proton.me">Abrir inscripción</a></article>
+          <article class="resource"><h3>2. Alta de alumno</h3><p>Tras verificar Bizum, se añade el alumno a Google Sheets y se le envía usuario y clave.</p><a class="btn btn-secondary" href="mailto:thementorroom@proton.me">thementorroom@proton.me</a></article>
+          <article class="resource"><h3>3. App privada</h3><p>Google Apps Script mostrará el reto diario, materiales, vídeos, audios, caja de escritura y progreso.</p><a class="btn btn-primary" href="#reto">Ver flujo</a></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container foot"><div><strong>HOMERO CLUB</strong><br><span>Escribe. Descubre. Transforma.</span></div><div>thementorroom@proton.me<br>Bizum: 637341417</div></div></footer>
+  <script>
+    const CONFIG = { bizum: "637341417", googleFormUrl: "", email: "thementorroom@proton.me" };
+    document.getElementById("copyBizum").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(CONFIG.bizum); const btn=document.getElementById("copyBizum"); const old=btn.textContent; btn.textContent="Copiado"; setTimeout(()=>btn.textContent=old,1600); } catch(e){ alert(CONFIG.bizum); }
+    });
+    if(CONFIG.googleFormUrl){ const f=document.getElementById("formLink"); f.href=CONFIG.googleFormUrl; f.target="_blank"; }
+  </script>
+</body>
+</html>
