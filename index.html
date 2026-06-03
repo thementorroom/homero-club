@@ -287,6 +287,17 @@
       font-weight:700;
     }
 
+  
+    .contact-block{align-items:start}
+    .contact-form{display:grid;gap:.65rem;text-align:left}
+    .contact-form label{font-family:Arial,sans-serif;font-weight:900;font-size:.9rem}
+    .contact-form input,.contact-form textarea{
+      width:100%;border:1px solid var(--line);border-radius:14px;
+      padding:.85rem 1rem;background:#fffdf8;font:inherit;
+    }
+    .contact-form textarea{min-height:130px;resize:vertical}
+    .full{width:100%}
+
   </style>
 </head>
 <body>
@@ -305,6 +316,7 @@
         <a href="#reto">Reto 21 días</a>
         <a href="#precios">Precios</a>
         <a href="#contacto">Contacto</a>
+        <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Acceso privado</a>
       </nav>
     </div>
   </header>
@@ -487,8 +499,7 @@
             <li>Acceso inicial: 6 meses.</li>
             <li>Pago por Bizum con verificación manual.</li>
           </ul>
-          <p class="notice">El pack completo por 99 € está bien como precio de lanzamiento. Si incluye corrección individual intensa, convendría subirlo en una fase posterior.</p>
-        </article>
+</article>
 
         <article class="contact-card">
           <p class="eyebrow">Pago por Bizum</p>
@@ -498,7 +509,6 @@
             <div><strong>Consulta:</strong> pulsa el botón de e-mail para abrir tu correo.</div>
           </div>
           <button class="btn btn-secondary" id="copyBizum">Bizum</button>
-          <a class="btn btn-secondary" href="mailto:thementorroom@proton.me?subject=Consulta%20HOMERO%20CLUB">E-mail</a>
           <a class="btn btn-primary" href="#contacto">Solicitar acceso</a>
           <p class="muted">El pago se confirma manualmente. Después recibirás usuario, contraseña y enlace de la app privada o de la escuela.</p>
         </article>
@@ -510,13 +520,34 @@
         <div class="center">
           <p class="eyebrow">Contacto e inscripción</p>
           <h2>Solicita tu acceso a HOMERO CLUB</h2>
-          <p class="muted">El formulario de Google recogerá el producto elegido: APP, taller individual o pack completo.</p>
+          <p class="muted">El formulario de inscripción recoge el producto elegido: APP, taller individual o pack completo. Para dudas generales, usa el formulario de contacto.</p>
         </div>
-        <div class="contact-single">
+
+        <div class="grid2 contact-block">
           <article class="resource">
-            <h3>1. Formulario</h3>
+            <h3>1. Inscripción</h3>
             <p>Elige APP HOMERO, taller de Microrrelato, Cuento simbólico, Haiku o Pack completo.</p>
-            <a class="btn btn-primary" id="formLink" href="#" id="formLink">Abrir inscripción</a>
+            <div class="actions">
+              <a class="btn btn-primary" id="formLink" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank">Abrir inscripción</a>
+              <a class="btn btn-secondary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Acceso privado</a>
+            </div>
+          </article>
+
+          <article class="resource">
+            <h3>2. Contacto</h3>
+            <p>Escribe tu consulta y llegará al e-mail de contacto.</p>
+            <form class="contact-form" action="https://formsubmit.co/thementorroom@proton.me" method="POST">
+              <input type="hidden" name="_subject" value="Consulta HOMERO CLUB">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <label>Nombre</label>
+              <input name="nombre" required placeholder="Tu nombre">
+              <label>E-mail</label>
+              <input name="email" type="email" required placeholder="tu@email.com">
+              <label>Mensaje</label>
+              <textarea name="mensaje" required placeholder="Escribe aquí tu consulta..."></textarea>
+              <button class="btn btn-primary full" type="submit">Enviar consulta</button>
+            </form>
           </article>
         </div>
       </div>
@@ -526,14 +557,15 @@
   <footer>
     <div class="container foot">
       <div><strong>HOMERO CLUB</strong><br><span>Escribe. Descubre. Transforma.</span></div>
-      <div>thementorroom@proton.me</div>
+      <div>E-mail de contacto: thementorroom@proton.me</div>
     </div>
   </footer>
 
   <script>
     const CONFIG = {
       bizum: "637341417",
-      googleFormUrl: "",
+      googleFormUrl: "https://forms.gle/7j6choXxcgBYDCEU6",
+      appUrl: "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec",
       email: "thementorroom@proton.me"
     };
 
@@ -551,8 +583,7 @@
 
     if(CONFIG.googleFormUrl){
       const f = document.getElementById("formLink");
-      f.href = CONFIG.googleFormUrl;
-      f.target = "_blank";
+      if(f){ f.href = CONFIG.googleFormUrl; f.target = "_blank"; }
     }
   </script>
 </body>
