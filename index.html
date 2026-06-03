@@ -305,7 +305,6 @@
         <a href="#reto">Reto 21 días</a>
         <a href="#precios">Precios</a>
         <a href="#contacto">Contacto</a>
-        <a href="TU_URL_DE_APPS_SCRIPT" target="_blank">Acceso privado</a>
       </nav>
     </div>
   </header>
@@ -322,7 +321,6 @@
             <a class="btn btn-primary" href="#productos">Ver APP y ESCUELA</a>
             <a class="btn btn-secondary" href="#contacto">Solicitar inscripción</a>
           </div>
-          <p class="muted">Correo: thementorroom@proton.me · Bizum: 637341417</p>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="emblem"><span>✦</span><span>☉</span><span>⌁</span></div>
@@ -496,11 +494,11 @@
           <p class="eyebrow">Pago por Bizum</p>
           <h2>Reserva tu plaza</h2>
           <div class="bizum-data">
-            <div><strong>Bizum:</strong> 637341417</div>
-            <div><strong>Concepto recomendado:</strong> HOMERO + tu nombre</div>
-            <div><strong>Email:</strong> thementorroom@proton.me</div>
+            <div><strong>Pago:</strong> pulsa el botón de Bizum para copiar el número y usa el concepto <strong>HOMERO + tu nombre</strong>.</div>
+            <div><strong>Consulta:</strong> pulsa el botón de e-mail para abrir tu correo.</div>
           </div>
-          <button class="btn btn-secondary" id="copyBizum">Copiar Bizum</button>
+          <button class="btn btn-secondary" id="copyBizum">Bizum</button>
+          <a class="btn btn-secondary" href="mailto:thementorroom@proton.me?subject=Consulta%20HOMERO%20CLUB">E-mail</a>
           <a class="btn btn-primary" href="#contacto">Solicitar acceso</a>
           <p class="muted">El pago se confirma manualmente. Después recibirás usuario, contraseña y enlace de la app privada o de la escuela.</p>
         </article>
@@ -518,8 +516,7 @@
           <article class="resource">
             <h3>1. Formulario</h3>
             <p>Elige APP HOMERO, taller de Microrrelato, Cuento simbólico, Haiku o Pack completo.</p>
-            <a class="btn btn-primary" id="formLink" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank">Abrir inscripción</a>
-            <a class="btn btn-secondary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Acceso privado</a>
+            <a class="btn btn-primary" id="formLink" href="#" id="formLink">Abrir inscripción</a>
           </article>
         </div>
       </div>
@@ -529,14 +526,14 @@
   <footer>
     <div class="container foot">
       <div><strong>HOMERO CLUB</strong><br><span>Escribe. Descubre. Transforma.</span></div>
-      <div>thementorroom@proton.me<br>Bizum: 637341417</div>
+      <div>thementorroom@proton.me</div>
     </div>
   </footer>
 
   <script>
     const CONFIG = {
       bizum: "637341417",
-      googleFormUrl: "https://forms.gle/7j6choXxcgBYDCEU6",
+      googleFormUrl: "",
       email: "thementorroom@proton.me"
     };
 
@@ -545,7 +542,7 @@
         await navigator.clipboard.writeText(CONFIG.bizum);
         const btn = document.getElementById("copyBizum");
         const old = btn.textContent;
-        btn.textContent = "Copiado";
+        btn.textContent = "Bizum copiado";
         setTimeout(()=>btn.textContent = old, 1600);
       } catch(e){
         alert(CONFIG.bizum);
