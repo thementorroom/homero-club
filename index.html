@@ -298,6 +298,79 @@
     .contact-form textarea{min-height:130px;resize:vertical}
     .full{width:100%}
 
+  
+    .visual-hero{
+      min-height:360px;
+      border-radius:var(--r);
+      background:rgba(255,252,246,.58);
+      border:1px solid rgba(197,155,75,.20);
+      box-shadow:var(--shadow);
+      padding:1rem;
+      overflow:hidden;
+    }
+    .hero-logo-image{
+      width:100%;
+      max-width:720px;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      filter:drop-shadow(0 18px 26px rgba(18,18,37,.10));
+    }
+    .talleres-grid{align-items:stretch}
+    .taller-card{
+      padding:0;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .taller-card img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+      border-bottom:1px solid var(--line);
+    }
+    .taller-body{padding:1.35rem}
+    .taller-body p{font-size:1.05rem}
+    .aula-section{
+      background:rgba(255,255,255,.33);
+      border-top:1px solid rgba(197,155,75,.18);
+      border-bottom:1px solid rgba(197,155,75,.18);
+    }
+    .aula-card{
+      background:rgba(255,252,246,.88);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      padding:1rem;
+      overflow:hidden;
+      text-align:center;
+    }
+    .aula-card img{
+      width:100%;
+      border-radius:calc(var(--r) - 8px);
+      display:block;
+      object-fit:cover;
+      box-shadow:0 18px 44px rgba(18,18,37,.10);
+    }
+    .aula-actions{justify-content:center;margin:1.2rem 0 .2rem}
+    .visual-footer{align-items:center}
+    .footer-brand{display:flex;align-items:center;gap:.9rem}
+    .footer-brand img{
+      width:76px;
+      height:76px;
+      object-fit:contain;
+      border-radius:50%;
+      background:#fffaf0;
+    }
+    @media(max-width:760px){
+      .visual-hero{min-height:auto}
+      .hero-logo-image{max-width:100%}
+      .footer-brand{align-items:flex-start}
+      .footer-brand img{width:58px;height:58px}
+    }
+
   </style>
 </head>
 <body>
@@ -315,6 +388,7 @@
         <a href="#catalogo">Talleres</a>
         <a href="#reto">Reto 21 días</a>
         <a href="#precios">Precios</a>
+        <a href="#aula-virtual">Aula virtual</a>
         <a href="#contacto">Contacto</a>
         <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Acceso privado</a>
       </nav>
@@ -332,10 +406,11 @@
           <div class="actions">
             <a class="btn btn-primary" href="#productos">Ver APP y ESCUELA</a>
             <a class="btn btn-secondary" href="#contacto">Solicitar inscripción</a>
+            <a class="btn btn-secondary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Acceso privado</a>
           </div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="emblem"><span>✦</span><span>☉</span><span>⌁</span></div>
+        <div class="hero-art visual-hero" aria-hidden="true">
+          <img class="hero-logo-image" src="assets/img/logo-homero-club-horizontal.webp" alt="">
         </div>
       </div>
     </section>
@@ -425,28 +500,39 @@
     <section class="section" id="catalogo">
       <div class="container">
         <div class="center">
-          <p class="eyebrow">Catálogo de talleres</p>
-          <h2>La ESCUELA se organiza en tres caminos</h2>
-          <p class="muted">Cada taller puede funcionar por separado o dentro del pack completo.</p>
+          <p class="eyebrow">Talleres destacados</p>
+          <h2>Tres caminos de escritura</h2>
+          <p class="muted">Una escuela de brevedad, símbolo y contemplación: cada taller tiene su propia puerta de entrada y su propia forma de mirar.</p>
         </div>
-        <div class="grid3">
-          <article class="card">
-            <span class="tag">Taller 1</span>
-            <h3>Microrrelato</h3>
-            <p>Precisión, elipsis, intensidad, giro, título, final abierto y lectura crítica de modelos breves.</p>
-            <ul><li>Producto final: colección de 7 microrrelatos.</li><li>Precio de lanzamiento: 49 €.</li></ul>
+        <div class="grid3 talleres-grid">
+          <article class="card taller-card">
+            <img src="assets/img/homero-club-taller-haiku.webp" alt="Taller de Haiku · Homero Club" loading="lazy">
+            <div class="taller-body">
+              <span class="tag">Card 1</span>
+              <h3>Taller de Haiku</h3>
+              <p>Contemplar el mundo; sentir su aware.</p>
+              <a class="btn btn-secondary" href="#contacto">Solicitar información</a>
+            </div>
           </article>
-          <article class="card">
-            <span class="tag">Taller 2</span>
-            <h3>Cuento simbólico y filosófico</h3>
-            <p>Imagen inicial, símbolo, arquetipo, conflicto existencial, intertextualidad y composición narrativa.</p>
-            <ul><li>Producto final: cuento simbólico breve.</li><li>Precio de lanzamiento: 49 €.</li></ul>
+
+          <article class="card taller-card">
+            <img src="assets/img/homero-club-taller-microrrelato.webp" alt="Taller de Microrrelato · Homero Club" loading="lazy">
+            <div class="taller-body">
+              <span class="tag">Card 2</span>
+              <h3>Taller de Microrrelato</h3>
+              <p>Susurrar una sugerencia; construir el asombro.</p>
+              <a class="btn btn-secondary" href="#contacto">Solicitar información</a>
+            </div>
           </article>
-          <article class="card">
-            <span class="tag">Taller 3</span>
-            <h3>Haiku · Poesía japonesa</h3>
-            <p>Contemplación, aware, silencio, humildad perceptiva y camino del haijin.</p>
-            <ul><li>Producto final: cuaderno de 12 haikus.</li><li>Precio de lanzamiento: 49 €.</li></ul>
+
+          <article class="card taller-card">
+            <img src="assets/img/homero-club-taller-escritura-simbolica.webp" alt="Taller de Escritura Simbólica · Homero Club" loading="lazy">
+            <div class="taller-body">
+              <span class="tag">Card 3</span>
+              <h3>Escritura Simbólica</h3>
+              <p>Descifrar el misterio; tejer el arquetipo.</p>
+              <a class="btn btn-secondary" href="#contacto">Solicitar información</a>
+            </div>
           </article>
         </div>
       </div>
@@ -515,6 +601,23 @@
       </div>
     </section>
 
+    <section class="section aula-section" id="aula-virtual">
+      <div class="container">
+        <div class="center">
+          <p class="eyebrow">Aula virtual</p>
+          <h2>Tu acceso privado a Homero Club</h2>
+          <p class="muted">La landing vende. La app crea hábito. El aula ordena materiales, progreso, mensajes y práctica diaria.</p>
+        </div>
+        <article class="aula-card">
+          <img src="assets/img/homero-club-aula-virtual.webp" alt="Aula Virtual Homero Club" loading="lazy">
+          <div class="actions aula-actions">
+            <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank">Entrar al aula virtual</a>
+            <a class="btn btn-secondary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank">Inscribirme</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="contacto">
       <div class="container">
         <div class="center">
@@ -556,8 +659,11 @@
   </main>
 
   <footer>
-    <div class="container foot">
-      <div><strong>HOMERO CLUB</strong><br><span>Escribe. Descubre. Transforma.</span></div>
+    <div class="container foot visual-footer">
+      <div class="footer-brand">
+        <img src="assets/img/logo-homero-club-circular.webp" alt="Homero Club" loading="lazy">
+        <div><strong>HOMERO CLUB</strong><br><span>Escribe. Descubre. Transforma.</span></div>
+      </div>
       <div>E-mail de contacto: thementorroom@proton.me</div>
     </div>
   </footer>
