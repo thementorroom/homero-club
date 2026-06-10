@@ -13,8 +13,6 @@
       --paper:#fbf2e4;
       --gold:#c59b4b;
       --gold2:#9b6d22;
-      --wine:#6f263d;
-      --blue:#2e415f;
       --muted:#6d6670;
       --line:rgba(18,18,37,.14);
       --shadow:0 26px 70px rgba(18,18,37,.13);
@@ -96,6 +94,14 @@
       font-size:.82rem;
     }
 
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     nav{
       display:flex;
       align-items:center;
@@ -126,7 +132,8 @@
       padding:.45rem .65rem;
       border:1px solid rgba(197,155,75,.35);
       border-radius:999px;
-      background:rgba(255,255,255,.55);
+      background:rgba(255,255,255,.72);
+      flex:0 0 auto;
     }
 
     .lang-btn.active{
@@ -504,37 +511,8 @@
       border:1px solid rgba(197,155,75,.24);
     }
 
-    .form-panel p{
-      margin-top:0;
-    }
-
+    .form-panel p{margin-top:0}
     .contact-block{align-items:start}
-
-    .contact-form{
-      display:grid;
-      gap:.65rem;
-      text-align:left;
-    }
-
-    .contact-form label{
-      font-family:Arial,sans-serif;
-      font-weight:900;
-      font-size:.9rem;
-    }
-
-    .contact-form input,.contact-form textarea,.contact-form select{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:.85rem 1rem;
-      background:#fffdf8;
-      font:inherit;
-    }
-
-    .contact-form textarea{
-      min-height:130px;
-      resize:vertical;
-    }
 
     .full{width:100%}
 
@@ -730,12 +708,50 @@
     }
 
     @media(max-width:760px){
-      .head{display:grid;grid-template-columns:1fr}
+      .topbar{
+        font-size:.9rem;
+        line-height:1.55;
+        padding:.75rem 1rem;
+      }
+
+      .head{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:.75rem;
+        min-height:84px;
+      }
+
+      .brand-logo{
+        width:56px;
+        height:56px;
+      }
+
+      .brand strong{
+        font-size:.95rem;
+        letter-spacing:.12em;
+      }
+
+      .brand small{
+        font-size:.78rem;
+      }
+
+      .lang-switch{
+        display:flex;
+        margin-left:auto;
+        padding:.42rem .62rem;
+        background:rgba(255,255,255,.88);
+      }
+
       .hero{padding:3rem 0}
+
       h1{font-size:2.75rem}
+
       .hero-title-lockup{display:block}
       .hero-title-logo{margin:0 0 1rem}
+
       .actions .btn{width:100%}
+
       .hc-micro-v2-method{grid-template-columns:1fr}
       .hc-micro-v2-lines{grid-template-columns:1fr}
       .hc-micro-v2-buttons a{width:100%}
@@ -758,21 +774,23 @@
         </span>
       </a>
 
-      <nav>
-        <a href="#productos" data-i18n="nav_app">APP y Escuela</a>
-        <a href="#metodo" data-i18n="nav_method">Método</a>
-        <a href="#catalogo" data-i18n="nav_workshops">Talleres</a>
-        <a href="#taller-microrrelato" data-i18n="nav_micro">Microrrelato</a>
-        <a href="#precios" data-i18n="nav_prices">Precios</a>
-        <a href="#aula-virtual" data-i18n="nav_campus">Aula virtual</a>
-        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
-        <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="nav_private">Acceso privado</a>
+      <div class="header-right">
+        <nav>
+          <a href="#productos" data-i18n="nav_app">APP y Escuela</a>
+          <a href="#metodo" data-i18n="nav_method">Método</a>
+          <a href="#catalogo" data-i18n="nav_workshops">Talleres</a>
+          <a href="#taller-microrrelato" data-i18n="nav_micro">Microrrelato</a>
+          <a href="#precios" data-i18n="nav_prices">Precios</a>
+          <a href="#aula-virtual" data-i18n="nav_campus">Aula virtual</a>
+          <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+          <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="nav_private">Acceso privado</a>
+        </nav>
 
-        <span class="lang-switch">
+        <span class="lang-switch" aria-label="Selector de idioma">
           <button class="lang-btn active" data-lang="es" type="button">ES</button>
           <button class="lang-btn" data-lang="en" type="button">EN</button>
         </span>
-      </nav>
+      </div>
     </div>
   </header>
 
