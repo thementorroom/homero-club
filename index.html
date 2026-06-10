@@ -82,6 +82,7 @@
       border:1px solid rgba(197,155,75,.45);
       box-shadow:0 12px 28px rgba(197,155,75,.24);
       background:#fffaf0;
+      flex:0 0 auto;
     }
 
     .brand strong{
@@ -161,8 +162,8 @@
     }
 
     h1{
-      font-size:clamp(3.45rem,8vw,6.7rem);
-      line-height:.9;
+      font-size:clamp(3.15rem,7vw,6.25rem);
+      line-height:.92;
       margin:0;
       letter-spacing:-.04em;
     }
@@ -178,6 +179,25 @@
       font-size:1.65rem;
       line-height:1.08;
       margin:.15rem 0 .55rem;
+    }
+
+    .hero-title-lockup{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin:.2rem 0 .4rem;
+    }
+
+    .hero-title-logo{
+      width:98px;
+      height:98px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid rgba(197,155,75,.45);
+      box-shadow:0 18px 38px rgba(197,155,75,.22);
+      background:#fffaf0;
+      flex:0 0 auto;
     }
 
     .subtitle{
@@ -306,12 +326,22 @@
       border-bottom:1px solid rgba(197,155,75,.22);
     }
 
+    .method-lines{
+      display:grid;
+      gap:.35rem;
+      margin:1.2rem auto 0;
+      max-width:860px;
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.7;
+    }
+
     .method-word{
       display:flex;
       gap:.5rem;
       flex-wrap:wrap;
       justify-content:center;
-      margin-top:1.2rem;
+      margin-top:1.4rem;
     }
 
     .method-word span{
@@ -453,6 +483,20 @@
       margin:.4rem 0;
     }
 
+    .bizum-number{
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      margin:.8rem 0 0;
+      padding:.75rem 1rem;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      color:#e6cf8a;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+    }
+
     .contact-block{align-items:start}
 
     .contact-form{
@@ -493,8 +537,24 @@
     .foot{
       display:flex;
       justify-content:space-between;
+      align-items:center;
       gap:1rem;
       flex-wrap:wrap;
+    }
+
+    .foot-brand{
+      display:flex;
+      align-items:center;
+      gap:.85rem;
+    }
+
+    .foot-logo{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      object-fit:cover;
+      border:1px solid rgba(197,155,75,.45);
+      background:#fffaf0;
     }
 
     .hc-micro-v2{
@@ -661,7 +721,9 @@
     @media(max-width:760px){
       .head{display:grid;grid-template-columns:1fr}
       .hero{padding:3rem 0}
-      h1{font-size:3rem}
+      h1{font-size:2.75rem}
+      .hero-title-lockup{display:block}
+      .hero-title-logo{margin:0 0 1rem}
       .actions .btn{width:100%}
       .hc-micro-v2-method{grid-template-columns:1fr}
       .hc-micro-v2-lines{grid-template-columns:1fr}
@@ -708,10 +770,16 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow" data-i18n="hero_eyebrow">Homero Club · Pasión por la escritura</p>
-          <h1 data-i18n="hero_title">Escribe. Descubre. Transforma.</h1>
+
+          <div class="hero-title-lockup">
+            <img class="hero-title-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
+            <h1 data-i18n="hero_title">Escribe. Descubre. Transforma.</h1>
+          </div>
+
           <p class="subtitle" data-i18n="hero_subtitle">
             Tu hábito de escritura vive en nuestra APP. Perfecciona tu práctica con la profundidad de nuestra escuela.
           </p>
+
           <p class="lead" data-i18n="hero_lead">
             HOMERO CLUB nace para quienes quieren escribir con precisión, profundidad intertextual y sensibilidad: adéntrate en el camino del microrrelato, de la escritura simbólica y de la poesía japonesa (haiku).
           </p>
@@ -735,7 +803,7 @@
           <p class="eyebrow" data-i18n="products_eyebrow">APP y Escuela</p>
           <h2 data-i18n="products_title">Dos formas de entrar en HOMERO CLUB</h2>
           <p class="muted" data-i18n="products_text">
-            Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende los grandes maestros de cada género.
+            Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende de los grandes maestros de cada género.
           </p>
         </div>
 
@@ -775,9 +843,12 @@
         <div class="center">
           <p class="eyebrow" data-i18n="method_eyebrow">Método HOMERO CLUB</p>
           <h2 data-i18n="method_title">Enanos a hombros de gigantes</h2>
-          <p class="muted" data-i18n="method_text">
-            Aprende la metodología empleada por los grandes maestros para forjar sus obras; adapta sus virtudes y enfoques a tu voz; crea obras con identidad propia.
-          </p>
+
+          <div class="method-lines">
+            <p data-i18n="method_line1">Aprende la metodología empleada por los grandes maestros para forjar sus obras.</p>
+            <p data-i18n="method_line2">Adapta sus virtudes y enfoques a tu voz.</p>
+            <p data-i18n="method_line3">Crea obras con identidad propia.</p>
+          </div>
 
           <div class="method-word">
             <span data-i18n="method_chip1">Lectura de maestros</span>
@@ -1025,7 +1096,10 @@
           <div class="bizum-box">
             <h3 data-i18n="bizum_title">Pago por Bizum</h3>
             <p data-i18n="bizum_text">El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.</p>
-            <button class="btn btn-primary" id="copyBizum" type="button" data-i18n="bizum_btn">Copiar mensaje Bizum</button>
+            <a class="bizum-number" href="tel:+34637341417">Bizum: +34 637 341 417</a>
+            <div class="actions">
+              <button class="btn btn-primary" id="copyBizum" type="button" data-i18n="bizum_btn">Copiar Bizum</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1050,6 +1124,10 @@
             <p>
               <strong>Email:</strong><br>
               <a href="mailto:thementorroom@proton.me">thementorroom@proton.me</a>
+            </p>
+            <p>
+              <strong>Bizum:</strong><br>
+              <a href="tel:+34637341417">+34 637 341 417</a>
             </p>
 
             <div class="actions">
@@ -1090,13 +1168,16 @@
 
   <footer>
     <div class="container foot">
-      <div>
-        <strong>HOMERO CLUB</strong><br>
-        <span data-i18n="footer_school">Escuela de escritura creativa</span>
+      <div class="foot-brand">
+        <img class="foot-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
+        <div>
+          <strong>HOMERO CLUB</strong><br>
+          <span data-i18n="footer_school">Escuela de escritura creativa</span>
+        </div>
       </div>
 
       <div>
-        <span data-i18n="footer_tags">Microrrelato · Escritura simbólica · Haiku</span>
+        <span data-i18n="footer_tags">Escribe. Descubre. Transforma.</span>
       </div>
     </div>
   </footer>
@@ -1104,7 +1185,8 @@
   <script>
     const CONFIG = {
       email: "thementorroom@proton.me",
-      bizumMessage: "Pago HOMERO CLUB - Producto solicitado - Nombre y email",
+      bizumPhone: "+34637341417",
+      bizumMessage: "+34637341417",
       appUrl: "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec"
     };
 
@@ -1131,7 +1213,7 @@
 
         products_eyebrow:"APP y Escuela",
         products_title:"Dos formas de entrar en HOMERO CLUB",
-        products_text:"Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende los grandes maestros de cada género.",
+        products_text:"Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende de los grandes maestros de cada género.",
 
         app_tag:"APP 21 días",
         app_title:"Una práctica diaria",
@@ -1150,7 +1232,9 @@
 
         method_eyebrow:"Método HOMERO CLUB",
         method_title:"Enanos a hombros de gigantes",
-        method_text:"Aprende la metodología empleada por los grandes maestros para forjar sus obras; adapta sus virtudes y enfoques a tu voz; crea obras con identidad propia.",
+        method_line1:"Aprende la metodología empleada por los grandes maestros para forjar sus obras.",
+        method_line2:"Adapta sus virtudes y enfoques a tu voz.",
+        method_line3:"Crea obras con identidad propia.",
         method_chip1:"Lectura de maestros",
         method_chip2:"Técnica",
         method_chip3:"Símbolo",
@@ -1253,7 +1337,7 @@
 
         bizum_title:"Pago por Bizum",
         bizum_text:"El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.",
-        bizum_btn:"Copiar mensaje Bizum",
+        bizum_btn:"Copiar Bizum",
 
         contact_eyebrow:"Contacto",
         contact_title:"Solicitar inscripción",
@@ -1268,7 +1352,7 @@
         form_submit:"Enviar solicitud",
 
         footer_school:"Escuela de escritura creativa",
-        footer_tags:"Microrrelato · Escritura simbólica · Haiku"
+        footer_tags:"Escribe. Descubre. Transforma."
       },
 
       en: {
@@ -1312,7 +1396,9 @@
 
         method_eyebrow:"HOMERO CLUB Method",
         method_title:"Dwarfs standing on the shoulders of giants",
-        method_text:"Learn the methodology used by the great masters to forge their works; adapt their virtues and approaches to your voice; create works with your own identity.",
+        method_line1:"Learn the methodology used by the great masters to forge their works.",
+        method_line2:"Adapt their virtues and approaches to your voice.",
+        method_line3:"Create works with your own identity.",
         method_chip1:"Reading masters",
         method_chip2:"Technique",
         method_chip3:"Symbol",
@@ -1415,7 +1501,7 @@
 
         bizum_title:"Bizum payment",
         bizum_text:"Payment is made by Bizum after manual verification. Remember to include your name and chosen product.",
-        bizum_btn:"Copy Bizum message",
+        bizum_btn:"Copy Bizum",
 
         contact_eyebrow:"Contact",
         contact_title:"Request enrolment",
@@ -1430,7 +1516,7 @@
         form_submit:"Send request",
 
         footer_school:"Creative Writing School",
-        footer_tags:"Microfiction · Symbolic Writing · Haiku"
+        footer_tags:"Write. Discover. Transform."
       }
     };
 
@@ -1477,7 +1563,7 @@
         try{
           await navigator.clipboard.writeText(CONFIG.bizumMessage);
           const old = copyBizum.textContent;
-          copyBizum.textContent = document.documentElement.lang === "en" ? "Bizum message copied" : "Mensaje Bizum copiado";
+          copyBizum.textContent = document.documentElement.lang === "en" ? "Bizum copied" : "Bizum copiado";
           setTimeout(() => copyBizum.textContent = old, 1600);
         }catch(e){
           alert(CONFIG.bizumMessage);
