@@ -104,7 +104,8 @@
       justify-content:flex-end;
     }
 
-    nav a, .lang-btn{
+    nav a,
+    .lang-btn{
       font-family:Arial,sans-serif;
       font-size:.88rem;
       font-weight:800;
@@ -115,7 +116,8 @@
       padding:0;
     }
 
-    nav a:hover,.lang-btn:hover{color:var(--gold2)}
+    nav a:hover,
+    .lang-btn:hover{color:var(--gold2)}
 
     .lang-switch{
       display:flex;
@@ -332,15 +334,21 @@
     }
 
     .taller-visual{
-      min-height:190px;
+      min-height:220px;
       display:grid;
       place-items:center;
       background:
         radial-gradient(circle at 20% 20%,rgba(197,155,75,.25),transparent 30%),
         linear-gradient(135deg,#fffaf0,#efe0c3);
       border-bottom:1px solid var(--line);
-      font-size:4rem;
-      color:var(--gold2);
+      overflow:hidden;
+    }
+
+    .taller-visual img{
+      width:100%;
+      height:240px;
+      object-fit:contain;
+      padding:.8rem;
     }
 
     .taller-body{padding:1.55rem}
@@ -399,34 +407,6 @@
       font-family:Arial,sans-serif;
     }
 
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:.75rem;
-      text-align:center;
-    }
-
-    .step{
-      background:rgba(255,252,246,.78);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:1rem;
-    }
-
-    .step span{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      margin:0 auto .7rem;
-      background:rgba(197,155,75,.16);
-      color:var(--gold2);
-      border:1px solid rgba(197,155,75,.28);
-      font-family:Arial,sans-serif;
-      font-weight:900;
-    }
-
     .pricing{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -471,14 +451,6 @@
     .bizum-box p{
       color:rgba(255,255,255,.84);
       margin:.4rem 0;
-    }
-
-    .notice{
-      background:rgba(111,38,61,.08);
-      border:1px solid rgba(111,38,61,.16);
-      border-radius:18px;
-      padding:1rem;
-      color:var(--muted);
     }
 
     .contact-block{align-items:start}
@@ -540,6 +512,7 @@
 
     .hc-micro-v2-wrap{position:relative;z-index:2}
     .hc-micro-v2-hero{max-width:980px;margin:0 auto 2.8rem;text-align:center}
+
     .hc-micro-v2-kicker{
       margin:0 0 .8rem;
       font-family:Arial,sans-serif;
@@ -617,7 +590,11 @@
       font-weight:900;
     }
 
-    .hc-micro-v2-card p{color:var(--muted);font-size:.98rem;line-height:1.62}
+    .hc-micro-v2-card p{
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.62;
+    }
 
     .hc-micro-v2-block{
       margin-top:1.45rem;
@@ -677,7 +654,6 @@
     @media(max-width:1040px){
       .hero-grid,.grid2{grid-template-columns:1fr}
       .pricing,.grid3{grid-template-columns:1fr}
-      .steps{grid-template-columns:repeat(2,1fr)}
       .hc-micro-v2-method{grid-template-columns:repeat(2,1fr)}
       nav{display:none}
     }
@@ -687,7 +663,6 @@
       .hero{padding:3rem 0}
       h1{font-size:3rem}
       .actions .btn{width:100%}
-      .steps{grid-template-columns:1fr}
       .hc-micro-v2-method{grid-template-columns:1fr}
       .hc-micro-v2-lines{grid-template-columns:1fr}
       .hc-micro-v2-buttons a{width:100%}
@@ -703,7 +678,7 @@
   <header>
     <div class="container head">
       <a class="brand" href="#top">
-        <img class="brand-logo" src="assets/homero-club-logo.png" alt="HOMERO CLUB">
+        <img class="brand-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
         <span>
           <strong>HOMERO CLUB</strong>
           <small data-i18n="brand_subtitle">Escuela de escritura creativa</small>
@@ -719,6 +694,7 @@
         <a href="#aula-virtual" data-i18n="nav_campus">Aula virtual</a>
         <a href="#contacto" data-i18n="nav_contact">Contacto</a>
         <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="nav_private">Acceso privado</a>
+
         <span class="lang-switch">
           <button class="lang-btn active" data-lang="es" type="button">ES</button>
           <button class="lang-btn" data-lang="en" type="button">EN</button>
@@ -748,7 +724,7 @@
         </div>
 
         <div class="hero-art">
-          <img src="assets/homero-club-microrrelato.png" alt="Taller de Microrrelato HOMERO CLUB">
+          <img src="assets/img/homero-club-taller-microrrelato.webp" alt="Taller de Microrrelato HOMERO CLUB">
         </div>
       </div>
     </section>
@@ -827,7 +803,9 @@
 
         <div class="grid3">
           <article class="card taller-card">
-            <div class="taller-visual">✒</div>
+            <div class="taller-visual">
+              <img src="assets/img/homero-club-taller-microrrelato.webp" alt="Taller de Microrrelato HOMERO CLUB">
+            </div>
             <div class="taller-body">
               <p class="tag" data-i18n="micro_tag">Taller 1</p>
               <h3 data-i18n="micro_title_card">Microrrelato</h3>
@@ -839,7 +817,9 @@
           </article>
 
           <article class="card taller-card">
-            <div class="taller-visual">◆</div>
+            <div class="taller-visual">
+              <img src="assets/img/homero-club-taller-escritura-simbolica.webp" alt="Taller de Escritura Simbólica HOMERO CLUB">
+            </div>
             <div class="taller-body">
               <p class="tag" data-i18n="symbol_tag">Taller 2</p>
               <h3 data-i18n="symbol_title_card">Escritura simbólica</h3>
@@ -851,7 +831,9 @@
           </article>
 
           <article class="card taller-card">
-            <div class="taller-visual">月</div>
+            <div class="taller-visual">
+              <img src="assets/img/homero-club-taller-haiku.webp" alt="Taller de Haiku HOMERO CLUB">
+            </div>
             <div class="taller-body">
               <p class="tag" data-i18n="haiku_tag">Taller 3</p>
               <h3 data-i18n="haiku_title_card">Haiku</h3>
@@ -944,7 +926,7 @@
 
         <div class="aula-card">
           <div class="aula-image">
-            <img src="assets/homero-club-aula-virtual.png" alt="Aula virtual HOMERO CLUB">
+            <img src="assets/img/homero-club-aula-virtual.webp" alt="Aula virtual HOMERO CLUB">
           </div>
 
           <div class="actions" style="justify-content:center;margin-top:1.4rem">
@@ -1130,85 +1112,325 @@
       es: {
         topbar:"HOMERO CLUB · APP 21 días · Escuela de escritura creativa · Microrrelato · Escritura simbólica · Haiku",
         brand_subtitle:"Escuela de escritura creativa",
-        nav_app:"APP y Escuela", nav_method:"Método", nav_workshops:"Talleres", nav_micro:"Microrrelato", nav_prices:"Precios", nav_campus:"Aula virtual", nav_contact:"Contacto", nav_private:"Acceso privado",
+        nav_app:"APP y Escuela",
+        nav_method:"Método",
+        nav_workshops:"Talleres",
+        nav_micro:"Microrrelato",
+        nav_prices:"Precios",
+        nav_campus:"Aula virtual",
+        nav_contact:"Contacto",
+        nav_private:"Acceso privado",
+
         hero_eyebrow:"Homero Club · Pasión por la escritura",
         hero_title:"Escribe. Descubre. Transforma.",
         hero_subtitle:"Tu hábito de escritura vive en nuestra APP. Perfecciona tu práctica con la profundidad de nuestra escuela.",
         hero_lead:"HOMERO CLUB nace para quienes quieren escribir con precisión, profundidad intertextual y sensibilidad: adéntrate en el camino del microrrelato, de la escritura simbólica y de la poesía japonesa (haiku).",
-        hero_btn1:"Ver APP y Escuela", hero_btn2:"Taller de Microrrelato", hero_btn3:"Solicitar inscripción",
-        products_eyebrow:"APP y Escuela", products_title:"Dos formas de entrar en HOMERO CLUB", products_text:"Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende los grandes maestros de cada género.",
-        app_tag:"APP 21 días", app_title:"Una práctica diaria", app_li1:"Día 1-7: Microrrelato.", app_li2:"Día 8-14: Cuento simbólico y filosófico.", app_li3:"Día 15-21: Poesía japonesa (haiku).", app_btn:"Ver acceso APP",
-        school_tag:"Escuela de Escritura", school_title:"Talleres y curso completo", school_li1:"Taller de Microrrelato.", school_li2:"Taller de Escritura simbólica.", school_li3:"Taller de Poesía japonesa (haiku).", school_li4:"Curso de Escritura Completo HOMERO CLUB.", school_btn:"Ver escuela",
-        method_eyebrow:"Método HOMERO CLUB", method_title:"Enanos a hombros de gigantes", method_text:"Aprende la metodología empleada por los grandes maestros para forjar sus obras; adapta sus virtudes y enfoques a tu voz; crea obras con identidad propia.",
-        method_chip1:"Lectura de maestros", method_chip2:"Técnica", method_chip3:"Símbolo", method_chip4:"Filosofía", method_chip5:"Reescritura", method_chip6:"Corpus final",
-        catalog_eyebrow:"Talleres destacados", catalog_title:"Tres caminos de escritura", catalog_text:"Una escuela para vivenciar la intensidad, el símbolo y contemplación: cada taller es una puerta, cada escritura otorga una mirada.",
-        micro_tag:"Taller 1", micro_title_card:"Microrrelato", micro_text_card:"Escribe con silencios, vacíos y sugerencia para abarcar lo máximo con lo mínimo.",
-        symbol_tag:"Taller 2", symbol_title_card:"Escritura simbólica", symbol_text_card:"Redescubre el significado oculto de los elementos narrativos y construye puentes entre culturas.",
-        haiku_tag:"Taller 3", haiku_title_card:"Haiku", haiku_text_card:"Siente en la piel el aware del mundo y vivencia lo sagrado latiendo tras cada instante.",
-        enter:"Entrar", info:"Información", info2:"Información",
-        micro_section_kicker:"HOMERO CLUB · Taller de Microrrelato", micro_section_title:"Microrrelato", micro_section_subtitle:"Recorre la tradición de la escritura breve para forjar tu técnica, profundidad y sensibilidad.", micro_section_lead:"A escribir se aprende leyendo a los maestros.",
-        micro_method1_title:"Lectura técnica", micro_method1_text:"Qué sucede, qué se omite, cómo trabaja el título y dónde aparece la fisura.",
-        micro_method2_title:"Lectura simbólica", micro_method2_text:"Qué objeto, gesto, sombra, puerta, casa o ausencia concentra la vida profunda del texto.",
-        micro_method3_title:"Lectura filosófica", micro_method3_text:"Qué pregunta humana permanece abierta: identidad, muerte, culpa, destino, memoria, deseo o pérdida.",
-        micro_method4_title:"Escritura propia", micro_method4_text:"El alumno selecciona un mecanismo, lo razona y crea variaciones hasta construir una voz propia.",
+        hero_btn1:"Ver APP y Escuela",
+        hero_btn2:"Taller de Microrrelato",
+        hero_btn3:"Solicitar inscripción",
+
+        products_eyebrow:"APP y Escuela",
+        products_title:"Dos formas de entrar en HOMERO CLUB",
+        products_text:"Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende los grandes maestros de cada género.",
+
+        app_tag:"APP 21 días",
+        app_title:"Una práctica diaria",
+        app_li1:"Día 1-7: Microrrelato.",
+        app_li2:"Día 8-14: Cuento simbólico y filosófico.",
+        app_li3:"Día 15-21: Poesía japonesa (haiku).",
+        app_btn:"Ver acceso APP",
+
+        school_tag:"Escuela de Escritura",
+        school_title:"Talleres y curso completo",
+        school_li1:"Taller de Microrrelato.",
+        school_li2:"Taller de Escritura simbólica.",
+        school_li3:"Taller de Poesía japonesa (haiku).",
+        school_li4:"Curso de Escritura Completo HOMERO CLUB.",
+        school_btn:"Ver escuela",
+
+        method_eyebrow:"Método HOMERO CLUB",
+        method_title:"Enanos a hombros de gigantes",
+        method_text:"Aprende la metodología empleada por los grandes maestros para forjar sus obras; adapta sus virtudes y enfoques a tu voz; crea obras con identidad propia.",
+        method_chip1:"Lectura de maestros",
+        method_chip2:"Técnica",
+        method_chip3:"Símbolo",
+        method_chip4:"Filosofía",
+        method_chip5:"Reescritura",
+        method_chip6:"Corpus final",
+
+        catalog_eyebrow:"Talleres destacados",
+        catalog_title:"Tres caminos de escritura",
+        catalog_text:"Una escuela para vivenciar la intensidad, el símbolo y contemplación: cada taller es una puerta, cada escritura otorga una mirada.",
+
+        micro_tag:"Taller 1",
+        micro_title_card:"Microrrelato",
+        micro_text_card:"Escribe con silencios, vacíos y sugerencia para abarcar lo máximo con lo mínimo.",
+        symbol_tag:"Taller 2",
+        symbol_title_card:"Escritura simbólica",
+        symbol_text_card:"Redescubre el significado oculto de los elementos narrativos y construye puentes entre culturas.",
+        haiku_tag:"Taller 3",
+        haiku_title_card:"Haiku",
+        haiku_text_card:"Siente en la piel el aware del mundo y vivencia lo sagrado latiendo tras cada instante.",
+        enter:"Entrar",
+        info:"Información",
+        info2:"Información",
+
+        micro_section_kicker:"HOMERO CLUB · Taller de Microrrelato",
+        micro_section_title:"Microrrelato",
+        micro_section_subtitle:"Recorre la tradición de la escritura breve para forjar tu técnica, profundidad y sensibilidad.",
+        micro_section_lead:"A escribir se aprende leyendo a los maestros.",
+
+        micro_method1_title:"Lectura técnica",
+        micro_method1_text:"Qué sucede, qué se omite, cómo trabaja el título y dónde aparece la fisura.",
+        micro_method2_title:"Lectura simbólica",
+        micro_method2_text:"Qué objeto, gesto, sombra, puerta, casa o ausencia concentra la vida profunda del texto.",
+        micro_method3_title:"Lectura filosófica",
+        micro_method3_text:"Qué pregunta humana permanece abierta: identidad, muerte, culpa, destino, memoria, deseo o pérdida.",
+        micro_method4_title:"Escritura propia",
+        micro_method4_text:"El alumno selecciona un mecanismo, lo razona y crea variaciones hasta construir una voz propia.",
+
         lines_title:"Líneas de análisis y escritura",
-        line1:"Fábula mínima y animal moral: el animal como máscara humana.", line2:"Apólogo y sabiduría narrativa: la enseñanza sin sermón.", line3:"Koan, paradoja y vacío: la lógica que se quiebra.", line4:"Mito condensado: una historia antigua con centro nuevo.", line5:"Fantástico mínimo: un detalle imposible altera lo real.", line6:"Humor negro y crueldad breve: la risa como herida.", line7:"Falso documento: certificados, informes, manuales y expedientes.", line8:"Miniatura filosófica: una idea convertida en escena.", line9:"Vida cotidiana y revelación mínima: una existencia en un gesto.", line10:"Intertextualidad borgiana: la tradición como segunda lectura.",
-        btn_m00:"Módulo 0 · Bienvenida", btn_m01:"Módulo 1 · Historia mínima", btn_lines:"Líneas de análisis", btn_canon:"Canon operativo", btn_private:"Acceso privado al aula",
-        campus_eyebrow:"Aula virtual", campus_title:"Campus privado HOMERO CLUB", campus_text:"Acceso a materiales, módulos, recursos descargables y trabajo organizado por itinerarios.", campus_btn:"Acceso privado",
-        poetics_eyebrow:"Poética HOMERO CLUB", poetics_title:"Tres formas de mirar", poetics_1:"“El microrrelato es un silencio en el que habita un centauro.”", poetics_2:"“El cuento es el latido de un sueño hecho de símbolos.”", poetics_3:"“El haiku es la expresión que nace tras el susurro de lo sagrado.”",
-        prices_eyebrow:"Precios y acceso", prices_title:"Elige tu entrada a HOMERO CLUB", prices_text:"Acceso inicial: 6 meses. Pago por Bizum tras verificación manual.",
-        price1_tag:"APP HOMERO · 21 días", price1_title:"Hábito de escritura", price1_li1:"21 días de práctica guiada.", price1_li2:"Microrrelato, cuento simbólico y haiku.", price1_li3:"Acceso inicial durante 6 meses.",
-        price2_tag:"Taller individual", price2_title:"Un camino específico", price2_li1:"Microrrelato, escritura simbólica o haiku.", price2_li2:"Materiales, ejercicios y recursos.", price2_li3:"Acceso inicial durante 6 meses.",
-        price3_tag:"Curso completo", price3_title:"HOMERO CLUB completo", price3_li1:"APP 21 días.", price3_li2:"Tres talleres de escritura.", price3_li3:"Acceso inicial durante 6 meses.",
-        buy_app:"Solicitar APP", buy_workshop:"Solicitar taller", buy_complete:"Solicitar curso completo",
-        flow_title:"Sistema de compra y acceso", flow_1:"Rellena el formulario de solicitud.", flow_2:"Indica si quieres APP, taller individual o curso completo.", flow_3:"Recibirás confirmación manual con los datos de Bizum.", flow_4:"Realiza el pago por Bizum.", flow_5:"Tras la verificación, recibirás el acceso privado al aula.",
-        bizum_title:"Pago por Bizum", bizum_text:"El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.", bizum_btn:"Copiar mensaje Bizum",
-        contact_eyebrow:"Contacto", contact_title:"Solicitar inscripción", contact_text:"Escribe para entrar en HOMERO CLUB, solicitar acceso al aula o recibir información del taller.",
+        line1:"Fábula mínima y animal moral: el animal como máscara humana.",
+        line2:"Apólogo y sabiduría narrativa: la enseñanza sin sermón.",
+        line3:"Koan, paradoja y vacío: la lógica que se quiebra.",
+        line4:"Mito condensado: una historia antigua con centro nuevo.",
+        line5:"Fantástico mínimo: un detalle imposible altera lo real.",
+        line6:"Humor negro y crueldad breve: la risa como herida.",
+        line7:"Falso documento: certificados, informes, manuales y expedientes.",
+        line8:"Miniatura filosófica: una idea convertida en escena.",
+        line9:"Vida cotidiana y revelación mínima: una existencia en un gesto.",
+        line10:"Intertextualidad borgiana: la tradición como segunda lectura.",
+
+        btn_m00:"Módulo 0 · Bienvenida",
+        btn_m01:"Módulo 1 · Historia mínima",
+        btn_lines:"Líneas de análisis",
+        btn_canon:"Canon operativo",
+        btn_private:"Acceso privado al aula",
+
+        campus_eyebrow:"Aula virtual",
+        campus_title:"Campus privado HOMERO CLUB",
+        campus_text:"Acceso a materiales, módulos, recursos descargables y trabajo organizado por itinerarios.",
+        campus_btn:"Acceso privado",
+
+        poetics_eyebrow:"Poética HOMERO CLUB",
+        poetics_title:"Tres formas de mirar",
+        poetics_1:"“El microrrelato es un silencio en el que habita un centauro.”",
+        poetics_2:"“El cuento es el latido de un sueño hecho de símbolos.”",
+        poetics_3:"“El haiku es la expresión que nace tras el susurro de lo sagrado.”",
+
+        prices_eyebrow:"Precios y acceso",
+        prices_title:"Elige tu entrada a HOMERO CLUB",
+        prices_text:"Acceso inicial: 6 meses. Pago por Bizum tras verificación manual.",
+
+        price1_tag:"APP HOMERO · 21 días",
+        price1_title:"Hábito de escritura",
+        price1_li1:"21 días de práctica guiada.",
+        price1_li2:"Microrrelato, cuento simbólico y haiku.",
+        price1_li3:"Acceso inicial durante 6 meses.",
+
+        price2_tag:"Taller individual",
+        price2_title:"Un camino específico",
+        price2_li1:"Microrrelato, escritura simbólica o haiku.",
+        price2_li2:"Materiales, ejercicios y recursos.",
+        price2_li3:"Acceso inicial durante 6 meses.",
+
+        price3_tag:"Curso completo",
+        price3_title:"HOMERO CLUB completo",
+        price3_li1:"APP 21 días.",
+        price3_li2:"Tres talleres de escritura.",
+        price3_li3:"Acceso inicial durante 6 meses.",
+
+        buy_app:"Solicitar APP",
+        buy_workshop:"Solicitar taller",
+        buy_complete:"Solicitar curso completo",
+
+        flow_title:"Sistema de compra y acceso",
+        flow_1:"Rellena el formulario de solicitud.",
+        flow_2:"Indica si quieres APP, taller individual o curso completo.",
+        flow_3:"Recibirás confirmación manual con los datos de Bizum.",
+        flow_4:"Realiza el pago por Bizum.",
+        flow_5:"Tras la verificación, recibirás el acceso privado al aula.",
+
+        bizum_title:"Pago por Bizum",
+        bizum_text:"El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.",
+        bizum_btn:"Copiar mensaje Bizum",
+
+        contact_eyebrow:"Contacto",
+        contact_title:"Solicitar inscripción",
+        contact_text:"Escribe para entrar en HOMERO CLUB, solicitar acceso al aula o recibir información del taller.",
         contact_card_text:"Escuela de Escritura Creativa. Microrrelato, escritura simbólica y poesía japonesa.",
-        email_btn:"Escribir email", copy_email:"Copiar email", form_name:"Nombre", form_email:"Email", form_product:"Producto", form_message:"Mensaje", form_submit:"Enviar solicitud",
-        footer_school:"Escuela de escritura creativa", footer_tags:"Microrrelato · Escritura simbólica · Haiku"
+        email_btn:"Escribir email",
+        copy_email:"Copiar email",
+        form_name:"Nombre",
+        form_email:"Email",
+        form_product:"Producto",
+        form_message:"Mensaje",
+        form_submit:"Enviar solicitud",
+
+        footer_school:"Escuela de escritura creativa",
+        footer_tags:"Microrrelato · Escritura simbólica · Haiku"
       },
 
       en: {
         topbar:"HOMERO CLUB · 21-day APP · Creative Writing School · Microfiction · Symbolic Writing · Haiku",
         brand_subtitle:"Creative Writing School",
-        nav_app:"APP & School", nav_method:"Method", nav_workshops:"Workshops", nav_micro:"Microfiction", nav_prices:"Prices", nav_campus:"Virtual campus", nav_contact:"Contact", nav_private:"Private access",
+        nav_app:"APP & School",
+        nav_method:"Method",
+        nav_workshops:"Workshops",
+        nav_micro:"Microfiction",
+        nav_prices:"Prices",
+        nav_campus:"Virtual campus",
+        nav_contact:"Contact",
+        nav_private:"Private access",
+
         hero_eyebrow:"Homero Club · Passion for writing",
         hero_title:"Write. Discover. Transform.",
         hero_subtitle:"Your writing habit lives in our APP. Refine your practice through the depth of our school.",
         hero_lead:"HOMERO CLUB was created for those who want to write with precision, intertextual depth and sensitivity: enter the path of microfiction, symbolic writing and Japanese poetry (haiku).",
-        hero_btn1:"See APP & School", hero_btn2:"Microfiction Workshop", hero_btn3:"Request enrolment",
-        products_eyebrow:"APP & School", products_title:"Two ways to enter HOMERO CLUB", products_text:"Create your habit with our APP. Discover all our tools in the SCHOOL. Learn from the great masters of each genre.",
-        app_tag:"21-day APP", app_title:"A daily practice", app_li1:"Days 1-7: Microfiction.", app_li2:"Days 8-14: Symbolic and philosophical story.", app_li3:"Days 15-21: Japanese poetry (haiku).", app_btn:"See APP access",
-        school_tag:"Writing School", school_title:"Workshops and full course", school_li1:"Microfiction Workshop.", school_li2:"Symbolic Writing Workshop.", school_li3:"Japanese Poetry Workshop (haiku).", school_li4:"Complete HOMERO CLUB Writing Course.", school_btn:"See school",
-        method_eyebrow:"HOMERO CLUB Method", method_title:"Dwarfs standing on the shoulders of giants", method_text:"Learn the methodology used by the great masters to forge their works; adapt their virtues and approaches to your voice; create works with your own identity.",
-        method_chip1:"Reading masters", method_chip2:"Technique", method_chip3:"Symbol", method_chip4:"Philosophy", method_chip5:"Rewriting", method_chip6:"Final corpus",
-        catalog_eyebrow:"Featured workshops", catalog_title:"Three paths of writing", catalog_text:"A school to experience intensity, symbol and contemplation: each workshop is a doorway, each form of writing grants a way of seeing.",
-        micro_tag:"Workshop 1", micro_title_card:"Microfiction", micro_text_card:"Write with silences, gaps and suggestion to contain the maximum in the minimum.",
-        symbol_tag:"Workshop 2", symbol_title_card:"Symbolic writing", symbol_text_card:"Rediscover the hidden meaning of narrative elements and build bridges between cultures.",
-        haiku_tag:"Workshop 3", haiku_title_card:"Haiku", haiku_text_card:"Feel the world’s aware on your skin and experience the sacred beating behind each instant.",
-        enter:"Enter", info:"Information", info2:"Information",
-        micro_section_kicker:"HOMERO CLUB · Microfiction Workshop", micro_section_title:"Microfiction", micro_section_subtitle:"Explore the tradition of brief writing to forge your technique, depth and sensitivity.", micro_section_lead:"One learns to write by reading the masters.",
-        micro_method1_title:"Technical reading", micro_method1_text:"What happens, what is omitted, how the title works and where the fissure appears.",
-        micro_method2_title:"Symbolic reading", micro_method2_text:"What object, gesture, shadow, door, house or absence concentrates the deep life of the text.",
-        micro_method3_title:"Philosophical reading", micro_method3_text:"What human question remains open: identity, death, guilt, destiny, memory, desire or loss.",
-        micro_method4_title:"Own writing", micro_method4_text:"The student selects a mechanism, reasons through it and creates variations until forging an individual voice.",
+        hero_btn1:"See APP & School",
+        hero_btn2:"Microfiction Workshop",
+        hero_btn3:"Request enrolment",
+
+        products_eyebrow:"APP & School",
+        products_title:"Two ways to enter HOMERO CLUB",
+        products_text:"Create your habit with our APP. Discover all our tools in the SCHOOL. Learn from the great masters of each genre.",
+
+        app_tag:"21-day APP",
+        app_title:"A daily practice",
+        app_li1:"Days 1-7: Microfiction.",
+        app_li2:"Days 8-14: Symbolic and philosophical story.",
+        app_li3:"Days 15-21: Japanese poetry (haiku).",
+        app_btn:"See APP access",
+
+        school_tag:"Writing School",
+        school_title:"Workshops and full course",
+        school_li1:"Microfiction Workshop.",
+        school_li2:"Symbolic Writing Workshop.",
+        school_li3:"Japanese Poetry Workshop (haiku).",
+        school_li4:"Complete HOMERO CLUB Writing Course.",
+        school_btn:"See school",
+
+        method_eyebrow:"HOMERO CLUB Method",
+        method_title:"Dwarfs standing on the shoulders of giants",
+        method_text:"Learn the methodology used by the great masters to forge their works; adapt their virtues and approaches to your voice; create works with your own identity.",
+        method_chip1:"Reading masters",
+        method_chip2:"Technique",
+        method_chip3:"Symbol",
+        method_chip4:"Philosophy",
+        method_chip5:"Rewriting",
+        method_chip6:"Final corpus",
+
+        catalog_eyebrow:"Featured workshops",
+        catalog_title:"Three paths of writing",
+        catalog_text:"A school to experience intensity, symbol and contemplation: each workshop is a doorway, each form of writing grants a way of seeing.",
+
+        micro_tag:"Workshop 1",
+        micro_title_card:"Microfiction",
+        micro_text_card:"Write with silences, gaps and suggestion to contain the maximum in the minimum.",
+        symbol_tag:"Workshop 2",
+        symbol_title_card:"Symbolic writing",
+        symbol_text_card:"Rediscover the hidden meaning of narrative elements and build bridges between cultures.",
+        haiku_tag:"Workshop 3",
+        haiku_title_card:"Haiku",
+        haiku_text_card:"Feel the world’s aware on your skin and experience the sacred beating behind each instant.",
+        enter:"Enter",
+        info:"Information",
+        info2:"Information",
+
+        micro_section_kicker:"HOMERO CLUB · Microfiction Workshop",
+        micro_section_title:"Microfiction",
+        micro_section_subtitle:"Explore the tradition of brief writing to forge your technique, depth and sensitivity.",
+        micro_section_lead:"One learns to write by reading the masters.",
+
+        micro_method1_title:"Technical reading",
+        micro_method1_text:"What happens, what is omitted, how the title works and where the fissure appears.",
+        micro_method2_title:"Symbolic reading",
+        micro_method2_text:"What object, gesture, shadow, door, house or absence concentrates the deep life of the text.",
+        micro_method3_title:"Philosophical reading",
+        micro_method3_text:"What human question remains open: identity, death, guilt, destiny, memory, desire or loss.",
+        micro_method4_title:"Own writing",
+        micro_method4_text:"The student selects a mechanism, reasons through it and creates variations until forging an individual voice.",
+
         lines_title:"Lines of analysis and writing",
-        line1:"Minimal fable and moral animal: the animal as a human mask.", line2:"Apologue and narrative wisdom: teaching without sermon.", line3:"Koan, paradox and emptiness: logic breaking open.", line4:"Condensed myth: an ancient story with a new center.", line5:"Minimal fantastic: one impossible detail alters reality.", line6:"Black humour and brief cruelty: laughter as wound.", line7:"False document: certificates, reports, manuals and files.", line8:"Philosophical miniature: an idea turned into scene.", line9:"Everyday life and minimal revelation: an existence in one gesture.", line10:"Borgesian intertextuality: tradition as a second reading.",
-        btn_m00:"Module 0 · Welcome", btn_m01:"Module 1 · Minimal story", btn_lines:"Analysis lines", btn_canon:"Operational canon", btn_private:"Private classroom access",
-        campus_eyebrow:"Virtual campus", campus_title:"Private HOMERO CLUB Campus", campus_text:"Access to materials, modules, downloadable resources and itinerary-based work.", campus_btn:"Private access",
-        poetics_eyebrow:"HOMERO CLUB Poetics", poetics_title:"Three ways of seeing", poetics_1:"“Microfiction is a silence inhabited by a centaur.”", poetics_2:"“The story is the heartbeat of a dream made of symbols.”", poetics_3:"“Haiku is the expression born after the whisper of the sacred.”",
-        prices_eyebrow:"Prices and access", prices_title:"Choose your entrance to HOMERO CLUB", prices_text:"Initial access: 6 months. Payment by Bizum after manual verification.",
-        price1_tag:"HOMERO APP · 21 days", price1_title:"Writing habit", price1_li1:"21 days of guided practice.", price1_li2:"Microfiction, symbolic story and haiku.", price1_li3:"Initial access for 6 months.",
-        price2_tag:"Individual workshop", price2_title:"A specific path", price2_li1:"Microfiction, symbolic writing or haiku.", price2_li2:"Materials, exercises and resources.", price2_li3:"Initial access for 6 months.",
-        price3_tag:"Full course", price3_title:"Complete HOMERO CLUB", price3_li1:"21-day APP.", price3_li2:"Three writing workshops.", price3_li3:"Initial access for 6 months.",
-        buy_app:"Request APP", buy_workshop:"Request workshop", buy_complete:"Request full course",
-        flow_title:"Purchase and access system", flow_1:"Fill in the request form.", flow_2:"Indicate whether you want the APP, an individual workshop or the full course.", flow_3:"You will receive manual confirmation with Bizum details.", flow_4:"Make the payment by Bizum.", flow_5:"After verification, you will receive private classroom access.",
-        bizum_title:"Bizum payment", bizum_text:"Payment is made by Bizum after manual verification. Remember to include your name and chosen product.", bizum_btn:"Copy Bizum message",
-        contact_eyebrow:"Contact", contact_title:"Request enrolment", contact_text:"Write to enter HOMERO CLUB, request classroom access or receive workshop information.",
+        line1:"Minimal fable and moral animal: the animal as a human mask.",
+        line2:"Apologue and narrative wisdom: teaching without sermon.",
+        line3:"Koan, paradox and emptiness: logic breaking open.",
+        line4:"Condensed myth: an ancient story with a new center.",
+        line5:"Minimal fantastic: one impossible detail alters reality.",
+        line6:"Black humour and brief cruelty: laughter as wound.",
+        line7:"False document: certificates, reports, manuals and files.",
+        line8:"Philosophical miniature: an idea turned into scene.",
+        line9:"Everyday life and minimal revelation: an existence in one gesture.",
+        line10:"Borgesian intertextuality: tradition as a second reading.",
+
+        btn_m00:"Module 0 · Welcome",
+        btn_m01:"Module 1 · Minimal story",
+        btn_lines:"Analysis lines",
+        btn_canon:"Operational canon",
+        btn_private:"Private classroom access",
+
+        campus_eyebrow:"Virtual campus",
+        campus_title:"Private HOMERO CLUB Campus",
+        campus_text:"Access to materials, modules, downloadable resources and itinerary-based work.",
+        campus_btn:"Private access",
+
+        poetics_eyebrow:"HOMERO CLUB Poetics",
+        poetics_title:"Three ways of seeing",
+        poetics_1:"“Microfiction is a silence inhabited by a centaur.”",
+        poetics_2:"“The story is the heartbeat of a dream made of symbols.”",
+        poetics_3:"“Haiku is the expression born after the whisper of the sacred.”",
+
+        prices_eyebrow:"Prices and access",
+        prices_title:"Choose your entrance to HOMERO CLUB",
+        prices_text:"Initial access: 6 months. Payment by Bizum after manual verification.",
+
+        price1_tag:"HOMERO APP · 21 days",
+        price1_title:"Writing habit",
+        price1_li1:"21 days of guided practice.",
+        price1_li2:"Microfiction, symbolic story and haiku.",
+        price1_li3:"Initial access for 6 months.",
+
+        price2_tag:"Individual workshop",
+        price2_title:"A specific path",
+        price2_li1:"Microfiction, symbolic writing or haiku.",
+        price2_li2:"Materials, exercises and resources.",
+        price2_li3:"Initial access for 6 months.",
+
+        price3_tag:"Full course",
+        price3_title:"Complete HOMERO CLUB",
+        price3_li1:"21-day APP.",
+        price3_li2:"Three writing workshops.",
+        price3_li3:"Initial access for 6 months.",
+
+        buy_app:"Request APP",
+        buy_workshop:"Request workshop",
+        buy_complete:"Request full course",
+
+        flow_title:"Purchase and access system",
+        flow_1:"Fill in the request form.",
+        flow_2:"Indicate whether you want the APP, an individual workshop or the full course.",
+        flow_3:"You will receive manual confirmation with Bizum details.",
+        flow_4:"Make the payment by Bizum.",
+        flow_5:"After verification, you will receive private classroom access.",
+
+        bizum_title:"Bizum payment",
+        bizum_text:"Payment is made by Bizum after manual verification. Remember to include your name and chosen product.",
+        bizum_btn:"Copy Bizum message",
+
+        contact_eyebrow:"Contact",
+        contact_title:"Request enrolment",
+        contact_text:"Write to enter HOMERO CLUB, request classroom access or receive workshop information.",
         contact_card_text:"Creative Writing School. Microfiction, symbolic writing and Japanese poetry.",
-        email_btn:"Write email", copy_email:"Copy email", form_name:"Name", form_email:"Email", form_product:"Product", form_message:"Message", form_submit:"Send request",
-        footer_school:"Creative Writing School", footer_tags:"Microfiction · Symbolic Writing · Haiku"
+        email_btn:"Write email",
+        copy_email:"Copy email",
+        form_name:"Name",
+        form_email:"Email",
+        form_product:"Product",
+        form_message:"Message",
+        form_submit:"Send request",
+
+        footer_school:"Creative Writing School",
+        footer_tags:"Microfiction · Symbolic Writing · Haiku"
       }
     };
 
