@@ -513,7 +513,6 @@
 
     .form-panel p{margin-top:0}
     .contact-block{align-items:start}
-
     .full{width:100%}
 
     footer{
@@ -674,32 +673,6 @@
 
     .hc-micro-v2-lines strong{color:var(--gold2)}
 
-    .hc-micro-v2-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:.85rem;
-      margin-top:2rem;
-    }
-
-    .hc-micro-v2-buttons a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:.9rem 1.12rem;
-      border-radius:999px;
-      font-family:Arial,sans-serif;
-      font-weight:900;
-      font-size:.92rem;
-      text-decoration:none;
-      transition:transform .2s ease;
-    }
-
-    .hc-micro-v2-buttons a:hover{transform:translateY(-2px)}
-    .hc-micro-v2-buttons .primary{color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold2))}
-    .hc-micro-v2-buttons .secondary{color:var(--ink);background:rgba(255,255,255,.72);border:1px solid rgba(18,18,37,.15)}
-
     @media(max-width:1040px){
       .hero-grid,.grid2{grid-template-columns:1fr}
       .pricing,.grid3{grid-template-columns:1fr}
@@ -754,7 +727,6 @@
 
       .hc-micro-v2-method{grid-template-columns:1fr}
       .hc-micro-v2-lines{grid-template-columns:1fr}
-      .hc-micro-v2-buttons a{width:100%}
     }
   </style>
 </head>
@@ -871,7 +843,7 @@
       <div class="container">
         <div class="center">
           <p class="eyebrow" data-i18n="method_eyebrow">Método HOMERO CLUB</p>
-          <h2 data-i18n="method_title">Enanos a hombros de gigantes</h2>
+          <h2 data-i18n="method_title">A hombros de gigantes</h2>
 
           <div class="method-lines">
             <p data-i18n="method_line1">Aprende la metodología empleada por los grandes maestros para forjar sus obras.</p>
@@ -1001,14 +973,6 @@
               <li><strong>9.</strong> <span data-i18n="line9">Vida cotidiana y revelación mínima: una existencia en un gesto.</span></li>
               <li><strong>10.</strong> <span data-i18n="line10">Intertextualidad borgiana: la tradición como segunda lectura.</span></li>
             </ul>
-          </div>
-
-          <div class="hc-micro-v2-buttons">
-            <a class="primary" href="https://drive.google.com/file/d/1pdQ25vxx-z9ztHzZG0iuR5NhucGZ7uAU/view?usp=drivesdk" target="_blank" rel="noopener" data-i18n="btn_m00">Módulo 0 · Bienvenida</a>
-            <a class="primary" href="https://drive.google.com/file/d/1lnwOuDfk387OuThsA77ZU2N59lWH6rHW/view?usp=drivesdk" target="_blank" rel="noopener" data-i18n="btn_m01">Módulo 1 · Historia mínima</a>
-            <a class="secondary" href="https://drive.google.com/file/d/12QtRGObfqvGlQNDegvvCxER5xAd3L7eZ/view?usp=drivesdk" target="_blank" rel="noopener" data-i18n="btn_lines">Líneas de análisis</a>
-            <a class="secondary" href="https://drive.google.com/file/d/1aETy2Tfg1fjUEB1X6HgXdurXLNPCv7NC/view?usp=drivesdk" target="_blank" rel="noopener" data-i18n="btn_canon">Canon operativo</a>
-            <a class="secondary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="btn_private">Acceso privado al aula</a>
           </div>
         </div>
       </div>
@@ -1223,10 +1187,7 @@
   <script>
     const CONFIG = {
       email: "thementorroom@proton.me",
-      bizumPhone: "+34637341417",
-      bizumMessage: "+34637341417",
-      formUrl: "https://forms.gle/7j6choXxcgBYDCEU6",
-      appUrl: "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec"
+      bizumMessage: "+34637341417"
     };
 
     const i18n = {
@@ -1270,7 +1231,7 @@
         school_btn:"Ver escuela",
 
         method_eyebrow:"Método HOMERO CLUB",
-        method_title:"Enanos a hombros de gigantes",
+        method_title:"A hombros de gigantes",
         method_line1:"Aprende la metodología empleada por los grandes maestros para forjar sus obras.",
         method_line2:"Adapta sus virtudes y enfoques a tu voz.",
         method_line3:"Crea obras con identidad propia.",
@@ -1323,12 +1284,6 @@
         line8:"Miniatura filosófica: una idea convertida en escena.",
         line9:"Vida cotidiana y revelación mínima: una existencia en un gesto.",
         line10:"Intertextualidad borgiana: la tradición como segunda lectura.",
-
-        btn_m00:"Módulo 0 · Bienvenida",
-        btn_m01:"Módulo 1 · Historia mínima",
-        btn_lines:"Líneas de análisis",
-        btn_canon:"Canon operativo",
-        btn_private:"Acceso privado al aula",
 
         campus_eyebrow:"Aula virtual",
         campus_title:"Campus privado HOMERO CLUB",
@@ -1439,7 +1394,7 @@
         school_btn:"See school",
 
         method_eyebrow:"HOMERO CLUB Method",
-        method_title:"Dwarfs standing on the shoulders of giants",
+        method_title:"On the shoulders of giants",
         method_line1:"Learn the methodology used by the great masters to forge their works.",
         method_line2:"Adapt their virtues and approaches to your voice.",
         method_line3:"Create works with your own identity.",
@@ -1492,12 +1447,6 @@
         line8:"Philosophical miniature: an idea turned into scene.",
         line9:"Everyday life and minimal revelation: an existence in one gesture.",
         line10:"Borgesian intertextuality: tradition as a second reading.",
-
-        btn_m00:"Module 0 · Welcome",
-        btn_m01:"Module 1 · Minimal story",
-        btn_lines:"Analysis lines",
-        btn_canon:"Operational canon",
-        btn_private:"Private classroom access",
 
         campus_eyebrow:"Virtual campus",
         campus_title:"Private HOMERO CLUB Campus",
