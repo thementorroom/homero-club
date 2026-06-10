@@ -11,7 +11,6 @@
     :root{
       --ink:#121225;
       --paper:#fbf2e4;
-      --paper2:#efe0c3;
       --gold:#c59b4b;
       --gold2:#9b6d22;
       --wine:#6f263d;
@@ -497,6 +496,18 @@
       font-weight:900;
     }
 
+    .form-panel{
+      margin-top:1.2rem;
+      padding:1.2rem;
+      border-radius:22px;
+      background:rgba(197,155,75,.10);
+      border:1px solid rgba(197,155,75,.24);
+    }
+
+    .form-panel p{
+      margin-top:0;
+    }
+
     .contact-block{align-items:start}
 
     .contact-form{
@@ -792,7 +803,7 @@
         </div>
 
         <div class="hero-art">
-          <img src="assets/img/homero-club-taller-microrrelato.webp" alt="Taller de Microrrelato HOMERO CLUB">
+          <img src="assets/img/homero-club-aula-virtual.webp" alt="Aula virtual HOMERO CLUB">
         </div>
       </div>
     </section>
@@ -1055,7 +1066,7 @@
               <li data-i18n="price1_li2">Microrrelato, cuento simbólico y haiku.</li>
               <li data-i18n="price1_li3">Acceso inicial durante 6 meses.</li>
             </ul>
-            <a class="btn btn-primary" href="#contacto" data-i18n="buy_app">Solicitar APP</a>
+            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_app">Solicitar APP</a>
           </article>
 
           <article class="price-card">
@@ -1067,7 +1078,7 @@
               <li data-i18n="price2_li2">Materiales, ejercicios y recursos.</li>
               <li data-i18n="price2_li3">Acceso inicial durante 6 meses.</li>
             </ul>
-            <a class="btn btn-primary" href="#contacto" data-i18n="buy_workshop">Solicitar taller</a>
+            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_workshop">Solicitar taller</a>
           </article>
 
           <article class="price-card">
@@ -1079,7 +1090,7 @@
               <li data-i18n="price3_li2">Tres talleres de escritura.</li>
               <li data-i18n="price3_li3">Acceso inicial durante 6 meses.</li>
             </ul>
-            <a class="btn btn-primary" href="#contacto" data-i18n="buy_complete">Solicitar curso completo</a>
+            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_complete">Solicitar curso completo</a>
           </article>
         </div>
 
@@ -1092,6 +1103,10 @@
             <li data-i18n="flow_4">Realiza el pago por Bizum.</li>
             <li data-i18n="flow_5">Tras la verificación, recibirás el acceso privado al aula.</li>
           </ol>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn_main">Abrir formulario de inscripción</a>
+          </div>
 
           <div class="bizum-box">
             <h3 data-i18n="bizum_title">Pago por Bizum</h3>
@@ -1111,7 +1126,7 @@
           <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
           <h2 data-i18n="contact_title">Solicitar inscripción</h2>
           <p class="muted" data-i18n="contact_text">
-            Escribe para entrar en HOMERO CLUB, solicitar acceso al aula o recibir información del taller.
+            Completa el formulario oficial para solicitar acceso a HOMERO CLUB.
           </p>
         </div>
 
@@ -1121,6 +1136,16 @@
             <p data-i18n="contact_card_text">
               Escuela de Escritura Creativa. Microrrelato, escritura simbólica y poesía japonesa.
             </p>
+
+            <div class="form-panel">
+              <p data-i18n="form_panel_text">
+                El formulario recoge tus datos de contacto, el producto solicitado y la información necesaria para activar tu acceso tras la verificación del pago.
+              </p>
+              <a class="btn btn-primary full" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn">
+                Abrir formulario de inscripción
+              </a>
+            </div>
+
             <p>
               <strong>Email:</strong><br>
               <a href="mailto:thementorroom@proton.me">thementorroom@proton.me</a>
@@ -1131,7 +1156,7 @@
             </p>
 
             <div class="actions">
-              <a class="btn btn-primary" href="mailto:thementorroom@proton.me?subject=Inscripción%20HOMERO%20CLUB" data-i18n="email_btn">
+              <a class="btn btn-secondary" href="mailto:thementorroom@proton.me?subject=Inscripción%20HOMERO%20CLUB" data-i18n="email_btn">
                 Escribir email
               </a>
               <button class="btn btn-secondary" id="copyEmail" type="button" data-i18n="copy_email">
@@ -1141,25 +1166,20 @@
           </article>
 
           <article class="contact-card">
-            <form class="contact-form" action="mailto:thementorroom@proton.me" method="post" enctype="text/plain">
-              <label for="nombre" data-i18n="form_name">Nombre</label>
-              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre">
+            <h3 data-i18n="form_steps_title">Pasos de inscripción</h3>
+            <ol>
+              <li data-i18n="form_step_1">Abre el formulario oficial.</li>
+              <li data-i18n="form_step_2">Selecciona APP, taller individual o curso completo.</li>
+              <li data-i18n="form_step_3">Envía tus datos de contacto.</li>
+              <li data-i18n="form_step_4">Recibirás confirmación manual.</li>
+              <li data-i18n="form_step_5">Tras el pago por Bizum, se activa el acceso al aula.</li>
+            </ol>
 
-              <label for="email" data-i18n="form_email">Email</label>
-              <input id="email" name="email" type="email" placeholder="tu@email.com">
-
-              <label for="producto" data-i18n="form_product">Producto</label>
-              <select id="producto" name="producto">
-                <option>APP HOMERO · 21 días · 29€</option>
-                <option>Taller individual · desde 49€</option>
-                <option>Curso completo HOMERO CLUB · 99€</option>
-              </select>
-
-              <label for="mensaje" data-i18n="form_message">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Quiero información sobre HOMERO CLUB."></textarea>
-
-              <button class="btn btn-primary full" type="submit" data-i18n="form_submit">Enviar solicitud</button>
-            </form>
+            <div class="actions">
+              <a class="btn btn-primary full" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn_2">
+                Ir al formulario
+              </a>
+            </div>
           </article>
         </div>
       </div>
@@ -1187,6 +1207,7 @@
       email: "thementorroom@proton.me",
       bizumPhone: "+34637341417",
       bizumMessage: "+34637341417",
+      formUrl: "https://forms.gle/7j6choXxcgBYDCEU6",
       appUrl: "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec"
     };
 
@@ -1334,6 +1355,7 @@
         flow_3:"Recibirás confirmación manual con los datos de Bizum.",
         flow_4:"Realiza el pago por Bizum.",
         flow_5:"Tras la verificación, recibirás el acceso privado al aula.",
+        form_btn_main:"Abrir formulario de inscripción",
 
         bizum_title:"Pago por Bizum",
         bizum_text:"El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.",
@@ -1341,15 +1363,19 @@
 
         contact_eyebrow:"Contacto",
         contact_title:"Solicitar inscripción",
-        contact_text:"Escribe para entrar en HOMERO CLUB, solicitar acceso al aula o recibir información del taller.",
+        contact_text:"Completa el formulario oficial para solicitar acceso a HOMERO CLUB.",
         contact_card_text:"Escuela de Escritura Creativa. Microrrelato, escritura simbólica y poesía japonesa.",
+        form_panel_text:"El formulario recoge tus datos de contacto, el producto solicitado y la información necesaria para activar tu acceso tras la verificación del pago.",
+        form_btn:"Abrir formulario de inscripción",
+        form_steps_title:"Pasos de inscripción",
+        form_step_1:"Abre el formulario oficial.",
+        form_step_2:"Selecciona APP, taller individual o curso completo.",
+        form_step_3:"Envía tus datos de contacto.",
+        form_step_4:"Recibirás confirmación manual.",
+        form_step_5:"Tras el pago por Bizum, se activa el acceso al aula.",
+        form_btn_2:"Ir al formulario",
         email_btn:"Escribir email",
         copy_email:"Copiar email",
-        form_name:"Nombre",
-        form_email:"Email",
-        form_product:"Producto",
-        form_message:"Mensaje",
-        form_submit:"Enviar solicitud",
 
         footer_school:"Escuela de escritura creativa",
         footer_tags:"Escribe. Descubre. Transforma."
@@ -1498,6 +1524,7 @@
         flow_3:"You will receive manual confirmation with Bizum details.",
         flow_4:"Make the payment by Bizum.",
         flow_5:"After verification, you will receive private classroom access.",
+        form_btn_main:"Open enrolment form",
 
         bizum_title:"Bizum payment",
         bizum_text:"Payment is made by Bizum after manual verification. Remember to include your name and chosen product.",
@@ -1505,15 +1532,19 @@
 
         contact_eyebrow:"Contact",
         contact_title:"Request enrolment",
-        contact_text:"Write to enter HOMERO CLUB, request classroom access or receive workshop information.",
+        contact_text:"Complete the official form to request access to HOMERO CLUB.",
         contact_card_text:"Creative Writing School. Microfiction, symbolic writing and Japanese poetry.",
+        form_panel_text:"The form collects your contact details, selected product and the information needed to activate your access after payment verification.",
+        form_btn:"Open enrolment form",
+        form_steps_title:"Enrolment steps",
+        form_step_1:"Open the official form.",
+        form_step_2:"Select APP, individual workshop or full course.",
+        form_step_3:"Send your contact details.",
+        form_step_4:"You will receive manual confirmation.",
+        form_step_5:"After Bizum payment, classroom access is activated.",
+        form_btn_2:"Go to form",
         email_btn:"Write email",
         copy_email:"Copy email",
-        form_name:"Name",
-        form_email:"Email",
-        form_product:"Product",
-        form_message:"Message",
-        form_submit:"Send request",
 
         footer_school:"Creative Writing School",
         footer_tags:"Write. Discover. Transform."
