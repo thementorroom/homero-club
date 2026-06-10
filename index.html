@@ -793,7 +793,11 @@
         </div>
 
         <div class="hero-art">
-          <img src="assets/img/homero-club-aula-virtual.webp" alt="Aula virtual HOMERO CLUB">
+          <img
+            src="assets/img/homero-club-aula-virtual.webp"
+            data-img-es="assets/img/homero-club-aula-virtual.webp"
+            data-img-en="assets/img/homero-club-aula-virtual-en.webp"
+            alt="Aula virtual HOMERO CLUB">
         </div>
       </div>
     </section>
@@ -876,7 +880,11 @@
         <div class="grid3">
           <article class="card taller-card">
             <div class="taller-visual">
-              <img src="assets/img/homero-club-taller-microrrelato.webp" alt="Taller de Microrrelato HOMERO CLUB">
+              <img
+                src="assets/img/homero-club-taller-microrrelato.webp"
+                data-img-es="assets/img/homero-club-taller-microrrelato.webp"
+                data-img-en="assets/img/homero-club-taller-microrrelato-en.webp"
+                alt="Taller de Microrrelato HOMERO CLUB">
             </div>
             <div class="taller-body">
               <p class="tag" data-i18n="micro_tag">Taller 1</p>
@@ -890,7 +898,11 @@
 
           <article class="card taller-card">
             <div class="taller-visual">
-              <img src="assets/img/homero-club-taller-escritura-simbolica.webp" alt="Taller de Escritura Simbólica HOMERO CLUB">
+              <img
+                src="assets/img/homero-club-taller-escritura-simbolica.webp"
+                data-img-es="assets/img/homero-club-taller-escritura-simbolica.webp"
+                data-img-en="assets/img/homero-club-taller-escritura-simbolica-en.webp"
+                alt="Taller de Escritura Simbólica HOMERO CLUB">
             </div>
             <div class="taller-body">
               <p class="tag" data-i18n="symbol_tag">Taller 2</p>
@@ -904,7 +916,11 @@
 
           <article class="card taller-card">
             <div class="taller-visual">
-              <img src="assets/img/homero-club-taller-haiku.webp" alt="Taller de Haiku HOMERO CLUB">
+              <img
+                src="assets/img/homero-club-taller-haiku.webp"
+                data-img-es="assets/img/homero-club-taller-haiku.webp"
+                data-img-en="assets/img/homero-club-taller-haiku-en.webp"
+                alt="Taller de Haiku HOMERO CLUB">
             </div>
             <div class="taller-body">
               <p class="tag" data-i18n="haiku_tag">Taller 3</p>
@@ -990,7 +1006,11 @@
 
         <div class="aula-card">
           <div class="aula-image">
-            <img src="assets/img/homero-club-aula-virtual.webp" alt="Aula virtual HOMERO CLUB">
+            <img
+              src="assets/img/homero-club-aula-virtual.webp"
+              data-img-es="assets/img/homero-club-aula-virtual.webp"
+              data-img-en="assets/img/homero-club-aula-virtual-en.webp"
+              alt="Aula virtual HOMERO CLUB">
           </div>
 
           <div class="actions" style="justify-content:center;margin-top:1.4rem">
@@ -1525,6 +1545,12 @@
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if(dictionary[key]) el.textContent = dictionary[key];
+      });
+
+      document.querySelectorAll("[data-img-es][data-img-en]").forEach(img => {
+        img.src = lang === "en"
+          ? img.getAttribute("data-img-en")
+          : img.getAttribute("data-img-es");
       });
 
       document.querySelectorAll(".lang-btn").forEach(btn => {
