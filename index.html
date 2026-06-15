@@ -16,14 +16,17 @@
       --gold2:#947023;
       --soft:rgba(17,20,38,.68);
       --line:rgba(17,20,38,.13);
-      --card:rgba(255,252,246,.92);
-      --shadow:0 28px 90px rgba(17,20,38,.14);
+      --card:rgba(255,252,246,.94);
+      --shadow:0 24px 70px rgba(17,20,38,.12);
       --radius:28px;
     }
 
     *{box-sizing:border-box}
 
-    html{scroll-behavior:smooth}
+    html{
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
 
     body{
       margin:0;
@@ -31,8 +34,8 @@
       font-family:Georgia,"Times New Roman",serif;
       line-height:1.58;
       background:
-        radial-gradient(circle at 8% 6%,rgba(197,155,75,.18),transparent 25%),
-        radial-gradient(circle at 88% 14%,rgba(23,24,39,.10),transparent 30%),
+        radial-gradient(circle at 8% 6%,rgba(197,155,75,.15),transparent 25%),
+        radial-gradient(circle at 88% 14%,rgba(23,24,39,.08),transparent 30%),
         linear-gradient(180deg,#fffaf0,#f4e7d3 48%,#fffaf0);
       overflow-x:hidden;
     }
@@ -63,17 +66,17 @@
     }
 
     h1{
-      font-size:clamp(3.4rem,8vw,7.4rem);
+      font-size:clamp(3.2rem,7vw,6.8rem);
       letter-spacing:-.055em;
     }
 
     h2{
-      font-size:clamp(2.25rem,5vw,4.6rem);
+      font-size:clamp(2.15rem,4.6vw,4.25rem);
       letter-spacing:-.045em;
     }
 
     h3{
-      font-size:clamp(1.35rem,2.2vw,2rem);
+      font-size:clamp(1.35rem,2.1vw,1.9rem);
       letter-spacing:-.02em;
     }
 
@@ -95,11 +98,10 @@
       border:1px solid transparent;
       cursor:pointer;
       transition:.18s ease;
+      text-align:center;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px)}
 
     .primary{
       background:linear-gradient(135deg,var(--gold),var(--gold2));
@@ -134,14 +136,14 @@
       overflow:hidden;
     }
 
-    .pad{padding:clamp(1.25rem,3vw,2.2rem)}
+    .pad{padding:clamp(1.25rem,3vw,2.15rem)}
 
     header{
       position:sticky;
       top:0;
       z-index:99;
       backdrop-filter:blur(16px);
-      background:rgba(255,248,235,.86);
+      background:rgba(255,248,235,.9);
       border-bottom:1px solid rgba(17,20,38,.10);
     }
 
@@ -169,6 +171,7 @@
       object-fit:cover;
       background:#fffaf0;
       border:1px solid rgba(197,155,75,.45);
+      flex:0 0 auto;
     }
 
     .brand small{
@@ -205,9 +208,10 @@
       gap:.25rem;
       padding:.25rem;
       border-radius:999px;
-      background:rgba(255,252,246,.8);
+      background:rgba(255,252,246,.86);
       border:1px solid rgba(197,155,75,.32);
       margin-left:.35rem;
+      flex:0 0 auto;
     }
 
     .lang button.active{
@@ -216,7 +220,7 @@
     }
 
     .hero{
-      padding:clamp(3rem,7vw,7rem) 0 3rem;
+      padding:clamp(3rem,7vw,6.4rem) 0 3rem;
     }
 
     .hero-grid{
@@ -234,33 +238,33 @@
     }
 
     .hero-copy .lead{
-      font-size:clamp(1.16rem,2vw,1.42rem);
+      font-size:clamp(1.14rem,2vw,1.36rem);
       color:rgba(17,20,38,.78);
       max-width:720px;
     }
 
     .hero-image{
-      min-height:560px;
+      min-height:520px;
       position:relative;
       background:
-        linear-gradient(180deg,rgba(23,24,39,.04),rgba(23,24,39,.28)),
-        url("assets/img/hero-homero-club-autoconocimiento.webp");
+        linear-gradient(180deg,rgba(23,24,39,.05),rgba(23,24,39,.20)),
+        url("assets/img/homero-club-aula-virtual.webp");
       background-size:cover;
       background-position:center;
       border-radius:38px;
       box-shadow:var(--shadow);
       border:1px solid rgba(17,20,38,.12);
       overflow:hidden;
+      background-color:#efe6d5;
     }
 
     .hero-image:after{
       content:"";
       position:absolute;
       inset:auto 1rem 1rem 1rem;
-      height:42%;
+      min-height:132px;
       border-radius:28px;
-      background:
-        linear-gradient(180deg,rgba(255,248,235,.10),rgba(255,248,235,.88));
+      background:linear-gradient(180deg,rgba(255,248,235,.25),rgba(255,248,235,.92));
       backdrop-filter:blur(6px);
       border:1px solid rgba(255,255,255,.45);
     }
@@ -276,17 +280,18 @@
 
     .hero-note p{
       max-width:520px;
-      font-size:1.18rem;
+      font-size:1.16rem;
       font-weight:700;
+      margin:0;
     }
 
     .quote-band{
-      padding:4rem 0;
+      padding:3.4rem 0;
     }
 
     .quote{
       text-align:center;
-      padding:clamp(2rem,5vw,4rem);
+      padding:clamp(2rem,5vw,3.6rem);
       background:rgba(23,24,39,.96);
       color:#fff;
       border-radius:38px;
@@ -295,7 +300,7 @@
     }
 
     .quote h2{
-      font-size:clamp(2rem,4vw,4rem);
+      font-size:clamp(2rem,4vw,3.7rem);
       max-width:980px;
       margin:auto;
     }
@@ -304,11 +309,11 @@
       color:rgba(255,255,255,.78);
       max-width:820px;
       margin:1.3rem auto 0;
-      font-size:1.18rem;
+      font-size:1.16rem;
     }
 
     section{
-      padding:clamp(3rem,6vw,5.6rem) 0;
+      padding:clamp(3rem,6vw,5.2rem) 0;
     }
 
     .section-head{
@@ -336,27 +341,25 @@
     }
 
     .path-img{
-      height:255px;
-      background:#eee;
+      height:245px;
+      background:#efe6d5;
       background-size:cover;
       background-position:center;
     }
 
     .path-card:nth-child(1) .path-img{
-      background-image:url("assets/img/imagen-haiku-contemplacion.webp");
+      background-image:url("assets/img/homero-club-taller-haiku.webp");
     }
 
     .path-card:nth-child(2) .path-img{
-      background-image:url("assets/img/imagen-koan-grieta.webp");
+      background-image:url("assets/img/homero-club-taller-escritura-simbolica.webp");
     }
 
     .path-card:nth-child(3) .path-img{
-      background-image:url("assets/img/imagen-escritura-simbolica-laberinto.webp");
+      background-image:url("assets/img/homero-club-taller-escritura-simbolica.webp");
     }
 
-    .path-card .pad{
-      flex:1;
-    }
+    .path-card .pad{flex:1}
 
     .num{
       width:44px;
@@ -381,7 +384,7 @@
     .principle{
       padding:1.05rem;
       border-radius:22px;
-      background:rgba(255,252,246,.74);
+      background:rgba(255,252,246,.78);
       border:1px solid rgba(17,20,38,.10);
     }
 
@@ -400,7 +403,7 @@
 
     .app-block{
       background:
-        radial-gradient(circle at 10% 5%,rgba(197,155,75,.18),transparent 25%),
+        radial-gradient(circle at 8% 0%,rgba(197,155,75,.22),transparent 25%),
         linear-gradient(135deg,rgba(23,24,39,.98),rgba(35,35,54,.95));
       color:#fff;
       border-radius:38px;
@@ -427,23 +430,22 @@
       border:1px solid rgba(255,255,255,.14);
     }
 
-    .day-card .eyebrow{
-      color:#f0d991;
-    }
+    .day-card .eyebrow{color:#f0d991}
 
     .mentor{
       background:
-        linear-gradient(180deg,rgba(255,248,235,.70),rgba(255,252,246,.92)),
-        url("assets/img/imagen-the-mentor-room-tai-chi.webp");
+        linear-gradient(180deg,rgba(255,248,235,.58),rgba(255,252,246,.94)),
+        url("assets/img/homero-club-aula-virtual.webp");
       background-size:cover;
       background-position:center;
-      min-height:460px;
+      min-height:440px;
       display:flex;
       align-items:flex-end;
       border-radius:38px;
       overflow:hidden;
       border:1px solid rgba(17,20,38,.12);
       box-shadow:var(--shadow);
+      background-color:#efe6d5;
     }
 
     .mentor .card{
@@ -453,14 +455,14 @@
 
     .cta{
       text-align:center;
-      padding-bottom:6rem;
+      padding-bottom:5rem;
     }
 
     .cta .card{
-      padding:clamp(2rem,5vw,4rem);
+      padding:clamp(2rem,5vw,3.6rem);
       background:
-        radial-gradient(circle at 10% 20%,rgba(197,155,75,.16),transparent 26%),
-        rgba(255,252,246,.95);
+        radial-gradient(circle at 10% 20%,rgba(197,155,75,.14),transparent 26%),
+        rgba(255,252,246,.96);
     }
 
     footer{
@@ -483,11 +485,15 @@
       font-weight:700;
     }
 
-    [data-lang-content]{display:none}
-    [data-lang-content].active{display:block}
+    @media(max-width:1100px){
+      .principles{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
 
     @media(max-width:1020px){
       nav a{display:none}
+
       .hero-grid,
       .grid2,
       .grid3{
@@ -505,62 +511,248 @@
       .days{
         grid-template-columns:1fr;
       }
+
+      .path-img{
+        height:260px;
+      }
     }
 
-    @media(max-width:640px){
+    @media(max-width:760px){
+      body{
+        background:#fff8eb;
+      }
+
       .wrap{
         width:100%;
         padding-left:14px;
         padding-right:14px;
       }
 
+      header{
+        position:sticky;
+        top:0;
+      }
+
       .topbar{
         min-height:auto;
         padding:.75rem 0;
-        align-items:flex-start;
+        align-items:center;
+      }
+
+      .brand{
+        gap:.55rem;
       }
 
       .brand img{
-        width:42px;
-        height:42px;
+        width:40px;
+        height:40px;
+      }
+
+      .brand strong{
+        font-size:.95rem;
+      }
+
+      .brand small{
+        font-size:.68rem;
+        max-width:190px;
+        line-height:1.15;
       }
 
       .lang{
         margin-left:0;
       }
 
-      h1{
-        font-size:3.25rem;
+      .lang button{
+        padding:.45rem .58rem;
+        font-size:.78rem;
+      }
+
+      section{
+        padding:2.4rem 0;
       }
 
       .hero{
-        padding-top:2rem;
+        padding-top:1.5rem;
+        padding-bottom:2rem;
+      }
+
+      .hero-grid{
+        gap:1rem;
+      }
+
+      .hero-copy{
+        padding:0;
+      }
+
+      h1{
+        font-size:clamp(2.45rem,12vw,3.2rem);
+        line-height:.95;
+      }
+
+      h2{
+        font-size:clamp(2rem,9vw,2.7rem);
+        line-height:1;
+      }
+
+      h3{
+        font-size:1.42rem;
+      }
+
+      p{
+        font-size:1rem;
+      }
+
+      .hero-copy .lead{
+        font-size:1.04rem;
+      }
+
+      .actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:.65rem;
+      }
+
+      .actions .btn{
+        width:100%;
       }
 
       .hero-image{
-        min-height:360px;
-        border-radius:28px;
+        min-height:290px;
+        border-radius:24px;
+      }
+
+      .hero-image:after{
+        inset:auto .75rem .75rem .75rem;
+        min-height:92px;
+        border-radius:20px;
       }
 
       .hero-note{
-        left:1rem;
-        right:1rem;
-        bottom:1rem;
+        left:1.15rem;
+        right:1.15rem;
+        bottom:1.05rem;
       }
 
-      .quote,
+      .hero-note p{
+        font-size:.96rem;
+        margin:0;
+      }
+
+      .quote-band{
+        padding:2rem 0;
+      }
+
+      .quote{
+        padding:1.45rem;
+        border-radius:24px;
+      }
+
+      .quote h2{
+        font-size:1.75rem;
+      }
+
+      .quote p{
+        font-size:1rem;
+      }
+
+      .card,
+      .path-card,
       .app-block,
       .mentor,
       .cta .card{
-        border-radius:28px;
+        border-radius:24px;
+      }
+
+      .pad{
+        padding:1.15rem;
+      }
+
+      .path-img{
+        height:205px;
+      }
+
+      .num{
+        width:38px;
+        height:38px;
+        margin-bottom:.8rem;
       }
 
       .principles{
         grid-template-columns:1fr;
       }
 
-      .actions .btn{
-        width:100%;
+      .principle{
+        padding:1rem;
+      }
+
+      .days{
+        gap:.8rem;
+      }
+
+      .day-card{
+        border-radius:20px;
+        padding:1rem;
+      }
+
+      .mentor{
+        min-height:auto;
+        padding:1rem 0;
+        background-position:center;
+      }
+
+      .mentor .card{
+        margin:.75rem;
+      }
+
+      .cta{
+        padding-bottom:3rem;
+      }
+
+      footer .wrap{
+        display:block;
+      }
+
+      footer strong{
+        display:block;
+        margin-bottom:.5rem;
+      }
+    }
+
+    @media(max-width:420px){
+      .brand small{
+        display:none;
+      }
+
+      h1{
+        font-size:2.35rem;
+      }
+
+      .hero-image{
+        min-height:260px;
+      }
+
+      .path-img{
+        height:185px;
+      }
+    }
+
+    @media print{
+      header{
+        position:static;
+      }
+
+      body{
+        background:#fffaf0;
+      }
+
+      .btn{
+        box-shadow:none;
+      }
+
+      .hero-image,
+      .path-img,
+      .mentor{
+        break-inside:avoid;
       }
     }
   </style>
