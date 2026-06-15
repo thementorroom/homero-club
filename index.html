@@ -3,1597 +3,1077 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HOMERO CLUB · Escuela de Escritura Creativa</title>
-  <meta name="description" content="HOMERO CLUB: APP de escritura, Escuela de Escritura Creativa, microrrelato, escritura simbólica y poesía japonesa.">
-  <meta name="theme-color" content="#121225">
+  <title>HOMERO CLUB · Escritura, contemplación y autoconocimiento</title>
+  <meta name="description" content="HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento. Escritura, contemplación, haiku, koan y escritura simbólica.">
 
   <style>
     :root{
-      --ink:#121225;
-      --paper:#fbf2e4;
+      --ink:#111426;
+      --night:#171827;
+      --paper:#fff8eb;
+      --paper2:#f5ead9;
       --gold:#c59b4b;
-      --gold2:#9b6d22;
-      --muted:#6d6670;
-      --line:rgba(18,18,37,.14);
-      --shadow:0 26px 70px rgba(18,18,37,.13);
-      --r:26px;
-      --container:min(1180px,calc(100% - 2rem));
+      --gold2:#947023;
+      --soft:rgba(17,20,38,.68);
+      --line:rgba(17,20,38,.13);
+      --card:rgba(255,252,246,.92);
+      --shadow:0 28px 90px rgba(17,20,38,.14);
+      --radius:28px;
     }
 
     *{box-sizing:border-box}
+
     html{scroll-behavior:smooth}
 
     body{
       margin:0;
-      font-family:Georgia,"Times New Roman",serif;
       color:var(--ink);
-      line-height:1.65;
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.58;
       background:
-        radial-gradient(circle at 8% 9%,rgba(197,155,75,.18),transparent 23%),
-        radial-gradient(circle at 92% 16%,rgba(111,38,61,.12),transparent 24%),
-        radial-gradient(circle at 86% 80%,rgba(46,65,95,.10),transparent 28%),
-        linear-gradient(180deg,#fffaf0 0%,var(--paper) 62%,#efdfc1 100%);
+        radial-gradient(circle at 8% 6%,rgba(197,155,75,.18),transparent 25%),
+        radial-gradient(circle at 88% 14%,rgba(23,24,39,.10),transparent 30%),
+        linear-gradient(180deg,#fffaf0,#f4e7d3 48%,#fffaf0);
+      overflow-x:hidden;
     }
 
-    a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .container{width:var(--container);margin:auto}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
 
-    .topbar{
-      background:var(--ink);
-      color:#fff;
-      text-align:center;
-      padding:.55rem 1rem;
-      font-size:.92rem;
-      letter-spacing:.04em;
+    .wrap{
+      width:min(1180px,calc(100% - 2rem));
+      margin:auto;
     }
+
+    .eyebrow{
+      font-family:Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.76rem;
+      color:var(--gold2);
+      font-weight:900;
+    }
+
+    .muted{color:var(--soft)}
+
+    h1,h2,h3{
+      line-height:1.02;
+      margin:.2rem 0 .9rem;
+    }
+
+    h1{
+      font-size:clamp(3.4rem,8vw,7.4rem);
+      letter-spacing:-.055em;
+    }
+
+    h2{
+      font-size:clamp(2.25rem,5vw,4.6rem);
+      letter-spacing:-.045em;
+    }
+
+    h3{
+      font-size:clamp(1.35rem,2.2vw,2rem);
+      letter-spacing:-.02em;
+    }
+
+    p{
+      margin:.45rem 0 1rem;
+      font-size:1.06rem;
+    }
+
+    .btn{
+      border-radius:999px;
+      padding:.9rem 1.25rem;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.45rem;
+      min-height:48px;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:white;
+      box-shadow:0 16px 34px rgba(148,112,35,.25);
+    }
+
+    .secondary{
+      background:rgba(255,252,246,.88);
+      color:var(--ink);
+      border-color:rgba(17,20,38,.14);
+    }
+
+    .dark{
+      background:var(--night);
+      color:white;
+      border-color:var(--night);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-top:1.3rem;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .pad{padding:clamp(1.25rem,3vw,2.2rem)}
 
     header{
       position:sticky;
       top:0;
-      z-index:50;
-      background:rgba(251,242,228,.94);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
+      z-index:99;
+      backdrop-filter:blur(16px);
+      background:rgba(255,248,235,.86);
+      border-bottom:1px solid rgba(17,20,38,.10);
     }
 
-    .head{
-      min-height:82px;
+    .topbar{
+      min-height:74px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:1rem;
+      font-family:Arial,sans-serif;
+      font-weight:900;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:.9rem;
+      gap:.75rem;
+      min-width:0;
     }
 
-    .brand-logo{
-      width:62px;
-      height:62px;
+    .brand img{
+      width:48px;
+      height:48px;
       border-radius:50%;
       object-fit:cover;
-      border:1px solid rgba(197,155,75,.45);
-      box-shadow:0 12px 28px rgba(197,155,75,.24);
       background:#fffaf0;
-      flex:0 0 auto;
-    }
-
-    .brand strong{
-      display:block;
-      letter-spacing:.16em;
-      font-size:1.05rem;
+      border:1px solid rgba(197,155,75,.45);
     }
 
     .brand small{
       display:block;
-      color:var(--muted);
-      font-size:.82rem;
-    }
-
-    .header-right{
-      display:flex;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+      color:var(--soft);
+      font-weight:800;
+      font-size:.78rem;
+      margin-top:.1rem;
     }
 
     nav{
       display:flex;
       align-items:center;
-      gap:1rem;
+      gap:.2rem;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
 
     nav a,
-    .lang-btn{
+    .lang button{
       font-family:Arial,sans-serif;
-      font-size:.88rem;
-      font-weight:800;
-      color:var(--muted);
-      background:none;
+      font-weight:900;
+      font-size:.86rem;
+      padding:.55rem .72rem;
+      border-radius:999px;
+      background:transparent;
       border:0;
       cursor:pointer;
-      padding:0;
-    }
-
-    nav a:hover,
-    .lang-btn:hover{color:var(--gold2)}
-
-    .lang-switch{
-      display:flex;
-      gap:.35rem;
-      align-items:center;
-      padding:.45rem .65rem;
-      border:1px solid rgba(197,155,75,.35);
-      border-radius:999px;
-      background:rgba(255,255,255,.72);
-      flex:0 0 auto;
-    }
-
-    .lang-btn.active{
-      color:var(--gold2);
-      font-weight:900;
-    }
-
-    .section{
-      padding:clamp(4.8rem,7vw,7.8rem) 0;
-    }
-
-    .center{
-      text-align:center;
-      margin-bottom:2rem;
-      max-width:900px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .eyebrow{
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:var(--gold2);
-      font-family:Arial,sans-serif;
-      font-weight:900;
-      font-size:.78rem;
-      margin:0 0 .7rem;
-    }
-
-    h1,h2,h3,.subtitle{
-      font-family:Georgia,"Times New Roman",serif;
-    }
-
-    h1{
-      font-size:clamp(3.15rem,7vw,6.25rem);
-      line-height:.92;
-      margin:0;
-      letter-spacing:-.04em;
-    }
-
-    h2{
-      font-size:clamp(2.1rem,4vw,3.45rem);
-      line-height:1;
-      margin:0 0 .8rem;
-      letter-spacing:-.025em;
-    }
-
-    h3{
-      font-size:1.65rem;
-      line-height:1.08;
-      margin:.15rem 0 .55rem;
-    }
-
-    .hero-title-lockup{
-      display:flex;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-      margin:.2rem 0 .4rem;
-    }
-
-    .hero-title-logo{
-      width:98px;
-      height:98px;
-      object-fit:cover;
-      border-radius:50%;
-      border:1px solid rgba(197,155,75,.45);
-      box-shadow:0 18px 38px rgba(197,155,75,.22);
-      background:#fffaf0;
-      flex:0 0 auto;
-    }
-
-    .subtitle{
-      color:var(--muted);
-      font-size:clamp(1.3rem,2.4vw,2rem);
-      font-style:italic;
-      margin:1rem 0 .5rem;
-    }
-
-    .lead{
-      color:var(--muted);
-      font-size:1.12rem;
-      max-width:70ch;
-    }
-
-    .muted{color:var(--muted)}
-
-    .actions{
-      display:flex;
-      gap:.9rem;
-      flex-wrap:wrap;
-      margin-top:1.55rem;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:.95rem 1.25rem;
-      border-radius:999px;
-      border:0;
-      font-family:Arial,sans-serif;
-      font-weight:900;
-      cursor:pointer;
-      transition:.2s;
-      min-height:48px;
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--gold),#9b6e22);
-      color:#fff;
-      box-shadow:0 14px 34px rgba(197,155,75,.28);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.65);
-      border:1px solid var(--line);
       color:var(--ink);
     }
 
+    .lang{
+      display:flex;
+      gap:.25rem;
+      padding:.25rem;
+      border-radius:999px;
+      background:rgba(255,252,246,.8);
+      border:1px solid rgba(197,155,75,.32);
+      margin-left:.35rem;
+    }
+
+    .lang button.active{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#fff;
+    }
+
     .hero{
-      padding:clamp(4.4rem,7vw,7rem) 0 clamp(4.8rem,7vw,7.2rem);
-      background:
-        linear-gradient(90deg,rgba(251,242,228,.98),rgba(251,242,228,.9) 50%,rgba(251,242,228,.62)),
-        radial-gradient(circle at 82% 42%,rgba(197,155,75,.24),transparent 28%),
-        radial-gradient(circle at 88% 18%,rgba(111,38,61,.15),transparent 24%);
-      border-bottom:1px solid rgba(197,155,75,.24);
+      padding:clamp(3rem,7vw,7rem) 0 3rem;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.03fr .97fr;
-      gap:clamp(2.6rem,5vw,5rem);
-      align-items:center;
+      grid-template-columns:1.04fr .96fr;
+      gap:1.2rem;
+      align-items:stretch;
     }
 
-    .hero-art{
-      min-height:clamp(360px,40vw,540px);
-      display:grid;
-      place-items:center;
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:clamp(1rem,2vw,1.2rem) 0;
+    }
+
+    .hero-copy .lead{
+      font-size:clamp(1.16rem,2vw,1.42rem);
+      color:rgba(17,20,38,.78);
+      max-width:720px;
+    }
+
+    .hero-image{
+      min-height:560px;
       position:relative;
-      border-radius:34px;
-      border:1px solid rgba(197,155,75,.26);
-      box-shadow:0 34px 90px rgba(18,18,37,.12);
-      background:rgba(255,252,246,.72);
+      background:
+        linear-gradient(180deg,rgba(23,24,39,.04),rgba(23,24,39,.28)),
+        url("assets/img/hero-homero-club-autoconocimiento.webp");
+      background-size:cover;
+      background-position:center;
+      border-radius:38px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(17,20,38,.12);
       overflow:hidden;
-      padding:1.2rem;
     }
 
-    .hero-art img{
-      width:100%;
-      height:100%;
-      max-height:520px;
-      object-fit:contain;
+    .hero-image:after{
+      content:"";
+      position:absolute;
+      inset:auto 1rem 1rem 1rem;
+      height:42%;
       border-radius:28px;
+      background:
+        linear-gradient(180deg,rgba(255,248,235,.10),rgba(255,248,235,.88));
+      backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,.45);
     }
 
-    .grid2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:clamp(1.2rem,2.4vw,1.8rem);
+    .hero-note{
+      position:absolute;
+      z-index:2;
+      left:2rem;
+      right:2rem;
+      bottom:2rem;
+      color:var(--ink);
+    }
+
+    .hero-note p{
+      max-width:520px;
+      font-size:1.18rem;
+      font-weight:700;
+    }
+
+    .quote-band{
+      padding:4rem 0;
+    }
+
+    .quote{
+      text-align:center;
+      padding:clamp(2rem,5vw,4rem);
+      background:rgba(23,24,39,.96);
+      color:#fff;
+      border-radius:38px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(197,155,75,.28);
+    }
+
+    .quote h2{
+      font-size:clamp(2rem,4vw,4rem);
+      max-width:980px;
+      margin:auto;
+    }
+
+    .quote p{
+      color:rgba(255,255,255,.78);
+      max-width:820px;
+      margin:1.3rem auto 0;
+      font-size:1.18rem;
+    }
+
+    section{
+      padding:clamp(3rem,6vw,5.6rem) 0;
+    }
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:1.4rem;
     }
 
     .grid3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:clamp(1.2rem,2.4vw,1.8rem);
+      gap:1rem;
     }
 
-    .card,.quote,.price-card,.contact-card{
-      background:rgba(255,252,246,.88);
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      box-shadow:var(--shadow);
-      padding:1.6rem;
-    }
-
-    .card p,.card li,.quote p,.price-card li,.contact-card p{
-      color:var(--muted);
-    }
-
-    .tag{
-      font-family:Arial,sans-serif;
-      color:var(--gold2);
-      font-weight:900;
-      text-transform:uppercase;
-      font-size:.78rem;
-      letter-spacing:.12em;
-    }
-
-    .method{
-      background:rgba(255,255,255,.34);
-      border-top:1px solid rgba(197,155,75,.22);
-      border-bottom:1px solid rgba(197,155,75,.22);
-    }
-
-    .method-lines{
+    .grid2{
       display:grid;
-      gap:.35rem;
-      margin:1.2rem auto 0;
-      max-width:860px;
-      color:var(--muted);
-      font-size:1.08rem;
-      line-height:1.7;
-    }
-
-    .method-word{
-      display:flex;
-      gap:.5rem;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:1.4rem;
-    }
-
-    .method-word span{
-      background:rgba(197,155,75,.14);
-      color:var(--gold2);
-      border:1px solid rgba(197,155,75,.26);
-      border-radius:999px;
-      padding:.45rem .75rem;
-      font-family:Arial,sans-serif;
-      font-weight:900;
-      font-size:.85rem;
-    }
-
-    .taller-card{
-      padding:0;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
-    }
-
-    .taller-visual{
-      min-height:220px;
-      display:grid;
-      place-items:center;
-      background:
-        radial-gradient(circle at 20% 20%,rgba(197,155,75,.25),transparent 30%),
-        linear-gradient(135deg,#fffaf0,#efe0c3);
-      border-bottom:1px solid var(--line);
-      overflow:hidden;
-    }
-
-    .taller-visual img{
-      width:100%;
-      height:240px;
-      object-fit:contain;
-      padding:.8rem;
-    }
-
-    .taller-body{padding:1.55rem}
-
-    .aula-section{
-      background:rgba(255,255,255,.33);
-      border-top:1px solid rgba(197,155,75,.18);
-      border-bottom:1px solid rgba(197,155,75,.18);
-    }
-
-    .aula-card{
-      max-width:1040px;
-      margin:2.3rem auto 0;
-      border-radius:34px;
-      padding:2rem;
-      text-align:center;
-    }
-
-    .aula-image{
-      border-radius:28px;
-      overflow:hidden;
-      border:1px solid rgba(197,155,75,.28);
-      box-shadow:0 18px 44px rgba(18,18,37,.10);
-      background:#fffaf0;
-    }
-
-    .aula-image img{
-      width:100%;
-      height:auto;
-    }
-
-    .quotes{
-      background:rgba(18,18,37,.96);
-      color:#fff;
-    }
-
-    .quotes .eyebrow{color:#e6cf8a}
-    .quotes h2{color:#fff}
-
-    .quotes .quote{
-      background:rgba(255,255,255,.08);
-      border-color:rgba(255,255,255,.14);
-      box-shadow:none;
-    }
-
-    .quotes .quote p{
-      color:rgba(255,255,255,.84);
-      font-size:1.2rem;
-      font-style:italic;
-    }
-
-    .quotes .quote strong{
-      display:block;
-      color:#e6cf8a;
-      margin-top:.9rem;
-      font-family:Arial,sans-serif;
-    }
-
-    .pricing{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:1rem;
       align-items:stretch;
     }
 
-    .price-card{
+    .path-card{
       display:flex;
       flex-direction:column;
       min-height:100%;
     }
 
-    .price{
-      font-size:3.5rem;
-      line-height:1;
-      color:var(--gold2);
-      margin:.6rem 0;
+    .path-img{
+      height:255px;
+      background:#eee;
+      background-size:cover;
+      background-position:center;
     }
 
-    .price-card ul{
-      padding-left:1.2rem;
-      margin:1rem 0;
+    .path-card:nth-child(1) .path-img{
+      background-image:url("assets/img/imagen-haiku-contemplacion.webp");
     }
 
-    .purchase-flow{
-      margin-top:1.5rem;
-      padding:1.2rem;
-      border-radius:22px;
-      background:rgba(197,155,75,.10);
-      border:1px solid rgba(197,155,75,.25);
+    .path-card:nth-child(2) .path-img{
+      background-image:url("assets/img/imagen-koan-grieta.webp");
     }
 
-    .bizum-box{
-      margin-top:1.4rem;
-      padding:1.2rem;
-      border-radius:22px;
-      background:rgba(18,18,37,.95);
-      color:#fff;
+    .path-card:nth-child(3) .path-img{
+      background-image:url("assets/img/imagen-escritura-simbolica-laberinto.webp");
     }
 
-    .bizum-box p{
-      color:rgba(255,255,255,.84);
-      margin:.4rem 0;
+    .path-card .pad{
+      flex:1;
     }
 
-    .bizum-number{
+    .num{
+      width:44px;
+      height:44px;
+      border-radius:50%;
       display:inline-flex;
       align-items:center;
-      gap:.35rem;
-      margin:.8rem 0 0;
-      padding:.75rem 1rem;
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.18);
-      color:#e6cf8a;
+      justify-content:center;
+      background:rgba(197,155,75,.16);
+      color:var(--gold2);
       font-family:Arial,sans-serif;
       font-weight:900;
+      margin-bottom:1rem;
     }
 
-    .form-panel{
-      margin-top:1.2rem;
-      padding:1.2rem;
-      border-radius:22px;
-      background:rgba(197,155,75,.10);
-      border:1px solid rgba(197,155,75,.24);
-    }
-
-    .form-panel p{margin-top:0}
-    .contact-block{align-items:start}
-    .full{width:100%}
-
-    footer{
-      background:linear-gradient(180deg,#121225,#17172e);
-      color:#fff;
-      padding:2rem 0;
-      border-top:1px solid rgba(197,155,75,.32);
-    }
-
-    .foot{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-
-    .foot-brand{
-      display:flex;
-      align-items:center;
-      gap:.85rem;
-    }
-
-    .foot-logo{
-      width:54px;
-      height:54px;
-      border-radius:50%;
-      object-fit:cover;
-      border:1px solid rgba(197,155,75,.45);
-      background:#fffaf0;
-    }
-
-    .hc-micro-v2{
-      position:relative;
-      padding:clamp(5rem,7vw,8rem) 0;
-      background:
-        radial-gradient(circle at 8% 12%, rgba(197,155,75,.16), transparent 24%),
-        radial-gradient(circle at 92% 18%, rgba(46,65,95,.10), transparent 25%),
-        radial-gradient(circle at 86% 86%, rgba(111,38,61,.08), transparent 28%),
-        linear-gradient(180deg, rgba(255,250,240,.94), rgba(251,242,228,.82));
-      border-top:1px solid rgba(197,155,75,.24);
-      border-bottom:1px solid rgba(197,155,75,.24);
-      overflow:hidden;
-    }
-
-    .hc-micro-v2-wrap{position:relative;z-index:2}
-    .hc-micro-v2-hero{max-width:980px;margin:0 auto 2.8rem;text-align:center}
-
-    .hc-micro-v2-kicker{
-      margin:0 0 .8rem;
-      font-family:Arial,sans-serif;
-      font-size:.78rem;
-      font-weight:900;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--gold2);
-    }
-
-    .hc-micro-v2-title{
-      margin:0 auto .95rem;
-      max-width:940px;
-      font-size:clamp(2.5rem,5.2vw,4.65rem);
-      line-height:.96;
-      letter-spacing:-.038em;
-      color:var(--ink);
-    }
-
-    .hc-micro-v2-subtitle{
-      max-width:900px;
-      margin:0 auto 1.25rem;
-      font-size:clamp(1.25rem,2.2vw,1.75rem);
-      line-height:1.35;
-      color:var(--gold2);
-      font-style:italic;
-    }
-
-    .hc-micro-v2-lead{
-      max-width:820px;
-      margin:0 auto;
-      font-size:1.08rem;
-      line-height:1.8;
-      color:var(--muted);
-    }
-
-    .hc-micro-v2-panel{
-      max-width:1120px;
-      margin:2.8rem auto 0;
-      padding:clamp(1.35rem,3vw,2.35rem);
-      border:1px solid rgba(18,18,37,.12);
-      border-radius:34px;
-      background:rgba(255,252,246,.88);
-      box-shadow:0 28px 76px rgba(18,18,37,.10);
-    }
-
-    .hc-micro-v2-method{
+    .principles{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(7,1fr);
+      gap:.75rem;
+    }
+
+    .principle{
+      padding:1.05rem;
+      border-radius:22px;
+      background:rgba(255,252,246,.74);
+      border:1px solid rgba(17,20,38,.10);
+    }
+
+    .principle strong{
+      display:block;
+      font-size:1.02rem;
+      line-height:1.15;
+      margin-bottom:.45rem;
+    }
+
+    .principle p{
+      font-size:.94rem;
+      color:var(--soft);
+      margin:0;
+    }
+
+    .app-block{
+      background:
+        radial-gradient(circle at 10% 5%,rgba(197,155,75,.18),transparent 25%),
+        linear-gradient(135deg,rgba(23,24,39,.98),rgba(35,35,54,.95));
+      color:#fff;
+      border-radius:38px;
+      overflow:hidden;
+      border:1px solid rgba(197,155,75,.28);
+      box-shadow:var(--shadow);
+    }
+
+    .app-block .muted{
+      color:rgba(255,255,255,.72);
+    }
+
+    .days{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
       gap:1rem;
       margin-top:1.4rem;
     }
 
-    .hc-micro-v2-card{
-      position:relative;
-      min-height:100%;
-      padding:1.35rem;
-      border:1px solid rgba(18,18,37,.12);
-      border-radius:26px;
-      background:rgba(255,255,255,.70);
+    .day-card{
+      padding:1.2rem;
+      border-radius:24px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .day-card .eyebrow{
+      color:#f0d991;
+    }
+
+    .mentor{
+      background:
+        linear-gradient(180deg,rgba(255,248,235,.70),rgba(255,252,246,.92)),
+        url("assets/img/imagen-the-mentor-room-tai-chi.webp");
+      background-size:cover;
+      background-position:center;
+      min-height:460px;
+      display:flex;
+      align-items:flex-end;
+      border-radius:38px;
       overflow:hidden;
+      border:1px solid rgba(17,20,38,.12);
+      box-shadow:var(--shadow);
     }
 
-    .hc-micro-v2-card span{
-      display:inline-grid;
-      place-items:center;
-      width:42px;
-      height:42px;
-      margin-bottom:.8rem;
-      border-radius:50%;
-      background:rgba(197,155,75,.16);
-      color:var(--gold2);
-      border:1px solid rgba(197,155,75,.32);
+    .mentor .card{
+      margin:1rem;
+      max-width:720px;
+    }
+
+    .cta{
+      text-align:center;
+      padding-bottom:6rem;
+    }
+
+    .cta .card{
+      padding:clamp(2rem,5vw,4rem);
+      background:
+        radial-gradient(circle at 10% 20%,rgba(197,155,75,.16),transparent 26%),
+        rgba(255,252,246,.95);
+    }
+
+    footer{
+      background:var(--night);
+      color:#fff;
+      padding:2rem 0;
       font-family:Arial,sans-serif;
-      font-weight:900;
     }
 
-    .hc-micro-v2-card p{
-      color:var(--muted);
-      font-size:.98rem;
-      line-height:1.62;
+    footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .hc-micro-v2-block{
-      margin-top:1.45rem;
-      padding:1.35rem;
-      border-radius:26px;
-      background:rgba(255,250,240,.72);
-      border:1px solid rgba(197,155,75,.20);
+    footer small{
+      color:rgba(255,255,255,.68);
+      font-weight:700;
     }
 
-    .hc-micro-v2-lines{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:.65rem .9rem;
-      margin:0;
-      padding:0;
-      list-style:none;
+    [data-lang-content]{display:none}
+    [data-lang-content].active{display:block}
+
+    @media(max-width:1020px){
+      nav a{display:none}
+      .hero-grid,
+      .grid2,
+      .grid3{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image{
+        min-height:420px;
+      }
+
+      .principles{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .days{
+        grid-template-columns:1fr;
+      }
     }
 
-    .hc-micro-v2-lines li{
-      padding:.82rem .95rem;
-      border-radius:18px;
-      background:rgba(255,255,255,.68);
-      border:1px solid rgba(18,18,37,.08);
-      color:rgba(18,18,37,.76);
-      font-size:.98rem;
-      line-height:1.45;
-    }
+    @media(max-width:640px){
+      .wrap{
+        width:100%;
+        padding-left:14px;
+        padding-right:14px;
+      }
 
-    .hc-micro-v2-lines strong{color:var(--gold2)}
-
-    @media(max-width:1040px){
-      .hero-grid,.grid2{grid-template-columns:1fr}
-      .pricing,.grid3{grid-template-columns:1fr}
-      .hc-micro-v2-method{grid-template-columns:repeat(2,1fr)}
-      nav{display:none}
-    }
-
-    @media(max-width:760px){
       .topbar{
-        font-size:.9rem;
-        line-height:1.55;
-        padding:.75rem 1rem;
+        min-height:auto;
+        padding:.75rem 0;
+        align-items:flex-start;
       }
 
-      .head{
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:.75rem;
-        min-height:84px;
+      .brand img{
+        width:42px;
+        height:42px;
       }
 
-      .brand-logo{
-        width:56px;
-        height:56px;
+      .lang{
+        margin-left:0;
       }
 
-      .brand strong{
-        font-size:.95rem;
-        letter-spacing:.12em;
+      h1{
+        font-size:3.25rem;
       }
 
-      .brand small{
-        font-size:.78rem;
+      .hero{
+        padding-top:2rem;
       }
 
-      .lang-switch{
-        display:flex;
-        margin-left:auto;
-        padding:.42rem .62rem;
-        background:rgba(255,255,255,.88);
+      .hero-image{
+        min-height:360px;
+        border-radius:28px;
       }
 
-      .hero{padding:3rem 0}
+      .hero-note{
+        left:1rem;
+        right:1rem;
+        bottom:1rem;
+      }
 
-      h1{font-size:2.75rem}
+      .quote,
+      .app-block,
+      .mentor,
+      .cta .card{
+        border-radius:28px;
+      }
 
-      .hero-title-lockup{display:block}
-      .hero-title-logo{margin:0 0 1rem}
+      .principles{
+        grid-template-columns:1fr;
+      }
 
-      .actions .btn{width:100%}
-
-      .hc-micro-v2-method{grid-template-columns:1fr}
-      .hc-micro-v2-lines{grid-template-columns:1fr}
+      .actions .btn{
+        width:100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar" data-i18n="topbar">
-    HOMERO CLUB · APP 21 días · Escuela de escritura creativa · Microrrelato · Escritura simbólica · Haiku
-  </div>
-
   <header>
-    <div class="container head">
-      <a class="brand" href="#top">
-        <img class="brand-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
-        <span>
+    <div class="wrap topbar">
+      <a class="brand" href="#inicio" aria-label="HOMERO CLUB">
+        <img src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
+        <div>
           <strong>HOMERO CLUB</strong>
-          <small data-i18n="brand_subtitle">Escuela de escritura creativa</small>
-        </span>
+          <small data-i18n="brand_sub">Escritura, contemplación y autoconocimiento</small>
+        </div>
       </a>
 
-      <div class="header-right">
-        <nav>
-          <a href="#productos" data-i18n="nav_app">APP y Escuela</a>
-          <a href="#metodo" data-i18n="nav_method">Método</a>
-          <a href="#catalogo" data-i18n="nav_workshops">Talleres</a>
-          <a href="#taller-microrrelato" data-i18n="nav_micro">Microrrelato</a>
-          <a href="#precios" data-i18n="nav_prices">Precios</a>
-          <a href="#aula-virtual" data-i18n="nav_campus">Aula virtual</a>
-          <a href="#contacto" data-i18n="nav_contact">Contacto</a>
-          <a href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="nav_private">Acceso privado</a>
-        </nav>
+      <nav>
+        <a href="#vias" data-i18n="nav_paths">Vías</a>
+        <a href="#metodo" data-i18n="nav_method">Método</a>
+        <a href="#app" data-i18n="nav_app">APP 21 días</a>
+        <a href="#escuela" data-i18n="nav_school">Escuela</a>
+        <a href="#mentor" data-i18n="nav_mentor">The Mentor Room</a>
 
-        <span class="lang-switch" aria-label="Selector de idioma">
-          <button class="lang-btn active" data-lang="es" type="button">ES</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
-        </span>
-      </div>
+        <div class="lang">
+          <button type="button" data-lang-btn="es" onclick="setLang('es')">ES</button>
+          <button type="button" data-lang-btn="en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main id="inicio">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow" data-i18n="hero_eyebrow">Homero Club · Pasión por la escritura</p>
-
-          <div class="hero-title-lockup">
-            <img class="hero-title-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
-            <h1 data-i18n="hero_title">Escribe. Descubre. Transforma.</h1>
-          </div>
-
-          <p class="subtitle" data-i18n="hero_subtitle">
-            Tu hábito de escritura vive en nuestra APP. Perfecciona tu práctica con la profundidad de nuestra escuela.
-          </p>
-
-          <p class="lead" data-i18n="hero_lead">
-            HOMERO CLUB nace para quienes quieren escribir con precisión, profundidad intertextual y sensibilidad: adéntrate en el camino del microrrelato, de la escritura simbólica y de la poesía japonesa (haiku).
-          </p>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Cuerpo, palabra y conciencia</p>
+          <h1 data-i18n-html="hero_title">HOMERO CLUB<br>Escritura, contemplación y autoconocimiento</h1>
+          <p class="lead" data-i18n="hero_lead">Una práctica para mirar mejor, reconocer patrones y transformar la relación con la propia historia a través de tres vías: haiku, koan y escritura simbólica.</p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#productos" data-i18n="hero_btn1">Ver APP y Escuela</a>
-            <a class="btn btn-secondary" href="#taller-microrrelato" data-i18n="hero_btn2">Taller de Microrrelato</a>
-            <a class="btn btn-secondary" href="#contacto" data-i18n="hero_btn3">Solicitar inscripción</a>
+            <a class="btn primary" href="#metodo" data-i18n="btn_method">Descubrir el método</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_app">Entrar en la APP</a>
+            <a class="btn dark" href="#" onclick="openForm();return false;" data-i18n="btn_access">Solicitar acceso</a>
           </div>
         </div>
 
-        <div class="hero-art">
-          <img
-            src="assets/img/homero-club-aula-virtual.webp"
-            data-img-es="assets/img/homero-club-aula-virtual.webp"
-            data-img-en="assets/img/homero-club-aula-virtual-en.webp"
-            alt="Aula virtual HOMERO CLUB">
+        <div class="hero-image">
+          <div class="hero-note">
+            <p data-i18n="hero_quote">HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="productos">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="products_eyebrow">APP y Escuela</p>
-          <h2 data-i18n="products_title">Dos formas de entrar en HOMERO CLUB</h2>
-          <p class="muted" data-i18n="products_text">
-            Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende de los grandes maestros de cada género.
-          </p>
+    <section class="quote-band">
+      <div class="wrap">
+        <div class="quote">
+          <h2 data-i18n="central_quote">La escritura, como espejo del interior, libera; como simple adorno, engaña.</h2>
+          <p data-i18n="central_text">No escribimos para adornar la identidad. Escribimos para verla.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="vias">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="paths_eyebrow">Tres vías de práctica</p>
+          <h2 data-i18n="paths_title">Haiku, koan y escritura simbólica</h2>
+          <p class="muted" data-i18n="paths_text">Tres formas breves de atención: mirar el mundo, entrar en la grieta de la mente y convertir los patrones interiores en símbolos visibles.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card path-card">
+            <div class="path-img"></div>
+            <div class="pad">
+              <span class="num">1</span>
+              <p class="eyebrow">HAIKU</p>
+              <h3 data-i18n="haiku_title">Mirar sin apropiarse</h3>
+              <p class="muted" data-i18n="haiku_text">El haiku enseña a detenerse ante el mundo sin cubrirlo de interpretaciones. Una práctica de atención, silencio y presencia.</p>
+            </div>
+          </article>
+
+          <article class="card path-card">
+            <div class="path-img"></div>
+            <div class="pad">
+              <span class="num">2</span>
+              <p class="eyebrow">KOAN</p>
+              <h3 data-i18n="koan_title">Fluir con la grieta</h3>
+              <p class="muted" data-i18n="koan_text">El koan zen y las tradiciones breves de paradoja rompen la lógica automática. Allí donde la mente deja de controlar, empieza otra forma de ver.</p>
+            </div>
+          </article>
+
+          <article class="card path-card">
+            <div class="path-img"></div>
+            <div class="pad">
+              <span class="num">3</span>
+              <p class="eyebrow" data-i18n="symbolic_label">ESCRITURA SIMBÓLICA</p>
+              <h3 data-i18n="symbolic_title">Ver, codificar y liberar</h3>
+              <p class="muted" data-i18n="symbolic_text">A partir de pensamientos, acciones, decisiones y entornos vitales, la escritura simbólica ayuda a reconocer patrones y convertirlos en imágenes de comprensión y liberación.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="method_eyebrow">Método HOMERO CLUB</p>
+          <h2 data-i18n="method_title">Escribir para ver</h2>
+          <p class="muted" data-i18n="method_text">La palabra se convierte en una herramienta de atención: permite separar identidad y patrón, dar forma a lo interior y dejar que el símbolo abra camino.</p>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <strong data-i18n="p1_title">La escritura como herramienta de autoconocimiento</strong>
+            <p data-i18n="p1_text">No priorizamos el adorno ni la emoción. Empezamos por la atención.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p2_title">El patrón no es la identidad</strong>
+            <p data-i18n="p2_text">Una persona no es su miedo, su culpa, su ansiedad, su deseo ni su máscara.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p3_title">La literatura no debe alimentar el ego espiritual</strong>
+            <p data-i18n="p3_text">No escribimos para parecer profundos. Escribimos para mirar con más honestidad.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p4_title">La forma descubre el interior</strong>
+            <p data-i18n="p4_text">Toda emoción se expresa en una forma. La forma vuelve visible la experiencia.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p5_title">El símbolo es reflejo y camino de liberación</strong>
+            <p data-i18n="p5_text">La tarea es crear una imagen viva que enseñe a ver mejor cada elección.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p6_title">La brevedad ayuda a ver el mecanismo</strong>
+            <p data-i18n="p6_text">Lo breve obliga a elegir. Y elegir revela.</p>
+          </div>
+
+          <div class="principle">
+            <strong data-i18n="p7_title">El silencio también escribe</strong>
+            <p data-i18n="p7_text">Lo que el texto calla puede ser más importante que lo que dice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app">
+      <div class="wrap">
+        <div class="app-block">
+          <div class="pad">
+            <p class="eyebrow" data-i18n="app_eyebrow">Práctica progresiva</p>
+            <h2 data-i18n="app_title">APP HOMERO · 21 días</h2>
+            <p class="muted" data-i18n="app_text">Una práctica breve y sostenida para crear hábito, afinar la atención y entrar en el método HOMERO CLUB.</p>
+
+            <div class="days">
+              <div class="day-card">
+                <p class="eyebrow" data-i18n="days_1">Días 1–7</p>
+                <h3 data-i18n="days_1_title">Haiku y contemplación</h3>
+                <p class="muted" data-i18n="days_1_text">Mirar el mundo antes de interpretarlo.</p>
+              </div>
+
+              <div class="day-card">
+                <p class="eyebrow" data-i18n="days_2">Días 8–14</p>
+                <h3 data-i18n="days_2_title">Koan y desarme de la mente de mono</h3>
+                <p class="muted" data-i18n="days_2_text">Observar la mente que salta, controla, interpreta y se aferra.</p>
+              </div>
+
+              <div class="day-card">
+                <p class="eyebrow" data-i18n="days_3">Días 15–21</p>
+                <h3 data-i18n="days_3_title">Escritura simbólica de autoconocimiento</h3>
+                <p class="muted" data-i18n="days_3_text">Convertir patrones interiores en imágenes de comprensión y liberación.</p>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_open_app">Abrir APP</a>
+              <a class="btn secondary" href="#" onclick="openForm();return false;" data-i18n="btn_request">Solicitar acceso</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="escuela">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="school_eyebrow">Escuela HOMERO CLUB</p>
+          <h2 data-i18n="school_title">Tres senderos, una misma atención</h2>
+          <p class="muted" data-i18n="school_text">La escuela reúne talleres y recorridos para profundizar en haiku, koan y escritura simbólica de autoconocimiento.</p>
         </div>
 
         <div class="grid2">
-          <article class="card">
-            <p class="tag" data-i18n="app_tag">APP 21 días</p>
-            <h3 data-i18n="app_title">Una práctica diaria</h3>
-            <ul>
-              <li data-i18n="app_li1">Día 1-7: Microrrelato.</li>
-              <li data-i18n="app_li2">Día 8-14: Cuento simbólico y filosófico.</li>
-              <li data-i18n="app_li3">Día 15-21: Poesía japonesa (haiku).</li>
-            </ul>
+          <div class="card pad">
+            <p class="eyebrow">01</p>
+            <h3 data-i18n="school_haiku">Taller de Haiku y contemplación</h3>
+            <p class="muted" data-i18n="school_haiku_text">Instante, kigo, kire, ma, aware, wabi, sabi, karumi y escritura por eliminación.</p>
+          </div>
+
+          <div class="card pad">
+            <p class="eyebrow">02</p>
+            <h3 data-i18n="school_koan">Taller de Koan y escritura paradójica</h3>
+            <p class="muted" data-i18n="school_koan_text">Koan zen, paradoja, mente de mono, silencio, vacío fértil y ruptura de la respuesta automática.</p>
+          </div>
+
+          <div class="card pad">
+            <p class="eyebrow">03</p>
+            <h3 data-i18n="school_symbolic">Taller de Escritura simbólica de autoconocimiento</h3>
+            <p class="muted" data-i18n="school_symbolic_text">Pensamientos, acciones, decisiones, gustos y entornos vitales como puertas simbólicas hacia el patrón.</p>
+          </div>
+
+          <div class="card pad">
+            <p class="eyebrow">04</p>
+            <h3 data-i18n="school_full">Curso completo HOMERO CLUB</h3>
+            <p class="muted" data-i18n="school_full_text">Un recorrido integrado por las tres vías: mundo, mente y símbolo.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_enrol">Solicitar inscripción</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mentor">
+      <div class="wrap">
+        <div class="mentor">
+          <div class="card pad">
+            <p class="eyebrow">THE MENTOR ROOM</p>
+            <h2 data-i18n="mentor_title">Cuerpo, palabra y conciencia</h2>
+            <p class="muted" data-i18n="mentor_text">El Tai Chi libera al cuerpo a través de la conciencia. El haiku libera al ego a través del mundo. El koan libera a la mente en el vacío. La escritura simbólica enseña a ver.</p>
             <div class="actions">
-              <a class="btn btn-primary" href="#precios" data-i18n="app_btn">Ver acceso APP</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <p class="tag" data-i18n="school_tag">Escuela de Escritura</p>
-            <h3 data-i18n="school_title">Talleres y curso completo</h3>
-            <ul>
-              <li data-i18n="school_li1">Taller de Microrrelato.</li>
-              <li data-i18n="school_li2">Taller de Escritura simbólica.</li>
-              <li data-i18n="school_li3">Taller de Poesía japonesa (haiku).</li>
-              <li data-i18n="school_li4">Curso de Escritura Completo HOMERO CLUB.</li>
-            </ul>
-            <div class="actions">
-              <a class="btn btn-primary" href="#catalogo" data-i18n="school_btn">Ver escuela</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section method" id="metodo">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="method_eyebrow">Método HOMERO CLUB</p>
-          <h2 data-i18n="method_title">A hombros de gigantes</h2>
-
-          <div class="method-lines">
-            <p data-i18n="method_line1">Aprende la metodología empleada por los grandes maestros para forjar sus obras.</p>
-            <p data-i18n="method_line2">Adapta sus virtudes y enfoques a tu voz.</p>
-            <p data-i18n="method_line3">Crea obras con identidad propia.</p>
-          </div>
-
-          <div class="method-word">
-            <span data-i18n="method_chip1">Lectura de maestros</span>
-            <span data-i18n="method_chip2">Técnica</span>
-            <span data-i18n="method_chip3">Símbolo</span>
-            <span data-i18n="method_chip4">Filosofía</span>
-            <span data-i18n="method_chip5">Reescritura</span>
-            <span data-i18n="method_chip6">Corpus final</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="catalogo">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="catalog_eyebrow">Talleres destacados</p>
-          <h2 data-i18n="catalog_title">Tres caminos de escritura</h2>
-          <p class="muted" data-i18n="catalog_text">
-            Una escuela para vivenciar la intensidad, el símbolo y contemplación: cada taller es una puerta, cada escritura otorga una mirada.
-          </p>
-        </div>
-
-        <div class="grid3">
-          <article class="card taller-card">
-            <div class="taller-visual">
-              <img
-                src="assets/img/homero-club-taller-microrrelato.webp"
-                data-img-es="assets/img/homero-club-taller-microrrelato.webp"
-                data-img-en="assets/img/homero-club-taller-microrrelato-en.webp"
-                alt="Taller de Microrrelato HOMERO CLUB">
-            </div>
-            <div class="taller-body">
-              <p class="tag" data-i18n="micro_tag">Taller 1</p>
-              <h3 data-i18n="micro_title_card">Microrrelato</h3>
-              <p data-i18n="micro_text_card">
-                Escribe con silencios, vacíos y sugerencia para abarcar lo máximo con lo mínimo.
-              </p>
-              <a class="btn btn-primary" href="#taller-microrrelato" data-i18n="enter">Entrar</a>
-            </div>
-          </article>
-
-          <article class="card taller-card">
-            <div class="taller-visual">
-              <img
-                src="assets/img/homero-club-taller-escritura-simbolica.webp"
-                data-img-es="assets/img/homero-club-taller-escritura-simbolica.webp"
-                data-img-en="assets/img/homero-club-taller-escritura-simbolica-en.webp"
-                alt="Taller de Escritura Simbólica HOMERO CLUB">
-            </div>
-            <div class="taller-body">
-              <p class="tag" data-i18n="symbol_tag">Taller 2</p>
-              <h3 data-i18n="symbol_title_card">Escritura simbólica</h3>
-              <p data-i18n="symbol_text_card">
-                Redescubre el significado oculto de los elementos narrativos y construye puentes entre culturas.
-              </p>
-              <a class="btn btn-secondary" href="#precios" data-i18n="info">Información</a>
-            </div>
-          </article>
-
-          <article class="card taller-card">
-            <div class="taller-visual">
-              <img
-                src="assets/img/homero-club-taller-haiku.webp"
-                data-img-es="assets/img/homero-club-taller-haiku.webp"
-                data-img-en="assets/img/homero-club-taller-haiku-en.webp"
-                alt="Taller de Haiku HOMERO CLUB">
-            </div>
-            <div class="taller-body">
-              <p class="tag" data-i18n="haiku_tag">Taller 3</p>
-              <h3 data-i18n="haiku_title_card">Haiku</h3>
-              <p data-i18n="haiku_text_card">
-                Siente en la piel el aware del mundo y vivencia lo sagrado latiendo tras cada instante.
-              </p>
-              <a class="btn btn-secondary" href="#precios" data-i18n="info2">Información</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="hc-micro-v2" id="taller-microrrelato">
-      <div class="container hc-micro-v2-wrap">
-        <div class="hc-micro-v2-hero">
-          <p class="hc-micro-v2-kicker" data-i18n="micro_section_kicker">HOMERO CLUB · Taller de Microrrelato</p>
-          <h2 class="hc-micro-v2-title" data-i18n="micro_section_title">Microrrelato</h2>
-          <p class="hc-micro-v2-subtitle" data-i18n="micro_section_subtitle">
-            Recorre la tradición de la escritura breve para forjar tu técnica, profundidad y sensibilidad.
-          </p>
-          <p class="hc-micro-v2-lead" data-i18n="micro_section_lead">
-            A escribir se aprende leyendo a los maestros.
-          </p>
-        </div>
-
-        <div class="hc-micro-v2-panel">
-          <div class="hc-micro-v2-method">
-            <article class="hc-micro-v2-card">
-              <span>1</span>
-              <h3 data-i18n="micro_method1_title">Lectura técnica</h3>
-              <p data-i18n="micro_method1_text">Qué sucede, qué se omite, cómo trabaja el título y dónde aparece la fisura.</p>
-            </article>
-
-            <article class="hc-micro-v2-card">
-              <span>2</span>
-              <h3 data-i18n="micro_method2_title">Lectura simbólica</h3>
-              <p data-i18n="micro_method2_text">Qué objeto, gesto, sombra, puerta, casa o ausencia concentra la vida profunda del texto.</p>
-            </article>
-
-            <article class="hc-micro-v2-card">
-              <span>3</span>
-              <h3 data-i18n="micro_method3_title">Lectura filosófica</h3>
-              <p data-i18n="micro_method3_text">Qué pregunta humana permanece abierta: identidad, muerte, culpa, destino, memoria, deseo o pérdida.</p>
-            </article>
-
-            <article class="hc-micro-v2-card">
-              <span>4</span>
-              <h3 data-i18n="micro_method4_title">Escritura propia</h3>
-              <p data-i18n="micro_method4_text">El alumno selecciona un mecanismo, lo razona y crea variaciones hasta construir una voz propia.</p>
-            </article>
-          </div>
-
-          <div class="hc-micro-v2-block">
-            <h3 data-i18n="lines_title">Líneas de análisis y escritura</h3>
-            <ul class="hc-micro-v2-lines">
-              <li><strong>1.</strong> <span data-i18n="line1">Fábula mínima y animal moral: el animal como máscara humana.</span></li>
-              <li><strong>2.</strong> <span data-i18n="line2">Apólogo y sabiduría narrativa: la enseñanza sin sermón.</span></li>
-              <li><strong>3.</strong> <span data-i18n="line3">Koan, paradoja y vacío: la lógica que se quiebra.</span></li>
-              <li><strong>4.</strong> <span data-i18n="line4">Mito condensado: una historia antigua con centro nuevo.</span></li>
-              <li><strong>5.</strong> <span data-i18n="line5">Fantástico mínimo: un detalle imposible altera lo real.</span></li>
-              <li><strong>6.</strong> <span data-i18n="line6">Humor negro y crueldad breve: la risa como herida.</span></li>
-              <li><strong>7.</strong> <span data-i18n="line7">Falso documento: certificados, informes, manuales y expedientes.</span></li>
-              <li><strong>8.</strong> <span data-i18n="line8">Miniatura filosófica: una idea convertida en escena.</span></li>
-              <li><strong>9.</strong> <span data-i18n="line9">Vida cotidiana y revelación mínima: una existencia en un gesto.</span></li>
-              <li><strong>10.</strong> <span data-i18n="line10">Intertextualidad borgiana: la tradición como segunda lectura.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section aula-section" id="aula-virtual">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="campus_eyebrow">Aula virtual</p>
-          <h2 data-i18n="campus_title">Campus privado HOMERO CLUB</h2>
-          <p class="muted" data-i18n="campus_text">
-            Acceso a materiales, módulos, recursos descargables y trabajo organizado por itinerarios.
-          </p>
-        </div>
-
-        <div class="aula-card">
-          <div class="aula-image">
-            <img
-              src="assets/img/homero-club-aula-virtual.webp"
-              data-img-es="assets/img/homero-club-aula-virtual.webp"
-              data-img-en="assets/img/homero-club-aula-virtual-en.webp"
-              alt="Aula virtual HOMERO CLUB">
-          </div>
-
-          <div class="actions" style="justify-content:center;margin-top:1.4rem">
-            <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec" target="_blank" rel="noopener" data-i18n="campus_btn">
-              Acceso privado
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section quotes">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="poetics_eyebrow">Poética HOMERO CLUB</p>
-          <h2 data-i18n="poetics_title">Tres formas de mirar</h2>
-        </div>
-
-        <div class="grid3">
-          <article class="quote">
-            <p data-i18n="poetics_1">“El microrrelato es un silencio en el que habita un centauro.”</p>
-            <strong>Microrrelato</strong>
-          </article>
-
-          <article class="quote">
-            <p data-i18n="poetics_2">“El cuento es el latido de un sueño hecho de símbolos.”</p>
-            <strong>Cuento simbólico</strong>
-          </article>
-
-          <article class="quote">
-            <p data-i18n="poetics_3">“El haiku es la expresión que nace tras el susurro de lo sagrado.”</p>
-            <strong>Haiku</strong>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="precios">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="prices_eyebrow">Precios y acceso</p>
-          <h2 data-i18n="prices_title">Elige tu entrada a HOMERO CLUB</h2>
-          <p class="muted" data-i18n="prices_text">
-            Acceso inicial: 6 meses. Pago por Bizum tras verificación manual.
-          </p>
-        </div>
-
-        <div class="pricing">
-          <article class="price-card">
-            <p class="tag" data-i18n="price1_tag">APP HOMERO · 21 días</p>
-            <h3 data-i18n="price1_title">Hábito de escritura</h3>
-            <div class="price">29€</div>
-            <ul>
-              <li data-i18n="price1_li1">21 días de práctica guiada.</li>
-              <li data-i18n="price1_li2">Microrrelato, cuento simbólico y haiku.</li>
-              <li data-i18n="price1_li3">Acceso inicial durante 6 meses.</li>
-            </ul>
-            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_app">Solicitar APP</a>
-          </article>
-
-          <article class="price-card">
-            <p class="tag" data-i18n="price2_tag">Taller individual</p>
-            <h3 data-i18n="price2_title">Un camino específico</h3>
-            <div class="price">49€</div>
-            <ul>
-              <li data-i18n="price2_li1">Microrrelato, escritura simbólica o haiku.</li>
-              <li data-i18n="price2_li2">Materiales, ejercicios y recursos.</li>
-              <li data-i18n="price2_li3">Acceso inicial durante 6 meses.</li>
-            </ul>
-            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_workshop">Solicitar taller</a>
-          </article>
-
-          <article class="price-card">
-            <p class="tag" data-i18n="price3_tag">Curso completo</p>
-            <h3 data-i18n="price3_title">HOMERO CLUB completo</h3>
-            <div class="price">99€</div>
-            <ul>
-              <li data-i18n="price3_li1">APP 21 días.</li>
-              <li data-i18n="price3_li2">Tres talleres de escritura.</li>
-              <li data-i18n="price3_li3">Acceso inicial durante 6 meses.</li>
-            </ul>
-            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="buy_complete">Solicitar curso completo</a>
-          </article>
-        </div>
-
-        <div class="purchase-flow">
-          <h3 data-i18n="flow_title">Sistema de compra y acceso</h3>
-          <ol>
-            <li data-i18n="flow_1">Rellena el formulario de solicitud.</li>
-            <li data-i18n="flow_2">Indica si quieres APP, taller individual o curso completo.</li>
-            <li data-i18n="flow_3">Recibirás confirmación manual con los datos de Bizum.</li>
-            <li data-i18n="flow_4">Realiza el pago por Bizum.</li>
-            <li data-i18n="flow_5">Tras la verificación, recibirás el acceso privado al aula.</li>
-          </ol>
-
-          <div class="actions">
-            <a class="btn btn-primary" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn_main">Abrir formulario de inscripción</a>
-          </div>
-
-          <div class="bizum-box">
-            <h3 data-i18n="bizum_title">Pago por Bizum</h3>
-            <p data-i18n="bizum_text">El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.</p>
-            <a class="bizum-number" href="tel:+34637341417">Bizum: +34 637 341 417</a>
-            <div class="actions">
-              <button class="btn btn-primary" id="copyBizum" type="button" data-i18n="bizum_btn">Copiar Bizum</button>
+              <a class="btn primary" href="#" onclick="openMentor();return false;" data-i18n="btn_mentor">Descubrir The Mentor Room</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="center">
-          <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
-          <h2 data-i18n="contact_title">Solicitar inscripción</h2>
-          <p class="muted" data-i18n="contact_text">
-            Completa el formulario oficial para solicitar acceso a HOMERO CLUB.
-          </p>
-        </div>
+    <section class="cta">
+      <div class="wrap">
+        <div class="card">
+          <p class="eyebrow" data-i18n="cta_eyebrow">Empieza a mirar de otro modo</p>
+          <h2 data-i18n="cta_title">Vuelve al mundo interno de tu verdad</h2>
+          <p class="muted" data-i18n="cta_text">No hace falta escribir para crear mundos nuevos. Hace falta escribir para volver al mundo interno de nuestra verdad.</p>
 
-        <div class="grid2 contact-block">
-          <article class="contact-card">
-            <h3>HOMERO CLUB</h3>
-            <p data-i18n="contact_card_text">
-              Escuela de Escritura Creativa. Microrrelato, escritura simbólica y poesía japonesa.
-            </p>
-
-            <div class="form-panel">
-              <p data-i18n="form_panel_text">
-                El formulario recoge tus datos de contacto, el producto solicitado y la información necesaria para activar tu acceso tras la verificación del pago.
-              </p>
-              <a class="btn btn-primary full" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn">
-                Abrir formulario de inscripción
-              </a>
-            </div>
-
-            <p>
-              <strong>Email:</strong><br>
-              <a href="mailto:thementorroom@proton.me">thementorroom@proton.me</a>
-            </p>
-            <p>
-              <strong>Bizum:</strong><br>
-              <a href="tel:+34637341417">+34 637 341 417</a>
-            </p>
-
-            <div class="actions">
-              <a class="btn btn-secondary" href="mailto:thementorroom@proton.me?subject=Inscripción%20HOMERO%20CLUB" data-i18n="email_btn">
-                Escribir email
-              </a>
-              <button class="btn btn-secondary" id="copyEmail" type="button" data-i18n="copy_email">
-                Copiar email
-              </button>
-            </div>
-          </article>
-
-          <article class="contact-card">
-            <h3 data-i18n="form_steps_title">Pasos de inscripción</h3>
-            <ol>
-              <li data-i18n="form_step_1">Abre el formulario oficial.</li>
-              <li data-i18n="form_step_2">Selecciona APP, taller individual o curso completo.</li>
-              <li data-i18n="form_step_3">Envía tus datos de contacto.</li>
-              <li data-i18n="form_step_4">Recibirás confirmación manual.</li>
-              <li data-i18n="form_step_5">Tras el pago por Bizum, se activa el acceso al aula.</li>
-            </ol>
-
-            <div class="actions">
-              <a class="btn btn-primary full" href="https://forms.gle/7j6choXxcgBYDCEU6" target="_blank" rel="noopener" data-i18n="form_btn_2">
-                Ir al formulario
-              </a>
-            </div>
-          </article>
+          <div class="actions" style="justify-content:center">
+            <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_access_2">Solicitar acceso</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_app_2">Entrar en la APP</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container foot">
-      <div class="foot-brand">
-        <img class="foot-logo" src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
-        <div>
-          <strong>HOMERO CLUB</strong><br>
-          <span data-i18n="footer_school">Escuela de escritura creativa</span>
-        </div>
-      </div>
-
-      <div>
-        <span data-i18n="footer_tags">Escribe. Descubre. Transforma.</span>
-      </div>
+    <div class="wrap">
+      <strong>HOMERO CLUB</strong>
+      <small data-i18n="footer_text">Escritura, contemplación y autoconocimiento · Cuerpo, palabra y conciencia.</small>
     </div>
   </footer>
 
   <script>
-    const CONFIG = {
-      email: "thementorroom@proton.me",
-      bizumMessage: "+34637341417"
-    };
+    const FORM_URL_ES = "https://forms.gle/7j6choXxcgBYDCEU6";
+    const FORM_URL_EN = "AQUI_PEGA_EL_FORMULARIO_INGLES";
+    const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
+    const MENTOR_URL = "#";
 
-    const i18n = {
-      es: {
-        topbar:"HOMERO CLUB · APP 21 días · Escuela de escritura creativa · Microrrelato · Escritura simbólica · Haiku",
-        brand_subtitle:"Escuela de escritura creativa",
-        nav_app:"APP y Escuela",
+    let currentLang = localStorage.getItem("homero_lang") || "es";
+
+    const I18N = {
+      es:{
+        brand_sub:"Escritura, contemplación y autoconocimiento",
+        nav_paths:"Vías",
         nav_method:"Método",
-        nav_workshops:"Talleres",
-        nav_micro:"Microrrelato",
-        nav_prices:"Precios",
-        nav_campus:"Aula virtual",
-        nav_contact:"Contacto",
-        nav_private:"Acceso privado",
+        nav_app:"APP 21 días",
+        nav_school:"Escuela",
+        nav_mentor:"The Mentor Room",
 
-        hero_eyebrow:"Homero Club · Pasión por la escritura",
-        hero_title:"Escribe. Descubre. Transforma.",
-        hero_subtitle:"Tu hábito de escritura vive en nuestra APP. Perfecciona tu práctica con la profundidad de nuestra escuela.",
-        hero_lead:"HOMERO CLUB nace para quienes quieren escribir con precisión, profundidad intertextual y sensibilidad: adéntrate en el camino del microrrelato, de la escritura simbólica y de la poesía japonesa (haiku).",
-        hero_btn1:"Ver APP y Escuela",
-        hero_btn2:"Taller de Microrrelato",
-        hero_btn3:"Solicitar inscripción",
+        hero_eyebrow:"Cuerpo, palabra y conciencia",
+        hero_title:"HOMERO CLUB<br>Escritura, contemplación y autoconocimiento",
+        hero_lead:"Una práctica para mirar mejor, reconocer patrones y transformar la relación con la propia historia a través de tres vías: haiku, koan y escritura simbólica.",
+        hero_quote:"HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento.",
+        btn_method:"Descubrir el método",
+        btn_app:"Entrar en la APP",
+        btn_access:"Solicitar acceso",
 
-        products_eyebrow:"APP y Escuela",
-        products_title:"Dos formas de entrar en HOMERO CLUB",
-        products_text:"Crea tu hábito con nuestra APP. Descubre todas nuestras herramientas en la ESCUELA. Aprende de los grandes maestros de cada género.",
+        central_quote:"La escritura, como espejo del interior, libera; como simple adorno, engaña.",
+        central_text:"No escribimos para adornar la identidad. Escribimos para verla.",
 
-        app_tag:"APP 21 días",
-        app_title:"Una práctica diaria",
-        app_li1:"Día 1-7: Microrrelato.",
-        app_li2:"Día 8-14: Cuento simbólico y filosófico.",
-        app_li3:"Día 15-21: Poesía japonesa (haiku).",
-        app_btn:"Ver acceso APP",
+        paths_eyebrow:"Tres vías de práctica",
+        paths_title:"Haiku, koan y escritura simbólica",
+        paths_text:"Tres formas breves de atención: mirar el mundo, entrar en la grieta de la mente y convertir los patrones interiores en símbolos visibles.",
 
-        school_tag:"Escuela de Escritura",
-        school_title:"Talleres y curso completo",
-        school_li1:"Taller de Microrrelato.",
-        school_li2:"Taller de Escritura simbólica.",
-        school_li3:"Taller de Poesía japonesa (haiku).",
-        school_li4:"Curso de Escritura Completo HOMERO CLUB.",
-        school_btn:"Ver escuela",
+        haiku_title:"Mirar sin apropiarse",
+        haiku_text:"El haiku enseña a detenerse ante el mundo sin cubrirlo de interpretaciones. Una práctica de atención, silencio y presencia.",
+
+        koan_title:"Fluir con la grieta",
+        koan_text:"El koan zen y las tradiciones breves de paradoja rompen la lógica automática. Allí donde la mente deja de controlar, empieza otra forma de ver.",
+
+        symbolic_label:"ESCRITURA SIMBÓLICA",
+        symbolic_title:"Ver, codificar y liberar",
+        symbolic_text:"A partir de pensamientos, acciones, decisiones y entornos vitales, la escritura simbólica ayuda a reconocer patrones y convertirlos en imágenes de comprensión y liberación.",
 
         method_eyebrow:"Método HOMERO CLUB",
-        method_title:"A hombros de gigantes",
-        method_line1:"Aprende la metodología empleada por los grandes maestros para forjar sus obras.",
-        method_line2:"Adapta sus virtudes y enfoques a tu voz.",
-        method_line3:"Crea obras con identidad propia.",
-        method_chip1:"Lectura de maestros",
-        method_chip2:"Técnica",
-        method_chip3:"Símbolo",
-        method_chip4:"Filosofía",
-        method_chip5:"Reescritura",
-        method_chip6:"Corpus final",
+        method_title:"Escribir para ver",
+        method_text:"La palabra se convierte en una herramienta de atención: permite separar identidad y patrón, dar forma a lo interior y dejar que el símbolo abra camino.",
 
-        catalog_eyebrow:"Talleres destacados",
-        catalog_title:"Tres caminos de escritura",
-        catalog_text:"Una escuela para vivenciar la intensidad, el símbolo y contemplación: cada taller es una puerta, cada escritura otorga una mirada.",
+        p1_title:"La escritura como herramienta de autoconocimiento",
+        p1_text:"No priorizamos el adorno ni la emoción. Empezamos por la atención.",
+        p2_title:"El patrón no es la identidad",
+        p2_text:"Una persona no es su miedo, su culpa, su ansiedad, su deseo ni su máscara.",
+        p3_title:"La literatura no debe alimentar el ego espiritual",
+        p3_text:"No escribimos para parecer profundos. Escribimos para mirar con más honestidad.",
+        p4_title:"La forma descubre el interior",
+        p4_text:"Toda emoción se expresa en una forma. La forma vuelve visible la experiencia.",
+        p5_title:"El símbolo es reflejo y camino de liberación",
+        p5_text:"La tarea es crear una imagen viva que enseñe a ver mejor cada elección.",
+        p6_title:"La brevedad ayuda a ver el mecanismo",
+        p6_text:"Lo breve obliga a elegir. Y elegir revela.",
+        p7_title:"El silencio también escribe",
+        p7_text:"Lo que el texto calla puede ser más importante que lo que dice.",
 
-        micro_tag:"Taller 1",
-        micro_title_card:"Microrrelato",
-        micro_text_card:"Escribe con silencios, vacíos y sugerencia para abarcar lo máximo con lo mínimo.",
-        symbol_tag:"Taller 2",
-        symbol_title_card:"Escritura simbólica",
-        symbol_text_card:"Redescubre el significado oculto de los elementos narrativos y construye puentes entre culturas.",
-        haiku_tag:"Taller 3",
-        haiku_title_card:"Haiku",
-        haiku_text_card:"Siente en la piel el aware del mundo y vivencia lo sagrado latiendo tras cada instante.",
-        enter:"Entrar",
-        info:"Información",
-        info2:"Información",
+        app_eyebrow:"Práctica progresiva",
+        app_title:"APP HOMERO · 21 días",
+        app_text:"Una práctica breve y sostenida para crear hábito, afinar la atención y entrar en el método HOMERO CLUB.",
+        days_1:"Días 1–7",
+        days_1_title:"Haiku y contemplación",
+        days_1_text:"Mirar el mundo antes de interpretarlo.",
+        days_2:"Días 8–14",
+        days_2_title:"Koan y desarme de la mente de mono",
+        days_2_text:"Observar la mente que salta, controla, interpreta y se aferra.",
+        days_3:"Días 15–21",
+        days_3_title:"Escritura simbólica de autoconocimiento",
+        days_3_text:"Convertir patrones interiores en imágenes de comprensión y liberación.",
+        btn_open_app:"Abrir APP",
+        btn_request:"Solicitar acceso",
 
-        micro_section_kicker:"HOMERO CLUB · Taller de Microrrelato",
-        micro_section_title:"Microrrelato",
-        micro_section_subtitle:"Recorre la tradición de la escritura breve para forjar tu técnica, profundidad y sensibilidad.",
-        micro_section_lead:"A escribir se aprende leyendo a los maestros.",
+        school_eyebrow:"Escuela HOMERO CLUB",
+        school_title:"Tres senderos, una misma atención",
+        school_text:"La escuela reúne talleres y recorridos para profundizar en haiku, koan y escritura simbólica de autoconocimiento.",
+        school_haiku:"Taller de Haiku y contemplación",
+        school_haiku_text:"Instante, kigo, kire, ma, aware, wabi, sabi, karumi y escritura por eliminación.",
+        school_koan:"Taller de Koan y escritura paradójica",
+        school_koan_text:"Koan zen, paradoja, mente de mono, silencio, vacío fértil y ruptura de la respuesta automática.",
+        school_symbolic:"Taller de Escritura simbólica de autoconocimiento",
+        school_symbolic_text:"Pensamientos, acciones, decisiones, gustos y entornos vitales como puertas simbólicas hacia el patrón.",
+        school_full:"Curso completo HOMERO CLUB",
+        school_full_text:"Un recorrido integrado por las tres vías: mundo, mente y símbolo.",
+        btn_enrol:"Solicitar inscripción",
 
-        micro_method1_title:"Lectura técnica",
-        micro_method1_text:"Qué sucede, qué se omite, cómo trabaja el título y dónde aparece la fisura.",
-        micro_method2_title:"Lectura simbólica",
-        micro_method2_text:"Qué objeto, gesto, sombra, puerta, casa o ausencia concentra la vida profunda del texto.",
-        micro_method3_title:"Lectura filosófica",
-        micro_method3_text:"Qué pregunta humana permanece abierta: identidad, muerte, culpa, destino, memoria, deseo o pérdida.",
-        micro_method4_title:"Escritura propia",
-        micro_method4_text:"El alumno selecciona un mecanismo, lo razona y crea variaciones hasta construir una voz propia.",
+        mentor_title:"Cuerpo, palabra y conciencia",
+        mentor_text:"El Tai Chi libera al cuerpo a través de la conciencia. El haiku libera al ego a través del mundo. El koan libera a la mente en el vacío. La escritura simbólica enseña a ver.",
+        btn_mentor:"Descubrir The Mentor Room",
 
-        lines_title:"Líneas de análisis y escritura",
-        line1:"Fábula mínima y animal moral: el animal como máscara humana.",
-        line2:"Apólogo y sabiduría narrativa: la enseñanza sin sermón.",
-        line3:"Koan, paradoja y vacío: la lógica que se quiebra.",
-        line4:"Mito condensado: una historia antigua con centro nuevo.",
-        line5:"Fantástico mínimo: un detalle imposible altera lo real.",
-        line6:"Humor negro y crueldad breve: la risa como herida.",
-        line7:"Falso documento: certificados, informes, manuales y expedientes.",
-        line8:"Miniatura filosófica: una idea convertida en escena.",
-        line9:"Vida cotidiana y revelación mínima: una existencia en un gesto.",
-        line10:"Intertextualidad borgiana: la tradición como segunda lectura.",
+        cta_eyebrow:"Empieza a mirar de otro modo",
+        cta_title:"Vuelve al mundo interno de tu verdad",
+        cta_text:"No hace falta escribir para crear mundos nuevos. Hace falta escribir para volver al mundo interno de nuestra verdad.",
+        btn_access_2:"Solicitar acceso",
+        btn_app_2:"Entrar en la APP",
 
-        campus_eyebrow:"Aula virtual",
-        campus_title:"Campus privado HOMERO CLUB",
-        campus_text:"Acceso a materiales, módulos, recursos descargables y trabajo organizado por itinerarios.",
-        campus_btn:"Acceso privado",
-
-        poetics_eyebrow:"Poética HOMERO CLUB",
-        poetics_title:"Tres formas de mirar",
-        poetics_1:"“El microrrelato es un silencio en el que habita un centauro.”",
-        poetics_2:"“El cuento es el latido de un sueño hecho de símbolos.”",
-        poetics_3:"“El haiku es la expresión que nace tras el susurro de lo sagrado.”",
-
-        prices_eyebrow:"Precios y acceso",
-        prices_title:"Elige tu entrada a HOMERO CLUB",
-        prices_text:"Acceso inicial: 6 meses. Pago por Bizum tras verificación manual.",
-
-        price1_tag:"APP HOMERO · 21 días",
-        price1_title:"Hábito de escritura",
-        price1_li1:"21 días de práctica guiada.",
-        price1_li2:"Microrrelato, cuento simbólico y haiku.",
-        price1_li3:"Acceso inicial durante 6 meses.",
-
-        price2_tag:"Taller individual",
-        price2_title:"Un camino específico",
-        price2_li1:"Microrrelato, escritura simbólica o haiku.",
-        price2_li2:"Materiales, ejercicios y recursos.",
-        price2_li3:"Acceso inicial durante 6 meses.",
-
-        price3_tag:"Curso completo",
-        price3_title:"HOMERO CLUB completo",
-        price3_li1:"APP 21 días.",
-        price3_li2:"Tres talleres de escritura.",
-        price3_li3:"Acceso inicial durante 6 meses.",
-
-        buy_app:"Solicitar APP",
-        buy_workshop:"Solicitar taller",
-        buy_complete:"Solicitar curso completo",
-
-        flow_title:"Sistema de compra y acceso",
-        flow_1:"Rellena el formulario de solicitud.",
-        flow_2:"Indica si quieres APP, taller individual o curso completo.",
-        flow_3:"Recibirás confirmación manual con los datos de Bizum.",
-        flow_4:"Realiza el pago por Bizum.",
-        flow_5:"Tras la verificación, recibirás el acceso privado al aula.",
-        form_btn_main:"Abrir formulario de inscripción",
-
-        bizum_title:"Pago por Bizum",
-        bizum_text:"El pago se realiza por Bizum tras verificación manual. No olvides indicar tu nombre y el producto solicitado.",
-        bizum_btn:"Copiar Bizum",
-
-        contact_eyebrow:"Contacto",
-        contact_title:"Solicitar inscripción",
-        contact_text:"Completa el formulario oficial para solicitar acceso a HOMERO CLUB.",
-        contact_card_text:"Escuela de Escritura Creativa. Microrrelato, escritura simbólica y poesía japonesa.",
-        form_panel_text:"El formulario recoge tus datos de contacto, el producto solicitado y la información necesaria para activar tu acceso tras la verificación del pago.",
-        form_btn:"Abrir formulario de inscripción",
-        form_steps_title:"Pasos de inscripción",
-        form_step_1:"Abre el formulario oficial.",
-        form_step_2:"Selecciona APP, taller individual o curso completo.",
-        form_step_3:"Envía tus datos de contacto.",
-        form_step_4:"Recibirás confirmación manual.",
-        form_step_5:"Tras el pago por Bizum, se activa el acceso al aula.",
-        form_btn_2:"Ir al formulario",
-        email_btn:"Escribir email",
-        copy_email:"Copiar email",
-
-        footer_school:"Escuela de escritura creativa",
-        footer_tags:"Escribe. Descubre. Transforma."
+        footer_text:"Escritura, contemplación y autoconocimiento · Cuerpo, palabra y conciencia."
       },
 
-      en: {
-        topbar:"HOMERO CLUB · 21-day APP · Creative Writing School · Microfiction · Symbolic Writing · Haiku",
-        brand_subtitle:"Creative Writing School",
-        nav_app:"APP & School",
+      en:{
+        brand_sub:"Writing, contemplation and self-knowledge",
+        nav_paths:"Paths",
         nav_method:"Method",
-        nav_workshops:"Workshops",
-        nav_micro:"Microfiction",
-        nav_prices:"Prices",
-        nav_campus:"Virtual campus",
-        nav_contact:"Contact",
-        nav_private:"Private access",
+        nav_app:"21-day APP",
+        nav_school:"School",
+        nav_mentor:"The Mentor Room",
 
-        hero_eyebrow:"Homero Club · Passion for writing",
-        hero_title:"Write. Discover. Transform.",
-        hero_subtitle:"Your writing habit lives in our APP. Refine your practice through the depth of our school.",
-        hero_lead:"HOMERO CLUB was created for those who want to write with precision, intertextual depth and sensitivity: enter the path of microfiction, symbolic writing and Japanese poetry (haiku).",
-        hero_btn1:"See APP & School",
-        hero_btn2:"Microfiction Workshop",
-        hero_btn3:"Request enrolment",
+        hero_eyebrow:"Body, word and consciousness",
+        hero_title:"HOMERO CLUB<br>Writing, contemplation and self-knowledge",
+        hero_lead:"A practice for seeing more clearly, recognizing patterns and transforming the relationship with one’s own story through three paths: haiku, koan and symbolic writing.",
+        hero_quote:"HOMERO CLUB is a door made of words toward self-knowledge.",
+        btn_method:"Discover the method",
+        btn_app:"Enter the APP",
+        btn_access:"Request access",
 
-        products_eyebrow:"APP & School",
-        products_title:"Two ways to enter HOMERO CLUB",
-        products_text:"Create your habit with our APP. Discover all our tools in the SCHOOL. Learn from the great masters of each genre.",
+        central_quote:"Writing, as a mirror of the inner life, liberates; as mere ornament, it deceives.",
+        central_text:"We do not write to decorate identity. We write to see it.",
 
-        app_tag:"21-day APP",
-        app_title:"A daily practice",
-        app_li1:"Days 1-7: Microfiction.",
-        app_li2:"Days 8-14: Symbolic and philosophical story.",
-        app_li3:"Days 15-21: Japanese poetry (haiku).",
-        app_btn:"See APP access",
+        paths_eyebrow:"Three paths of practice",
+        paths_title:"Haiku, koan and symbolic writing",
+        paths_text:"Three brief forms of attention: looking at the world, entering the crack of the mind, and turning inner patterns into visible symbols.",
 
-        school_tag:"Writing School",
-        school_title:"Workshops and full course",
-        school_li1:"Microfiction Workshop.",
-        school_li2:"Symbolic Writing Workshop.",
-        school_li3:"Japanese Poetry Workshop (haiku).",
-        school_li4:"Complete HOMERO CLUB Writing Course.",
-        school_btn:"See school",
+        haiku_title:"Looking without possessing",
+        haiku_text:"Haiku teaches us to pause before the world without covering it with interpretations. A practice of attention, silence and presence.",
+
+        koan_title:"Flowing with the crack",
+        koan_text:"Zen koan and brief traditions of paradox break automatic logic. Where the mind stops controlling, another way of seeing begins.",
+
+        symbolic_label:"SYMBOLIC WRITING",
+        symbolic_title:"Seeing, encoding and liberating",
+        symbolic_text:"Starting from thoughts, actions, decisions and life environments, symbolic writing helps recognize patterns and turn them into images of understanding and liberation.",
 
         method_eyebrow:"HOMERO CLUB Method",
-        method_title:"On the shoulders of giants",
-        method_line1:"Learn the methodology used by the great masters to forge their works.",
-        method_line2:"Adapt their virtues and approaches to your voice.",
-        method_line3:"Create works with your own identity.",
-        method_chip1:"Reading masters",
-        method_chip2:"Technique",
-        method_chip3:"Symbol",
-        method_chip4:"Philosophy",
-        method_chip5:"Rewriting",
-        method_chip6:"Final corpus",
+        method_title:"Writing to see",
+        method_text:"The word becomes a tool of attention: it helps separate identity from pattern, give form to the inner life and allow the symbol to open a path.",
 
-        catalog_eyebrow:"Featured workshops",
-        catalog_title:"Three paths of writing",
-        catalog_text:"A school to experience intensity, symbol and contemplation: each workshop is a doorway, each form of writing grants a way of seeing.",
+        p1_title:"Writing as a tool for self-knowledge",
+        p1_text:"We do not prioritize ornament or emotion. We begin with attention.",
+        p2_title:"The pattern is not identity",
+        p2_text:"A person is not their fear, guilt, anxiety, desire or mask.",
+        p3_title:"Literature must not feed the spiritual ego",
+        p3_text:"We do not write to appear profound. We write to look more honestly.",
+        p4_title:"Form reveals the inner life",
+        p4_text:"Every emotion expresses itself in a form. Form makes experience visible.",
+        p5_title:"The symbol is reflection and path of liberation",
+        p5_text:"The task is to create a living image that teaches us to see each choice more clearly.",
+        p6_title:"Brevity helps reveal the mechanism",
+        p6_text:"The brief form forces us to choose. And choosing reveals.",
+        p7_title:"Silence also writes",
+        p7_text:"What the text leaves unsaid may matter more than what it says.",
 
-        micro_tag:"Workshop 1",
-        micro_title_card:"Microfiction",
-        micro_text_card:"Write with silences, gaps and suggestion to contain the maximum in the minimum.",
-        symbol_tag:"Workshop 2",
-        symbol_title_card:"Symbolic writing",
-        symbol_text_card:"Rediscover the hidden meaning of narrative elements and build bridges between cultures.",
-        haiku_tag:"Workshop 3",
-        haiku_title_card:"Haiku",
-        haiku_text_card:"Feel the world’s aware on your skin and experience the sacred beating behind each instant.",
-        enter:"Enter",
-        info:"Information",
-        info2:"Information",
+        app_eyebrow:"Progressive practice",
+        app_title:"HOMERO APP · 21 days",
+        app_text:"A brief and sustained practice to build habit, refine attention and enter the HOMERO CLUB method.",
+        days_1:"Days 1–7",
+        days_1_title:"Haiku and contemplation",
+        days_1_text:"Looking at the world before interpreting it.",
+        days_2:"Days 8–14",
+        days_2_title:"Koan and disarming the monkey mind",
+        days_2_text:"Observing the mind that jumps, controls, interprets and clings.",
+        days_3:"Days 15–21",
+        days_3_title:"Symbolic writing for self-knowledge",
+        days_3_text:"Turning inner patterns into images of understanding and liberation.",
+        btn_open_app:"Open APP",
+        btn_request:"Request access",
 
-        micro_section_kicker:"HOMERO CLUB · Microfiction Workshop",
-        micro_section_title:"Microfiction",
-        micro_section_subtitle:"Explore the tradition of brief writing to forge your technique, depth and sensitivity.",
-        micro_section_lead:"One learns to write by reading the masters.",
+        school_eyebrow:"HOMERO CLUB School",
+        school_title:"Three paths, one attention",
+        school_text:"The school offers workshops and pathways to deepen haiku, koan and symbolic writing for self-knowledge.",
+        school_haiku:"Haiku and Contemplation Workshop",
+        school_haiku_text:"Instant, kigo, kire, ma, aware, wabi, sabi, karumi and revision by elimination.",
+        school_koan:"Koan and Paradoxical Writing Workshop",
+        school_koan_text:"Zen koan, paradox, monkey mind, silence, fertile emptiness and the rupture of automatic response.",
+        school_symbolic:"Symbolic Writing for Self-Knowledge Workshop",
+        school_symbolic_text:"Thoughts, actions, decisions, tastes and life environments as symbolic doors toward the pattern.",
+        school_full:"Complete HOMERO CLUB Course",
+        school_full_text:"An integrated journey through the three paths: world, mind and symbol.",
+        btn_enrol:"Request enrolment",
 
-        micro_method1_title:"Technical reading",
-        micro_method1_text:"What happens, what is omitted, how the title works and where the fissure appears.",
-        micro_method2_title:"Symbolic reading",
-        micro_method2_text:"What object, gesture, shadow, door, house or absence concentrates the deep life of the text.",
-        micro_method3_title:"Philosophical reading",
-        micro_method3_text:"What human question remains open: identity, death, guilt, destiny, memory, desire or loss.",
-        micro_method4_title:"Own writing",
-        micro_method4_text:"The student selects a mechanism, reasons through it and creates variations until forging an individual voice.",
+        mentor_title:"Body, word and consciousness",
+        mentor_text:"Tai Chi liberates the body through consciousness. Haiku liberates the ego through the world. Koan liberates the mind into emptiness. Symbolic writing teaches us to see.",
+        btn_mentor:"Discover The Mentor Room",
 
-        lines_title:"Lines of analysis and writing",
-        line1:"Minimal fable and moral animal: the animal as a human mask.",
-        line2:"Apologue and narrative wisdom: teaching without sermon.",
-        line3:"Koan, paradox and emptiness: logic breaking open.",
-        line4:"Condensed myth: an ancient story with a new center.",
-        line5:"Minimal fantastic: one impossible detail alters reality.",
-        line6:"Black humour and brief cruelty: laughter as wound.",
-        line7:"False document: certificates, reports, manuals and files.",
-        line8:"Philosophical miniature: an idea turned into scene.",
-        line9:"Everyday life and minimal revelation: an existence in one gesture.",
-        line10:"Borgesian intertextuality: tradition as a second reading.",
+        cta_eyebrow:"Begin to see differently",
+        cta_title:"Return to the inner world of your truth",
+        cta_text:"There is no need to write in order to create new worlds. What is needed is to write in order to return to the inner world of our truth.",
+        btn_access_2:"Request access",
+        btn_app_2:"Enter the APP",
 
-        campus_eyebrow:"Virtual campus",
-        campus_title:"Private HOMERO CLUB Campus",
-        campus_text:"Access to materials, modules, downloadable resources and itinerary-based work.",
-        campus_btn:"Private access",
-
-        poetics_eyebrow:"HOMERO CLUB Poetics",
-        poetics_title:"Three ways of seeing",
-        poetics_1:"“Microfiction is a silence inhabited by a centaur.”",
-        poetics_2:"“The story is the heartbeat of a dream made of symbols.”",
-        poetics_3:"“Haiku is the expression born after the whisper of the sacred.”",
-
-        prices_eyebrow:"Prices and access",
-        prices_title:"Choose your entrance to HOMERO CLUB",
-        prices_text:"Initial access: 6 months. Payment by Bizum after manual verification.",
-
-        price1_tag:"HOMERO APP · 21 days",
-        price1_title:"Writing habit",
-        price1_li1:"21 days of guided practice.",
-        price1_li2:"Microfiction, symbolic story and haiku.",
-        price1_li3:"Initial access for 6 months.",
-
-        price2_tag:"Individual workshop",
-        price2_title:"A specific path",
-        price2_li1:"Microfiction, symbolic writing or haiku.",
-        price2_li2:"Materials, exercises and resources.",
-        price2_li3:"Initial access for 6 months.",
-
-        price3_tag:"Full course",
-        price3_title:"Complete HOMERO CLUB",
-        price3_li1:"21-day APP.",
-        price3_li2:"Three writing workshops.",
-        price3_li3:"Initial access for 6 months.",
-
-        buy_app:"Request APP",
-        buy_workshop:"Request workshop",
-        buy_complete:"Request full course",
-
-        flow_title:"Purchase and access system",
-        flow_1:"Fill in the request form.",
-        flow_2:"Indicate whether you want the APP, an individual workshop or the full course.",
-        flow_3:"You will receive manual confirmation with Bizum details.",
-        flow_4:"Make the payment by Bizum.",
-        flow_5:"After verification, you will receive private classroom access.",
-        form_btn_main:"Open enrolment form",
-
-        bizum_title:"Bizum payment",
-        bizum_text:"Payment is made by Bizum after manual verification. Remember to include your name and chosen product.",
-        bizum_btn:"Copy Bizum",
-
-        contact_eyebrow:"Contact",
-        contact_title:"Request enrolment",
-        contact_text:"Complete the official form to request access to HOMERO CLUB.",
-        contact_card_text:"Creative Writing School. Microfiction, symbolic writing and Japanese poetry.",
-        form_panel_text:"The form collects your contact details, selected product and the information needed to activate your access after payment verification.",
-        form_btn:"Open enrolment form",
-        form_steps_title:"Enrolment steps",
-        form_step_1:"Open the official form.",
-        form_step_2:"Select APP, individual workshop or full course.",
-        form_step_3:"Send your contact details.",
-        form_step_4:"You will receive manual confirmation.",
-        form_step_5:"After Bizum payment, classroom access is activated.",
-        form_btn_2:"Go to form",
-        email_btn:"Write email",
-        copy_email:"Copy email",
-
-        footer_school:"Creative Writing School",
-        footer_tags:"Write. Discover. Transform."
+        footer_text:"Writing, contemplation and self-knowledge · Body, word and consciousness."
       }
     };
 
-    function setLanguage(lang){
-      const dictionary = i18n[lang] || i18n.es;
+    function setLang(lang){
+      currentLang = lang;
+      localStorage.setItem("homero_lang", lang);
       document.documentElement.lang = lang;
 
-      document.querySelectorAll("[data-i18n]").forEach(el => {
+      document.querySelectorAll("[data-lang-btn]").forEach(function(btn){
+        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      });
+
+      document.querySelectorAll("[data-i18n]").forEach(function(el){
         const key = el.getAttribute("data-i18n");
-        if(dictionary[key]) el.textContent = dictionary[key];
+        if(I18N[lang] && I18N[lang][key]){
+          el.textContent = I18N[lang][key];
+        }
       });
 
-      document.querySelectorAll("[data-img-es][data-img-en]").forEach(img => {
-        img.src = lang === "en"
-          ? img.getAttribute("data-img-en")
-          : img.getAttribute("data-img-es");
-      });
-
-      document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      localStorage.setItem("hc_lang", lang);
-    }
-
-    document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-    });
-
-    const savedLang = localStorage.getItem("hc_lang") || "es";
-    setLanguage(savedLang);
-
-    const copyEmail = document.getElementById("copyEmail");
-    if(copyEmail){
-      copyEmail.addEventListener("click", async () => {
-        try{
-          await navigator.clipboard.writeText(CONFIG.email);
-          const old = copyEmail.textContent;
-          copyEmail.textContent = document.documentElement.lang === "en" ? "Email copied" : "Email copiado";
-          setTimeout(() => copyEmail.textContent = old, 1600);
-        }catch(e){
-          alert(CONFIG.email);
+      document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+        const key = el.getAttribute("data-i18n-html");
+        if(I18N[lang] && I18N[lang][key]){
+          el.innerHTML = I18N[lang][key];
         }
       });
     }
 
-    const copyBizum = document.getElementById("copyBizum");
-    if(copyBizum){
-      copyBizum.addEventListener("click", async () => {
-        try{
-          await navigator.clipboard.writeText(CONFIG.bizumMessage);
-          const old = copyBizum.textContent;
-          copyBizum.textContent = document.documentElement.lang === "en" ? "Bizum copied" : "Bizum copiado";
-          setTimeout(() => copyBizum.textContent = old, 1600);
-        }catch(e){
-          alert(CONFIG.bizumMessage);
-        }
-      });
+    function openForm(){
+      const url = currentLang === "en" ? FORM_URL_EN : FORM_URL_ES;
+      if(!url || url === "AQUI_PEGA_EL_FORMULARIO_INGLES"){
+        alert(currentLang === "en"
+          ? "The English enrolment form is not connected yet."
+          : "El formulario inglés todavía no está conectado.");
+        return;
+      }
+      window.open(url, "_blank");
     }
+
+    function openApp(){
+      window.open(APP_URL, "_blank");
+    }
+
+    function openMentor(){
+      if(!MENTOR_URL || MENTOR_URL === "#"){
+        alert(currentLang === "en"
+          ? "The Mentor Room page will be connected soon."
+          : "La página de The Mentor Room se conectará próximamente.");
+        return;
+      }
+      window.open(MENTOR_URL, "_blank");
+    }
+
+    setLang(currentLang);
   </script>
 </body>
 </html>
