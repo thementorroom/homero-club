@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>THE MENTOR ROOM · Cuerpo, palabra y conciencia</title>
-  <meta name="description" content="The Mentor Room reúne prácticas de conciencia: Tai Chi como vía del cuerpo y HOMERO CLUB como vía de la palabra. Escritura, contemplación y autoconocimiento.">
+  <meta name="description" content="The Mentor Room reúne prácticas de conciencia: Tai Chi como vía del cuerpo y HOMERO CLUB como vía de la palabra.">
 
   <style>
     :root{
@@ -34,15 +34,25 @@
       font-family:Georgia,"Times New Roman",serif;
       line-height:1.58;
       background:
-        radial-gradient(circle at 8% 6%,rgba(197,155,75,.15),transparent 25%),
+        radial-gradient(circle at 8% 6%,rgba(197,155,75,.14),transparent 25%),
         radial-gradient(circle at 88% 14%,rgba(23,24,39,.08),transparent 30%),
         linear-gradient(180deg,#fffaf0,#f4e7d3 48%,#fffaf0);
       overflow-x:hidden;
     }
 
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
 
     h1,h2,h3,p,a,small,strong{
       text-wrap:pretty;
@@ -51,6 +61,29 @@
     h1,h2,h3{
       overflow-wrap:normal;
       word-break:normal;
+      line-height:1.02;
+      margin:.2rem 0 .9rem;
+    }
+
+    h1{
+      font-size:clamp(3rem,6.1vw,5.6rem);
+      letter-spacing:-.052em;
+      line-height:.96;
+    }
+
+    h2{
+      font-size:clamp(2.1rem,4.4vw,4rem);
+      letter-spacing:-.042em;
+    }
+
+    h3{
+      font-size:clamp(1.35rem,2vw,1.85rem);
+      letter-spacing:-.02em;
+    }
+
+    p{
+      margin:.45rem 0 1rem;
+      font-size:1.06rem;
     }
 
     .wrap{
@@ -67,31 +100,8 @@
       font-weight:900;
     }
 
-    .muted{color:var(--soft)}
-
-    h1,h2,h3{
-      line-height:1.02;
-      margin:.2rem 0 .9rem;
-    }
-
-    h1{
-      font-size:clamp(3.2rem,7vw,6.8rem);
-      letter-spacing:-.055em;
-    }
-
-    h2{
-      font-size:clamp(2.15rem,4.6vw,4.25rem);
-      letter-spacing:-.045em;
-    }
-
-    h3{
-      font-size:clamp(1.35rem,2.1vw,1.9rem);
-      letter-spacing:-.02em;
-    }
-
-    p{
-      margin:.45rem 0 1rem;
-      font-size:1.06rem;
+    .muted{
+      color:var(--soft);
     }
 
     .btn{
@@ -110,7 +120,9 @@
       text-align:center;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .primary{
       background:linear-gradient(135deg,var(--gold),var(--gold2));
@@ -119,7 +131,7 @@
     }
 
     .secondary{
-      background:rgba(255,252,246,.88);
+      background:rgba(255,252,246,.9);
       color:var(--ink);
       border-color:rgba(17,20,38,.14);
     }
@@ -145,14 +157,16 @@
       overflow:hidden;
     }
 
-    .pad{padding:clamp(1.25rem,3vw,2.15rem)}
+    .pad{
+      padding:clamp(1.25rem,3vw,2.15rem);
+    }
 
     header{
       position:sticky;
       top:0;
       z-index:99;
       backdrop-filter:blur(16px);
-      background:rgba(255,248,235,.9);
+      background:rgba(255,248,235,.92);
       border-bottom:1px solid rgba(17,20,38,.10);
     }
 
@@ -173,14 +187,25 @@
       min-width:0;
     }
 
-    .brand img{
+    .mark{
       width:48px;
       height:48px;
       border-radius:50%;
-      object-fit:cover;
-      background:#fffaf0;
-      border:1px solid rgba(197,155,75,.45);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       flex:0 0 auto;
+      background:
+        radial-gradient(circle at 30% 20%,#fffaf0,rgba(255,248,235,.85)),
+        linear-gradient(135deg,var(--gold),var(--gold2));
+      border:1px solid rgba(197,155,75,.65);
+      box-shadow:0 8px 22px rgba(17,20,38,.09);
+      color:var(--night);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:.62rem;
+      line-height:.85;
+      text-align:center;
+      letter-spacing:.02em;
     }
 
     .brand small{
@@ -217,7 +242,7 @@
       gap:.25rem;
       padding:.25rem;
       border-radius:999px;
-      background:rgba(255,252,246,.86);
+      background:rgba(255,252,246,.88);
       border:1px solid rgba(197,155,75,.32);
       margin-left:.35rem;
       flex:0 0 auto;
@@ -228,15 +253,24 @@
       color:#fff;
     }
 
+    section{
+      padding:clamp(3rem,6vw,5.2rem) 0;
+    }
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:1.4rem;
+    }
+
     .hero{
-      padding:clamp(3rem,7vw,6.4rem) 0 3rem;
+      padding:clamp(3rem,7vw,6rem) 0 3rem;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.04fr .96fr;
-      gap:1.2rem;
-      align-items:stretch;
+      grid-template-columns:.92fr 1.08fr;
+      gap:2rem;
+      align-items:center;
     }
 
     .hero-copy{
@@ -247,35 +281,39 @@
     }
 
     .hero-copy .lead{
-      font-size:clamp(1.14rem,2vw,1.36rem);
+      font-size:clamp(1.08rem,1.65vw,1.25rem);
       color:rgba(17,20,38,.78);
-      max-width:720px;
+      max-width:660px;
     }
 
     .hero-image{
-      min-height:520px;
+      min-height:560px;
       position:relative;
       background:
-        linear-gradient(180deg,rgba(23,24,39,.05),rgba(23,24,39,.20)),
-        url("assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-003");
+        linear-gradient(180deg,rgba(255,248,235,.02),rgba(17,20,38,.12)),
+        url("assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-004");
       background-size:cover;
-      background-position:center;
+      background-position:center center;
       border-radius:38px;
       box-shadow:var(--shadow);
       border:1px solid rgba(17,20,38,.12);
       overflow:hidden;
       background-color:#efe6d5;
+      isolation:isolate;
     }
 
     .hero-image:after{
       content:"";
       position:absolute;
-      inset:auto 1rem 1rem 1rem;
-      min-height:132px;
+      left:1rem;
+      right:1rem;
+      bottom:1rem;
+      min-height:124px;
       border-radius:28px;
-      background:linear-gradient(180deg,rgba(255,248,235,.25),rgba(255,248,235,.92));
-      backdrop-filter:blur(6px);
-      border:1px solid rgba(255,255,255,.45);
+      background:linear-gradient(180deg,rgba(255,248,235,.55),rgba(255,248,235,.96));
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.48);
+      z-index:1;
     }
 
     .hero-note{
@@ -288,8 +326,8 @@
     }
 
     .hero-note p{
-      max-width:520px;
-      font-size:1.16rem;
+      max-width:650px;
+      font-size:1.08rem;
       font-weight:700;
       margin:0;
     }
@@ -321,13 +359,11 @@
       font-size:1.16rem;
     }
 
-    section{
-      padding:clamp(3rem,6vw,5.2rem) 0;
-    }
-
-    .section-head{
-      max-width:860px;
-      margin-bottom:1.4rem;
+    .grid2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+      align-items:stretch;
     }
 
     .grid3{
@@ -336,11 +372,11 @@
       gap:1rem;
     }
 
-    .grid2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:1rem;
-      align-items:stretch;
+    .mentor-path-card{
+      min-height:290px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .path-card{
@@ -350,25 +386,46 @@
     }
 
     .path-img{
-      height:245px;
+      height:auto;
+      aspect-ratio:16/10;
+      min-height:320px;
       background:#efe6d5;
       background-size:cover;
-      background-position:center;
+      background-position:center center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .path-img:after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:30%;
+      background:linear-gradient(180deg,rgba(255,248,235,0),rgba(255,248,235,.86));
+      pointer-events:none;
     }
 
     .path-card:nth-child(1) .path-img{
-      background-image:url("assets/img/imagen-haiku-contemplacion.webp?v=tmr-003");
+      background-image:url("assets/img/imagen-haiku-contemplacion.webp?v=tmr-004");
+      background-position:center center;
     }
 
     .path-card:nth-child(2) .path-img{
-      background-image:url("assets/img/imagen-koan-grieta.webp?v=tmr-003");
+      background-image:url("assets/img/imagen-koan-grieta.webp?v=tmr-004");
+      background-position:center center;
     }
 
     .path-card:nth-child(3) .path-img{
-      background-image:url("assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-003");
+      background-image:url("assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-004");
+      background-position:center center;
     }
 
-    .path-card .pad{flex:1}
+    .path-card .pad{
+      flex:1;
+      background:rgba(255,252,246,.96);
+    }
 
     .num{
       width:44px;
@@ -439,15 +496,17 @@
       border:1px solid rgba(255,255,255,.14);
     }
 
-    .day-card .eyebrow{color:#f0d991}
+    .day-card .eyebrow{
+      color:#f0d991;
+    }
 
     .mentor{
       background:
-        linear-gradient(180deg,rgba(255,248,235,.58),rgba(255,252,246,.94)),
-        url("assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-003");
+        linear-gradient(180deg,rgba(255,248,235,.35),rgba(255,252,246,.92)),
+        url("assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-004");
       background-size:cover;
-      background-position:center;
-      min-height:440px;
+      background-position:center center;
+      min-height:520px;
       display:flex;
       align-items:flex-end;
       border-radius:38px;
@@ -459,7 +518,9 @@
 
     .mentor .card{
       margin:1rem;
-      max-width:720px;
+      max-width:760px;
+      background:rgba(255,252,246,.94);
+      backdrop-filter:blur(8px);
     }
 
     .cta{
@@ -498,10 +559,16 @@
       .principles{
         grid-template-columns:repeat(3,1fr);
       }
+
+      h1{
+        font-size:clamp(2.8rem,6.8vw,5rem);
+      }
     }
 
     @media(max-width:1020px){
-      nav a{display:none}
+      nav a{
+        display:none;
+      }
 
       .hero-grid,
       .grid2,
@@ -510,7 +577,7 @@
       }
 
       .hero-image{
-        min-height:420px;
+        min-height:430px;
       }
 
       .principles{
@@ -522,7 +589,7 @@
       }
 
       .path-img{
-        height:260px;
+        min-height:380px;
       }
     }
 
@@ -537,11 +604,6 @@
         padding-right:14px;
       }
 
-      header{
-        position:sticky;
-        top:0;
-      }
-
       .topbar{
         min-height:auto;
         padding:.75rem 0;
@@ -552,9 +614,10 @@
         gap:.55rem;
       }
 
-      .brand img{
+      .mark{
         width:40px;
         height:40px;
+        font-size:.54rem;
       }
 
       .brand strong{
@@ -637,13 +700,16 @@
       }
 
       .hero-image{
-        min-height:290px;
+        min-height:330px;
         border-radius:24px;
+        background-position:center center;
       }
 
       .hero-image:after{
-        inset:auto .75rem .75rem .75rem;
-        min-height:92px;
+        left:.75rem;
+        right:.75rem;
+        bottom:.75rem;
+        min-height:96px;
         border-radius:20px;
       }
 
@@ -654,7 +720,7 @@
       }
 
       .hero-note p{
-        font-size:.96rem;
+        font-size:.92rem;
         margin:0;
       }
 
@@ -689,7 +755,7 @@
       }
 
       .path-img{
-        height:205px;
+        min-height:260px;
       }
 
       .num{
@@ -720,9 +786,9 @@
       }
 
       .mentor{
-        min-height:auto;
+        min-height:390px;
         padding:1rem 0;
-        background-position:center;
+        background-position:center center;
       }
 
       .mentor .card{
@@ -770,11 +836,11 @@
       }
 
       .hero-image{
-        min-height:260px;
+        min-height:300px;
       }
 
       .path-img{
-        height:185px;
+        min-height:230px;
       }
     }
   </style>
@@ -784,7 +850,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR ROOM">
-        <img src="assets/img/logo-homero-club-circular.webp" alt="THE MENTOR ROOM">
+        <span class="mark">THE<br>MENTOR</span>
         <div>
           <strong>THE MENTOR ROOM</strong>
           <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
@@ -838,19 +904,23 @@
         </div>
 
         <div class="grid2">
-          <article class="card pad">
-            <p class="eyebrow">TAI CHI</p>
-            <h3 data-i18n="mentor_path_body_title">La vía del cuerpo</h3>
-            <p class="muted" data-i18n="mentor_path_body_text">Movimiento lento, respiración, equilibrio y atención para liberar el cuerpo a través de la conciencia.</p>
+          <article class="card pad mentor-path-card">
+            <div>
+              <p class="eyebrow">TAI CHI</p>
+              <h3 data-i18n="mentor_path_body_title">La vía del cuerpo</h3>
+              <p class="muted" data-i18n="mentor_path_body_text">Movimiento lento, respiración, equilibrio y atención para liberar el cuerpo a través de la conciencia.</p>
+            </div>
             <div class="actions">
               <a class="btn primary" href="#mentor" data-i18n="btn_taichi">Ver Tai Chi</a>
             </div>
           </article>
 
-          <article class="card pad">
-            <p class="eyebrow">HOMERO CLUB</p>
-            <h3 data-i18n="mentor_path_word_title">La vía de la palabra</h3>
-            <p class="muted" data-i18n="mentor_path_word_text">Escritura, contemplación y autoconocimiento a través de haiku, koan y escritura simbólica.</p>
+          <article class="card pad mentor-path-card">
+            <div>
+              <p class="eyebrow">HOMERO CLUB</p>
+              <h3 data-i18n="mentor_path_word_title">La vía de la palabra</h3>
+              <p class="muted" data-i18n="mentor_path_word_text">Escritura, contemplación y autoconocimiento a través de haiku, koan y escritura simbólica.</p>
+            </div>
             <div class="actions">
               <a class="btn secondary" href="#vias" data-i18n="btn_homero">Explorar HOMERO CLUB</a>
             </div>
@@ -923,32 +993,26 @@
             <strong data-i18n="p1_title">La escritura como herramienta de autoconocimiento</strong>
             <p data-i18n="p1_text">No priorizamos el adorno ni la emoción. Empezamos por la atención.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p2_title">El patrón no es la identidad</strong>
             <p data-i18n="p2_text">Una persona no es su miedo, su culpa, su ansiedad, su deseo ni su máscara.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p3_title">La literatura no debe alimentar el ego espiritual</strong>
             <p data-i18n="p3_text">No escribimos para parecer profundos. Escribimos para mirar con más honestidad.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p4_title">La forma descubre el interior</strong>
             <p data-i18n="p4_text">Toda emoción se expresa en una forma. La forma vuelve visible la experiencia.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p5_title">El símbolo es reflejo y camino de liberación</strong>
             <p data-i18n="p5_text">La tarea es crear una imagen viva que enseñe a ver mejor cada elección.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p6_title">La brevedad ayuda a ver el mecanismo</strong>
             <p data-i18n="p6_text">Lo breve obliga a elegir. Y elegir revela.</p>
           </div>
-
           <div class="principle">
             <strong data-i18n="p7_title">El silencio también escribe</strong>
             <p data-i18n="p7_text">Lo que el texto calla puede ser más importante que lo que dice.</p>
