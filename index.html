@@ -34,8 +34,8 @@
       font-family:Georgia,"Times New Roman",serif;
       line-height:1.58;
       background:
-        radial-gradient(circle at 8% 6%,rgba(197,155,75,.14),transparent 25%),
-        radial-gradient(circle at 88% 14%,rgba(23,24,39,.08),transparent 30%),
+        radial-gradient(circle at 8% 6%, rgba(197,155,75,.14), transparent 25%),
+        radial-gradient(circle at 88% 14%, rgba(23,24,39,.08), transparent 30%),
         linear-gradient(180deg,#fffaf0,#f4e7d3 48%,#fffaf0);
       overflow-x:hidden;
     }
@@ -87,7 +87,7 @@
     }
 
     .wrap{
-      width:min(1180px,calc(100% - 2rem));
+      width:min(1180px, calc(100% - 2rem));
       margin:auto;
     }
 
@@ -160,26 +160,18 @@
       padding:clamp(1.25rem,3vw,2.15rem);
     }
 
-    .mark{
-      width:48px;
-      height:48px;
+    /* LOGOS */
+    .brand-logo,
+    .footer-logo{
+      width:52px;
+      height:52px;
       border-radius:50%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      object-fit:cover;
+      object-position:center;
       flex:0 0 auto;
-      background:
-        radial-gradient(circle at 30% 20%,#fffaf0,rgba(255,248,235,.85)),
-        linear-gradient(135deg,var(--gold),var(--gold2));
-      border:1px solid rgba(197,155,75,.65);
+      border:1px solid rgba(197,155,75,.42);
       box-shadow:0 8px 22px rgba(17,20,38,.09);
-      color:var(--night);
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:.58rem;
-      line-height:.84;
-      text-align:center;
-      letter-spacing:.03em;
-      font-weight:900;
+      background:#fff8eb;
     }
 
     header{
@@ -204,8 +196,13 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:.75rem;
+      gap:.85rem;
       min-width:0;
+    }
+
+    .brand strong{
+      display:block;
+      line-height:1.1;
     }
 
     .brand small{
@@ -213,7 +210,8 @@
       color:var(--soft);
       font-weight:800;
       font-size:.78rem;
-      margin-top:.1rem;
+      margin-top:.12rem;
+      line-height:1.15;
     }
 
     nav{
@@ -268,7 +266,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
+      grid-template-columns:.95fr 1.05fr;
       gap:2rem;
       align-items:center;
     }
@@ -281,8 +279,7 @@
 
     .hero-frame{
       position:relative;
-      min-height:500px;
-      max-height:560px;
+      aspect-ratio:16 / 10;
       border-radius:34px;
       overflow:hidden;
       box-shadow:var(--shadow);
@@ -293,7 +290,6 @@
     .hero-frame img{
       width:100%;
       height:100%;
-      min-height:500px;
       object-fit:cover;
       object-position:center;
       filter:saturate(1.02) contrast(1.02);
@@ -468,29 +464,17 @@
       color:#f0d991;
     }
 
+    /* TAI CHI */
     .mentor-showcase{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:1rem;
+      grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      gap:1.25rem;
       align-items:stretch;
     }
 
+    .mentor-copy,
     .mentor-image{
-      min-height:520px;
-      border-radius:34px;
-      overflow:hidden;
-      border:1px solid rgba(17,20,38,.12);
-      box-shadow:var(--shadow);
-      background:#efe6d5;
-    }
-
-    .mentor-image img{
-      width:100%;
-      height:100%;
-      min-height:520px;
-      object-fit:cover;
-      object-position:center;
-      filter:saturate(1.02) contrast(1.02);
+      min-width:0;
     }
 
     .mentor-copy{
@@ -501,7 +485,28 @@
       border:1px solid var(--line);
       border-radius:34px;
       box-shadow:var(--shadow);
-      padding:clamp(1.5rem,4vw,3.5rem);
+      padding:clamp(1.5rem,4vw,3.3rem);
+      position:relative;
+      z-index:2;
+    }
+
+    .mentor-image{
+      aspect-ratio:16 / 10;
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(17,20,38,.12);
+      box-shadow:var(--shadow);
+      background:#efe6d5;
+      position:relative;
+      z-index:1;
+    }
+
+    .mentor-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(1.02) contrast(1.02);
     }
 
     .cta{
@@ -534,18 +539,20 @@
     .footer-brand{
       display:flex;
       align-items:center;
-      gap:.75rem;
+      gap:.85rem;
+      min-width:0;
     }
 
-    footer .mark{
-      background:
-        radial-gradient(circle at 30% 20%,#fffaf0,rgba(255,248,235,.88)),
-        linear-gradient(135deg,var(--gold),var(--gold2));
+    .footer-brand strong{
+      line-height:1.1;
     }
 
     footer small{
-      color:rgba(255,255,255,.68);
+      color:rgba(255,255,255,.72);
       font-weight:700;
+      line-height:1.35;
+      text-align:right;
+      display:block;
     }
 
     @media(max-width:1100px){
@@ -561,9 +568,20 @@
 
       .hero-grid,
       .grid2,
-      .grid3,
+      .grid3{
+        grid-template-columns:1fr;
+      }
+
       .mentor-showcase{
         grid-template-columns:1fr;
+      }
+
+      .mentor-copy{
+        order:1;
+      }
+
+      .mentor-image{
+        order:2;
       }
 
       .principles{
@@ -600,10 +618,10 @@
         align-items:center;
       }
 
-      .mark{
-        width:40px;
-        height:40px;
-        font-size:.52rem;
+      .brand-logo,
+      .footer-logo{
+        width:42px;
+        height:42px;
       }
 
       .brand strong{
@@ -667,10 +685,8 @@
         width:100%;
       }
 
-      .hero-frame,
-      .hero-frame img{
-        min-height:320px;
-        max-height:none;
+      .hero-frame{
+        aspect-ratio:1 / 1;
         border-radius:24px;
       }
 
@@ -718,9 +734,8 @@
         grid-template-columns:1fr;
       }
 
-      .mentor-image,
-      .mentor-image img{
-        min-height:340px;
+      .mentor-image{
+        aspect-ratio:1 / 1;
       }
 
       .mentor-copy{
@@ -733,6 +748,10 @@
 
       .footer-brand{
         margin-bottom:1rem;
+      }
+
+      footer small{
+        text-align:left;
       }
     }
 
@@ -748,93 +767,6 @@
       h2{
         font-size:1.8rem;
       }
-
-      .hero-frame,
-      .hero-frame img{
-        min-height:285px;
-      }
-
-      .mentor-image,
-      .mentor-image img{
-        min-height:300px;
-      }
-    }
-
-    /* =========================================================
-       THE MENTOR ROOM · BLOQUE FINAL DE CONTROL VISUAL
-       Hero y Tai Chi horizontales · Tarjetas HOMERO 1:1
-    ========================================================= */
-
-    .hero-frame img,
-    .path-img img,
-    .mentor-image img{
-      image-rendering:auto;
-      backface-visibility:hidden;
-      transform:translateZ(0);
-    }
-
-    .hero-frame{
-      aspect-ratio:16 / 10;
-      min-height:auto;
-      max-height:none;
-    }
-
-    .hero-frame img{
-      min-height:0;
-      height:100%;
-    }
-
-    .path-img{
-      aspect-ratio:1 / 1;
-      min-height:auto;
-      height:auto;
-    }
-
-    .path-img img{
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    .mentor-image{
-      aspect-ratio:16 / 10;
-      min-height:auto;
-      height:auto;
-    }
-
-    .mentor-image img{
-      min-height:0;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    @media(max-width:1020px){
-      .hero-frame{
-        aspect-ratio:16 / 10;
-      }
-
-      .path-img{
-        aspect-ratio:16 / 10;
-      }
-
-      .mentor-image{
-        aspect-ratio:16 / 10;
-      }
-    }
-
-    @media(max-width:760px){
-      .hero-frame{
-        aspect-ratio:1 / 1;
-      }
-
-      .path-img{
-        aspect-ratio:1 / 1;
-      }
-
-      .mentor-image{
-        aspect-ratio:1 / 1;
-      }
     }
   </style>
 </head>
@@ -843,7 +775,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR ROOM">
-        <span class="mark">THE<br>MENTOR</span>
+        <img class="brand-logo" src="assets/img/logo-tmr.png?v=tmr-008" alt="Logo The Mentor Room">
         <div>
           <strong>THE MENTOR ROOM</strong>
           <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
@@ -881,7 +813,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-007" alt="The Mentor Room · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-008" alt="The Mentor Room · umbral de autoconocimiento">
           <div class="hero-note">
             <p data-i18n="hero_quote">The Mentor Room reúne dos caminos de práctica: el cuerpo que aprende a escuchar y la palabra que aprende a revelar.</p>
           </div>
@@ -943,7 +875,7 @@
         <div class="grid3">
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-haiku-contemplacion.webp?v=tmr-007" alt="Haiku y contemplación">
+              <img src="assets/img/imagen-haiku-contemplacion.webp?v=tmr-008" alt="Haiku y contemplación">
             </div>
             <div class="pad">
               <span class="num">1</span>
@@ -955,7 +887,7 @@
 
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-koan-grieta.webp?v=tmr-007" alt="Koan y grieta">
+              <img src="assets/img/imagen-koan-grieta.webp?v=tmr-008" alt="Koan y grieta">
             </div>
             <div class="pad">
               <span class="num">2</span>
@@ -967,7 +899,7 @@
 
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-007" alt="Escritura simbólica y laberinto">
+              <img src="assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-008" alt="Escritura simbólica y laberinto">
             </div>
             <div class="pad">
               <span class="num">3</span>
@@ -1047,10 +979,6 @@
     <section id="mentor">
       <div class="wrap">
         <div class="mentor-showcase">
-          <div class="mentor-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-007" alt="Tai Chi · The Mentor Room">
-          </div>
-
           <div class="mentor-copy">
             <p class="eyebrow">TAI CHI · THE MENTOR ROOM</p>
             <h2 data-i18n="mentor_title">La vía del cuerpo</h2>
@@ -1058,6 +986,10 @@
             <div class="actions">
               <a class="btn primary" href="#" onclick="openMentor();return false;" data-i18n="btn_mentor">Descubrir Tai Chi</a>
             </div>
+          </div>
+
+          <div class="mentor-image">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-008" alt="Tai Chi · The Mentor Room">
           </div>
         </div>
       </div>
@@ -1082,8 +1014,10 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <span class="mark">THE<br>MENTOR</span>
-        <strong>THE MENTOR ROOM</strong>
+        <img class="footer-logo" src="assets/img/logo-tmr.png?v=tmr-008" alt="Logo The Mentor Room">
+        <div>
+          <strong>THE MENTOR ROOM</strong>
+        </div>
       </div>
       <small data-i18n="footer_text">Cuerpo, palabra y conciencia · HOMERO CLUB · Tai Chi.</small>
     </div>
