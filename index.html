@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HOMERO CLUB · Escritura, contemplación y autoconocimiento</title>
-  <meta name="description" content="HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento. Escritura, contemplación, haiku, koan y escritura simbólica.">
+  <title>THE MENTOR ROOM · Cuerpo, palabra y conciencia</title>
+  <meta name="description" content="The Mentor Room reúne prácticas de conciencia: Tai Chi como vía del cuerpo y HOMERO CLUB como vía de la palabra. Escritura, contemplación y autoconocimiento.">
 
   <style>
     :root{
@@ -43,6 +43,15 @@
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
+
+    h1,h2,h3,p,a,small,strong{
+      text-wrap:pretty;
+    }
+
+    h1,h2,h3{
+      overflow-wrap:normal;
+      word-break:normal;
+    }
 
     .wrap{
       width:min(1180px,calc(100% - 2rem));
@@ -248,7 +257,7 @@
       position:relative;
       background:
         linear-gradient(180deg,rgba(23,24,39,.05),rgba(23,24,39,.20)),
-        url("assets/img/homero-club-aula-virtual.webp");
+        url("assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-003");
       background-size:cover;
       background-position:center;
       border-radius:38px;
@@ -348,15 +357,15 @@
     }
 
     .path-card:nth-child(1) .path-img{
-      background-image:url("assets/img/homero-club-taller-haiku.webp");
+      background-image:url("assets/img/imagen-haiku-contemplacion.webp?v=tmr-003");
     }
 
     .path-card:nth-child(2) .path-img{
-      background-image:url("assets/img/homero-club-taller-escritura-simbolica.webp");
+      background-image:url("assets/img/imagen-koan-grieta.webp?v=tmr-003");
     }
 
     .path-card:nth-child(3) .path-img{
-      background-image:url("assets/img/homero-club-taller-escritura-simbolica.webp");
+      background-image:url("assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-003");
     }
 
     .path-card .pad{flex:1}
@@ -435,7 +444,7 @@
     .mentor{
       background:
         linear-gradient(180deg,rgba(255,248,235,.58),rgba(255,252,246,.94)),
-        url("assets/img/homero-club-aula-virtual.webp");
+        url("assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-003");
       background-size:cover;
       background-position:center;
       min-height:440px;
@@ -554,7 +563,7 @@
 
       .brand small{
         font-size:.68rem;
-        max-width:190px;
+        max-width:220px;
         line-height:1.15;
       }
 
@@ -585,25 +594,36 @@
       }
 
       h1{
-        font-size:clamp(2.45rem,12vw,3.2rem);
-        line-height:.95;
+        font-size:clamp(2.25rem,10.8vw,3rem);
+        line-height:1;
+        letter-spacing:-.045em;
       }
 
       h2{
-        font-size:clamp(2rem,9vw,2.7rem);
-        line-height:1;
+        font-size:clamp(1.85rem,8.2vw,2.45rem);
+        line-height:1.04;
+        letter-spacing:-.035em;
       }
 
       h3{
-        font-size:1.42rem;
+        font-size:1.32rem;
+        line-height:1.08;
       }
 
       p{
-        font-size:1rem;
+        font-size:.98rem;
+        line-height:1.55;
       }
 
-      .hero-copy .lead{
-        font-size:1.04rem;
+      .eyebrow{
+        letter-spacing:.13em;
+        font-size:.68rem;
+      }
+
+      .hero-copy .lead,
+      .muted{
+        font-size:.98rem;
+        line-height:1.55;
       }
 
       .actions{
@@ -648,7 +668,8 @@
       }
 
       .quote h2{
-        font-size:1.75rem;
+        font-size:1.58rem;
+        line-height:1.08;
       }
 
       .quote p{
@@ -685,6 +706,10 @@
         padding:1rem;
       }
 
+      .principle strong{
+        line-height:1.18;
+      }
+
       .days{
         gap:.8rem;
       }
@@ -704,8 +729,16 @@
         margin:.75rem;
       }
 
+      .section-head{
+        margin-bottom:1rem;
+      }
+
       .cta{
         padding-bottom:3rem;
+      }
+
+      .cta .card{
+        padding:1.4rem;
       }
 
       footer .wrap{
@@ -724,7 +757,16 @@
       }
 
       h1{
-        font-size:2.35rem;
+        font-size:2.15rem;
+      }
+
+      h2{
+        font-size:1.8rem;
+      }
+
+      .btn{
+        min-height:46px;
+        padding:.78rem 1rem;
       }
 
       .hero-image{
@@ -735,46 +777,26 @@
         height:185px;
       }
     }
-
-    @media print{
-      header{
-        position:static;
-      }
-
-      body{
-        background:#fffaf0;
-      }
-
-      .btn{
-        box-shadow:none;
-      }
-
-      .hero-image,
-      .path-img,
-      .mentor{
-        break-inside:avoid;
-      }
-    }
   </style>
 </head>
 
 <body>
   <header>
     <div class="wrap topbar">
-      <a class="brand" href="#inicio" aria-label="HOMERO CLUB">
-        <img src="assets/img/logo-homero-club-circular.webp" alt="HOMERO CLUB">
+      <a class="brand" href="#inicio" aria-label="THE MENTOR ROOM">
+        <img src="assets/img/logo-homero-club-circular.webp" alt="THE MENTOR ROOM">
         <div>
-          <strong>HOMERO CLUB</strong>
-          <small data-i18n="brand_sub">Escritura, contemplación y autoconocimiento</small>
+          <strong>THE MENTOR ROOM</strong>
+          <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
         </div>
       </a>
 
       <nav>
-        <a href="#vias" data-i18n="nav_paths">Vías</a>
-        <a href="#metodo" data-i18n="nav_method">Método</a>
+        <a href="#vias-mentor" data-i18n="nav_paths_mentor">Dos vías</a>
+        <a href="#vias" data-i18n="nav_homero">HOMERO CLUB</a>
+        <a href="#mentor" data-i18n="nav_taichi">Tai Chi</a>
         <a href="#app" data-i18n="nav_app">APP 21 días</a>
         <a href="#escuela" data-i18n="nav_school">Escuela</a>
-        <a href="#mentor" data-i18n="nav_mentor">The Mentor Room</a>
 
         <div class="lang">
           <button type="button" data-lang-btn="es" onclick="setLang('es')">ES</button>
@@ -789,20 +811,50 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero_eyebrow">Cuerpo, palabra y conciencia</p>
-          <h1 data-i18n-html="hero_title">HOMERO CLUB<br>Escritura, contemplación y autoconocimiento</h1>
-          <p class="lead" data-i18n="hero_lead">Una práctica para mirar mejor, reconocer patrones y transformar la relación con la propia historia a través de tres vías: haiku, koan y escritura simbólica.</p>
+          <h1 data-i18n-html="hero_title">THE MENTOR ROOM<br>Cuerpo, palabra y conciencia</h1>
+          <p class="lead" data-i18n="hero_lead">Un espacio de práctica para volver a la presencia a través del cuerpo, la palabra y la atención. HOMERO CLUB trabaja la escritura como vía de autoconocimiento. Tai Chi trabaja el cuerpo como camino de conciencia.</p>
 
           <div class="actions">
-            <a class="btn primary" href="#metodo" data-i18n="btn_method">Descubrir el método</a>
-            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_app">Entrar en la APP</a>
-            <a class="btn dark" href="#" onclick="openForm();return false;" data-i18n="btn_access">Solicitar acceso</a>
+            <a class="btn primary" href="#vias" data-i18n="btn_homero_hero">Entrar en HOMERO CLUB</a>
+            <a class="btn secondary" href="#mentor" data-i18n="btn_taichi_hero">Ver Tai Chi</a>
+            <a class="btn dark" href="#" onclick="openApp();return false;" data-i18n="btn_app">Entrar en la APP</a>
           </div>
         </div>
 
         <div class="hero-image">
           <div class="hero-note">
-            <p data-i18n="hero_quote">HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento.</p>
+            <p data-i18n="hero_quote">The Mentor Room reúne dos caminos de práctica: el cuerpo que aprende a escuchar y la palabra que aprende a revelar.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vias-mentor">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="mentor_paths_eyebrow">THE MENTOR ROOM</p>
+          <h2 data-i18n="mentor_paths_title">Dos vías, una misma atención</h2>
+          <p class="muted" data-i18n="mentor_paths_text">The Mentor Room reúne prácticas de conciencia: el cuerpo aprende a escuchar, la palabra aprende a revelar.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="card pad">
+            <p class="eyebrow">TAI CHI</p>
+            <h3 data-i18n="mentor_path_body_title">La vía del cuerpo</h3>
+            <p class="muted" data-i18n="mentor_path_body_text">Movimiento lento, respiración, equilibrio y atención para liberar el cuerpo a través de la conciencia.</p>
+            <div class="actions">
+              <a class="btn primary" href="#mentor" data-i18n="btn_taichi">Ver Tai Chi</a>
+            </div>
+          </article>
+
+          <article class="card pad">
+            <p class="eyebrow">HOMERO CLUB</p>
+            <h3 data-i18n="mentor_path_word_title">La vía de la palabra</h3>
+            <p class="muted" data-i18n="mentor_path_word_text">Escritura, contemplación y autoconocimiento a través de haiku, koan y escritura simbólica.</p>
+            <div class="actions">
+              <a class="btn secondary" href="#vias" data-i18n="btn_homero">Explorar HOMERO CLUB</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -819,9 +871,9 @@
     <section id="vias">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow" data-i18n="paths_eyebrow">Tres vías de práctica</p>
-          <h2 data-i18n="paths_title">Haiku, koan y escritura simbólica</h2>
-          <p class="muted" data-i18n="paths_text">Tres formas breves de atención: mirar el mundo, entrar en la grieta de la mente y convertir los patrones interiores en símbolos visibles.</p>
+          <p class="eyebrow">HOMERO CLUB</p>
+          <h2 data-i18n="paths_title">La vía de la palabra</h2>
+          <p class="muted" data-i18n="paths_text">HOMERO CLUB trabaja la escritura como práctica de autoconocimiento: mirar el mundo, atravesar la grieta de la mente y convertir los patrones interiores en símbolos visibles.</p>
         </div>
 
         <div class="grid3">
@@ -986,11 +1038,11 @@
       <div class="wrap">
         <div class="mentor">
           <div class="card pad">
-            <p class="eyebrow">THE MENTOR ROOM</p>
-            <h2 data-i18n="mentor_title">Cuerpo, palabra y conciencia</h2>
-            <p class="muted" data-i18n="mentor_text">El Tai Chi libera al cuerpo a través de la conciencia. El haiku libera al ego a través del mundo. El koan libera a la mente en el vacío. La escritura simbólica enseña a ver.</p>
+            <p class="eyebrow">TAI CHI · THE MENTOR ROOM</p>
+            <h2 data-i18n="mentor_title">La vía del cuerpo</h2>
+            <p class="muted" data-i18n="mentor_text">El Tai Chi libera al cuerpo a través de la conciencia. Movimiento lento, respiración, equilibrio y presencia: una práctica para volver al cuerpo sin violencia y a la mente sin ruido.</p>
             <div class="actions">
-              <a class="btn primary" href="#" onclick="openMentor();return false;" data-i18n="btn_mentor">Descubrir The Mentor Room</a>
+              <a class="btn primary" href="#" onclick="openMentor();return false;" data-i18n="btn_mentor">Descubrir Tai Chi</a>
             </div>
           </div>
         </div>
@@ -1001,8 +1053,8 @@
       <div class="wrap">
         <div class="card">
           <p class="eyebrow" data-i18n="cta_eyebrow">Empieza a mirar de otro modo</p>
-          <h2 data-i18n="cta_title">Vuelve al mundo interno de tu verdad</h2>
-          <p class="muted" data-i18n="cta_text">No hace falta escribir para crear mundos nuevos. Hace falta escribir para volver al mundo interno de nuestra verdad.</p>
+          <h2 data-i18n="cta_title">Cuerpo, palabra y conciencia</h2>
+          <p class="muted" data-i18n="cta_text">No hace falta crear mundos nuevos para volver a la verdad. Hace falta escuchar el cuerpo, mirar la mente y escribir con atención.</p>
 
           <div class="actions" style="justify-content:center">
             <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_access_2">Solicitar acceso</a>
@@ -1015,8 +1067,8 @@
 
   <footer>
     <div class="wrap">
-      <strong>HOMERO CLUB</strong>
-      <small data-i18n="footer_text">Escritura, contemplación y autoconocimiento · Cuerpo, palabra y conciencia.</small>
+      <strong>THE MENTOR ROOM</strong>
+      <small data-i18n="footer_text">Cuerpo, palabra y conciencia · HOMERO CLUB · Tai Chi.</small>
     </div>
   </footer>
 
@@ -1030,34 +1082,41 @@
 
     const I18N = {
       es:{
-        brand_sub:"Escritura, contemplación y autoconocimiento",
-        nav_paths:"Vías",
-        nav_method:"Método",
+        brand_sub:"Cuerpo, palabra y conciencia",
+        nav_paths_mentor:"Dos vías",
+        nav_homero:"HOMERO CLUB",
+        nav_taichi:"Tai Chi",
         nav_app:"APP 21 días",
         nav_school:"Escuela",
-        nav_mentor:"The Mentor Room",
 
         hero_eyebrow:"Cuerpo, palabra y conciencia",
-        hero_title:"HOMERO CLUB<br>Escritura, contemplación y autoconocimiento",
-        hero_lead:"Una práctica para mirar mejor, reconocer patrones y transformar la relación con la propia historia a través de tres vías: haiku, koan y escritura simbólica.",
-        hero_quote:"HOMERO CLUB es una puerta hecha de palabras hacia el autoconocimiento.",
-        btn_method:"Descubrir el método",
+        hero_title:"THE MENTOR ROOM<br>Cuerpo, palabra y conciencia",
+        hero_lead:"Un espacio de práctica para volver a la presencia a través del cuerpo, la palabra y la atención. HOMERO CLUB trabaja la escritura como vía de autoconocimiento. Tai Chi trabaja el cuerpo como camino de conciencia.",
+        hero_quote:"The Mentor Room reúne dos caminos de práctica: el cuerpo que aprende a escuchar y la palabra que aprende a revelar.",
+        btn_homero_hero:"Entrar en HOMERO CLUB",
+        btn_taichi_hero:"Ver Tai Chi",
         btn_app:"Entrar en la APP",
-        btn_access:"Solicitar acceso",
+
+        mentor_paths_eyebrow:"THE MENTOR ROOM",
+        mentor_paths_title:"Dos vías, una misma atención",
+        mentor_paths_text:"The Mentor Room reúne prácticas de conciencia: el cuerpo aprende a escuchar, la palabra aprende a revelar.",
+        mentor_path_body_title:"La vía del cuerpo",
+        mentor_path_body_text:"Movimiento lento, respiración, equilibrio y atención para liberar el cuerpo a través de la conciencia.",
+        mentor_path_word_title:"La vía de la palabra",
+        mentor_path_word_text:"Escritura, contemplación y autoconocimiento a través de haiku, koan y escritura simbólica.",
+        btn_taichi:"Ver Tai Chi",
+        btn_homero:"Explorar HOMERO CLUB",
 
         central_quote:"La escritura, como espejo del interior, libera; como simple adorno, engaña.",
         central_text:"No escribimos para adornar la identidad. Escribimos para verla.",
 
-        paths_eyebrow:"Tres vías de práctica",
-        paths_title:"Haiku, koan y escritura simbólica",
-        paths_text:"Tres formas breves de atención: mirar el mundo, entrar en la grieta de la mente y convertir los patrones interiores en símbolos visibles.",
+        paths_title:"La vía de la palabra",
+        paths_text:"HOMERO CLUB trabaja la escritura como práctica de autoconocimiento: mirar el mundo, atravesar la grieta de la mente y convertir los patrones interiores en símbolos visibles.",
 
         haiku_title:"Mirar sin apropiarse",
         haiku_text:"El haiku enseña a detenerse ante el mundo sin cubrirlo de interpretaciones. Una práctica de atención, silencio y presencia.",
-
         koan_title:"Fluir con la grieta",
         koan_text:"El koan zen y las tradiciones breves de paradoja rompen la lógica automática. Allí donde la mente deja de controlar, empieza otra forma de ver.",
-
         symbolic_label:"ESCRITURA SIMBÓLICA",
         symbolic_title:"Ver, codificar y liberar",
         symbolic_text:"A partir de pensamientos, acciones, decisiones y entornos vitales, la escritura simbólica ayuda a reconocer patrones y convertirlos en imágenes de comprensión y liberación.",
@@ -1109,48 +1168,55 @@
         school_full_text:"Un recorrido integrado por las tres vías: mundo, mente y símbolo.",
         btn_enrol:"Solicitar inscripción",
 
-        mentor_title:"Cuerpo, palabra y conciencia",
-        mentor_text:"El Tai Chi libera al cuerpo a través de la conciencia. El haiku libera al ego a través del mundo. El koan libera a la mente en el vacío. La escritura simbólica enseña a ver.",
-        btn_mentor:"Descubrir The Mentor Room",
+        mentor_title:"La vía del cuerpo",
+        mentor_text:"El Tai Chi libera al cuerpo a través de la conciencia. Movimiento lento, respiración, equilibrio y presencia: una práctica para volver al cuerpo sin violencia y a la mente sin ruido.",
+        btn_mentor:"Descubrir Tai Chi",
 
         cta_eyebrow:"Empieza a mirar de otro modo",
-        cta_title:"Vuelve al mundo interno de tu verdad",
-        cta_text:"No hace falta escribir para crear mundos nuevos. Hace falta escribir para volver al mundo interno de nuestra verdad.",
+        cta_title:"Cuerpo, palabra y conciencia",
+        cta_text:"No hace falta crear mundos nuevos para volver a la verdad. Hace falta escuchar el cuerpo, mirar la mente y escribir con atención.",
         btn_access_2:"Solicitar acceso",
         btn_app_2:"Entrar en la APP",
 
-        footer_text:"Escritura, contemplación y autoconocimiento · Cuerpo, palabra y conciencia."
+        footer_text:"Cuerpo, palabra y conciencia · HOMERO CLUB · Tai Chi."
       },
 
       en:{
-        brand_sub:"Writing, contemplation and self-knowledge",
-        nav_paths:"Paths",
-        nav_method:"Method",
+        brand_sub:"Body, word and consciousness",
+        nav_paths_mentor:"Two paths",
+        nav_homero:"HOMERO CLUB",
+        nav_taichi:"Tai Chi",
         nav_app:"21-day APP",
         nav_school:"School",
-        nav_mentor:"The Mentor Room",
 
         hero_eyebrow:"Body, word and consciousness",
-        hero_title:"HOMERO CLUB<br>Writing, contemplation and self-knowledge",
-        hero_lead:"A practice for seeing more clearly, recognizing patterns and transforming the relationship with one’s own story through three paths: haiku, koan and symbolic writing.",
-        hero_quote:"HOMERO CLUB is a door made of words toward self-knowledge.",
-        btn_method:"Discover the method",
+        hero_title:"THE MENTOR ROOM<br>Body, word and consciousness",
+        hero_lead:"A practice space for returning to presence through the body, the word and attention. HOMERO CLUB works with writing as a path of self-knowledge. Tai Chi works with the body as a path of consciousness.",
+        hero_quote:"The Mentor Room brings together two paths of practice: the body learning to listen and the word learning to reveal.",
+        btn_homero_hero:"Enter HOMERO CLUB",
+        btn_taichi_hero:"View Tai Chi",
         btn_app:"Enter the APP",
-        btn_access:"Request access",
+
+        mentor_paths_eyebrow:"THE MENTOR ROOM",
+        mentor_paths_title:"Two paths, one attention",
+        mentor_paths_text:"The Mentor Room brings together practices of consciousness: the body learns to listen, the word learns to reveal.",
+        mentor_path_body_title:"The path of the body",
+        mentor_path_body_text:"Slow movement, breathing, balance and attention to liberate the body through consciousness.",
+        mentor_path_word_title:"The path of the word",
+        mentor_path_word_text:"Writing, contemplation and self-knowledge through haiku, koan and symbolic writing.",
+        btn_taichi:"View Tai Chi",
+        btn_homero:"Explore HOMERO CLUB",
 
         central_quote:"Writing, as a mirror of the inner life, liberates; as mere ornament, it deceives.",
         central_text:"We do not write to decorate identity. We write to see it.",
 
-        paths_eyebrow:"Three paths of practice",
-        paths_title:"Haiku, koan and symbolic writing",
-        paths_text:"Three brief forms of attention: looking at the world, entering the crack of the mind, and turning inner patterns into visible symbols.",
+        paths_title:"The path of the word",
+        paths_text:"HOMERO CLUB works with writing as a practice of self-knowledge: looking at the world, crossing the crack of the mind and turning inner patterns into visible symbols.",
 
         haiku_title:"Looking without possessing",
         haiku_text:"Haiku teaches us to pause before the world without covering it with interpretations. A practice of attention, silence and presence.",
-
         koan_title:"Flowing with the crack",
         koan_text:"Zen koan and brief traditions of paradox break automatic logic. Where the mind stops controlling, another way of seeing begins.",
-
         symbolic_label:"SYMBOLIC WRITING",
         symbolic_title:"Seeing, encoding and liberating",
         symbolic_text:"Starting from thoughts, actions, decisions and life environments, symbolic writing helps recognize patterns and turn them into images of understanding and liberation.",
@@ -1202,17 +1268,17 @@
         school_full_text:"An integrated journey through the three paths: world, mind and symbol.",
         btn_enrol:"Request enrolment",
 
-        mentor_title:"Body, word and consciousness",
-        mentor_text:"Tai Chi liberates the body through consciousness. Haiku liberates the ego through the world. Koan liberates the mind into emptiness. Symbolic writing teaches us to see.",
-        btn_mentor:"Discover The Mentor Room",
+        mentor_title:"The path of the body",
+        mentor_text:"Tai Chi liberates the body through consciousness. Slow movement, breathing, balance and presence: a practice for returning to the body without violence and to the mind without noise.",
+        btn_mentor:"Discover Tai Chi",
 
         cta_eyebrow:"Begin to see differently",
-        cta_title:"Return to the inner world of your truth",
-        cta_text:"There is no need to write in order to create new worlds. What is needed is to write in order to return to the inner world of our truth.",
+        cta_title:"Body, word and consciousness",
+        cta_text:"There is no need to create new worlds in order to return to truth. What is needed is to listen to the body, observe the mind and write with attention.",
         btn_access_2:"Request access",
         btn_app_2:"Enter the APP",
 
-        footer_text:"Writing, contemplation and self-knowledge · Body, word and consciousness."
+        footer_text:"Body, word and consciousness · HOMERO CLUB · Tai Chi."
       }
     };
 
@@ -1258,8 +1324,8 @@
     function openMentor(){
       if(!MENTOR_URL || MENTOR_URL === "#"){
         alert(currentLang === "en"
-          ? "The Mentor Room page will be connected soon."
-          : "La página de The Mentor Room se conectará próximamente.");
+          ? "The Mentor Room / Tai Chi page will be connected soon."
+          : "La página de The Mentor Room / Tai Chi se conectará próximamente.");
         return;
       }
       window.open(MENTOR_URL, "_blank");
